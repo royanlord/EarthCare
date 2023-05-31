@@ -5,8 +5,11 @@ function About() {
         <div className="container about">
           <div className="row">
             <div className="col-lg-6">
-              <img src="" alt="" />
-              <p>Image</p>
+              <img
+                src="../src/assets/image1.svg"
+                alt=""
+                className="img-fluid"
+              />
             </div>
             <div className="col-lg-6">
               <p className="fs-3 fw-bold title">
@@ -52,8 +55,11 @@ function About() {
               </ol>
             </div>
             <div className="col-lg-6">
-              <img src="" alt="" />
-              <p>Image</p>
+              <img
+                src="../src/assets/image2.svg"
+                alt=""
+                className="img-fluid"
+              />
             </div>
           </div>
         </div>
@@ -65,7 +71,7 @@ function About() {
           <div class="wrapper p-5 d-flex justify-content-around gap-5 rounded-4 flex-wrap text-center text-white lh-1">
             <div>
               <img
-                src=""
+                src="../src/assets/nabil.svg"
                 alt="Nabil Anugerah P"
                 class="bg-primary rounded-circle"
               />
@@ -74,7 +80,7 @@ function About() {
             </div>
             <div>
               <img
-                src=""
+                src="../src/assets/royan.svg"
                 alt="Royan Farid F"
                 class="bg-primary rounded-circle"
               />
@@ -83,7 +89,7 @@ function About() {
             </div>
             <div>
               <img
-                src=""
+                src="../src/assets/ghulsan.svg"
                 alt="Ghulsan Savana A"
                 class="bg-primary rounded-circle"
               />
