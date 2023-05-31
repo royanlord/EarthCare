@@ -2,14 +2,14 @@ function About() {
   return (
     <>
       <section>
-        <div className="container">
+        <div className="container about">
           <div className="row">
             <div className="col-lg-6">
               <img src="" alt="" />
               <p>Image</p>
             </div>
             <div className="col-lg-6">
-              <p className="fs-3 fw-bold">
+              <p className="fs-3 fw-bold title">
                 EarthCare, <br />
                 <span className="fs-1">What is it?</span>
               </p>
@@ -27,7 +27,7 @@ function About() {
 
           <div className="row my-5">
             <div className="col-lg-6">
-              <p className="fs-3 fw-bold">
+              <p className="fs-3 fw-bold title">
                 Goals, <br />
                 <span className="fs-1">To Be Achieved</span>
               </p>
@@ -54,6 +54,41 @@ function About() {
             <div className="col-lg-6">
               <img src="" alt="" />
               <p>Image</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container py-5">
+          <p class="fs-2 fw-bold text-center">Our Team</p>
+          <div class="wrapper p-5 d-flex justify-content-around gap-5 rounded-4 flex-wrap text-center text-white lh-1">
+            <div>
+              <img
+                src=""
+                alt="Nabil Anugerah P"
+                class="bg-primary rounded-circle"
+              />
+              <p class="fs-4 fw-bold team">Nabil Anugerah P</p>
+              <small class="text-white-50">Front-End Developer</small>
+            </div>
+            <div>
+              <img
+                src=""
+                alt="Royan Farid F"
+                class="bg-primary rounded-circle"
+              />
+              <p class="fs-4 fw-bold team">Royan Farid F</p>
+              <small class="text-white-50">Front-End Developer</small>
+            </div>
+            <div>
+              <img
+                src=""
+                alt="Ghulsan Savana A"
+                class="bg-primary rounded-circle"
+              />
+              <p class="fs-4 fw-bold team">Ghulsan Savana A</p>
+              <small class="text-white-50">Front-End Developer</small>
             </div>
           </div>
         </div>
