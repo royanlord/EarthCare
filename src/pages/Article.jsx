@@ -23,7 +23,7 @@ export const Article = () => {
                         articles.map((data,index) => (
                             <div class="row mx-3 mb-4" key={index}>
                                 <div class="col-lg-6">
-                                    <img src={`../assets/${data.image}`} class="img-fluid my-2 me-4 rounded-3" alt={data.titleArticle} />
+                                    <img src={data.image} class="img-fluid my-2 me-4 rounded-3" alt={data.titleArticle} />
                                 </div>
                                 <div class="col-lg-6 ps-lg-5 d-flex flex-column justify-content-center">
                                     <h2 class="fw-semibold">{data.titleArticle}</h2>
@@ -35,7 +35,6 @@ export const Article = () => {
                                     <div class="button-more">
                                     </div>
                                 </div>
-                                {/* <img src="../assets/article1.svg" alt="" /> */}
                             </div>
                         ))
                     )}
