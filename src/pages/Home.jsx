@@ -1,4 +1,5 @@
 import Carousel from "react-bootstrap/Carousel";
+import { Card, Button } from "react-bootstrap";
 
 function Home() {
   return (
@@ -203,6 +204,82 @@ function Home() {
             </div>
           </Carousel.Item>
         </Carousel>
+
+        <section>
+          <div class="container mt-5">
+            <h2 class="text-center fw-bold">Event Terbaru, Yuk Ikutan!</h2>
+            <p class="text-center text-black-50">
+              Daftarkan diri anda untuk mendapatkan pengalaman baru
+            </p>
+          </div>
+
+          <hr />
+
+          <div className="d-flex justify-content-center gap-4 flex-wrap">
+            <Card style={{ width: "22rem" }}>
+              <Card.Img variant="top" src="holder.js/100px180" />
+              <Card.Body>
+                <Card.Title>Strategi Pengelolaan Sungai</Card.Title>
+                <Card.Text>
+                  <p className="text-black-50">ecoedu</p>
+                  <div class="date mb-2">
+                    <i class="fa-solid fa-calendar-days fa-lg"></i>
+                    <p class="d-inline text-muted ms-1">14 Mei 2023</p>
+                  </div>
+                  <div class="location">
+                    <i class="fa-solid fa-location-dot fa-lg"></i>
+                    <p class="d-inline text-muted ms-1">Online, zoom</p>
+                  </div>
+                </Card.Text>
+                <Button variant="primary" className="btn-event w-100">
+                  Join Now
+                </Button>
+              </Card.Body>
+            </Card>
+            <Card style={{ width: "22rem" }}>
+              <Card.Img variant="top" src="holder.js/100px180" />
+              <Card.Body>
+                <Card.Title>Gerakan Sedekah Sampah</Card.Title>
+                <Card.Text>
+                  <p className="text-black-50">tkn_psl</p>
+                  <div class="date mb-2">
+                    <i class="fa-solid fa-calendar-days fa-lg"></i>
+                    <p class="d-inline text-muted ms-1">8 April 2023</p>
+                  </div>
+                  <div class="location">
+                    <i class="fa-solid fa-location-dot fa-lg"></i>
+                    <p class="d-inline text-muted ms-1">
+                      Halaman Masjid Raya Bintaro Jaya
+                    </p>
+                  </div>
+                </Card.Text>
+                <Button variant="primary" className="btn-event w-100">
+                  Join Now
+                </Button>
+              </Card.Body>
+            </Card>
+            <Card style={{ width: "22rem" }}>
+              <Card.Img variant="top" src="holder.js/100px180" />
+              <Card.Body>
+                <Card.Title>Perhitungan Gas Rumah Kaca</Card.Title>
+                <Card.Text>
+                  <p className="text-black-50">ecoedu</p>
+                  <div class="date mb-2">
+                    <i class="fa-solid fa-calendar-days fa-lg"></i>
+                    <p class="d-inline text-muted ms-1">16 Maret 2023</p>
+                  </div>
+                  <div class="location">
+                    <i class="fa-solid fa-location-dot fa-lg"></i>
+                    <p class="d-inline text-muted ms-1">Online, zoom</p>
+                  </div>
+                </Card.Text>
+                <Button variant="primary" className="btn-event w-100">
+                  Join Now
+                </Button>
+              </Card.Body>
+            </Card>
+          </div>
+        </section>
       </main>
     </>
   );
