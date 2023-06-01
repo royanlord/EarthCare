@@ -1,9 +1,10 @@
 import "./css/style.css";
+import Events from "./pages/Events";
 
 function App() {
   return (
     <>
-      <h1>Hello, React JS</h1>
+      <Events />
     </>
   );
 }
