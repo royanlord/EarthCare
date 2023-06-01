@@ -41,7 +41,6 @@
 
 .component__footer .content__footer ul li a,
 .component__footer .about__footer ul li a {
-  text-align: left;
   margin-left: -32.2px;
   color: var(--colorPrimary);
   cursor: pointer;
