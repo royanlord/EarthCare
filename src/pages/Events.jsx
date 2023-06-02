@@ -1,16 +1,29 @@
-import { Card, Button, Form } from "react-bootstrap";
+import { Card, Button, Form, Col, Row } from "react-bootstrap";
+import { FaCalendarAlt, FaMapMarker } from "react-icons/fa";
+import { useEffect, useState } from "react";
 
 export default function Events() {
+  const [events, setEvents] = useState([]);
+
+  useEffect(() => {
+    fetch("https://644dfece4e86e9a4d8ef004c.mockapi.io/events")
+      .then((res) => res.json())
+      .then((result) => {
+        setEvents(result);
+      });
+  }, []);
   return (
     <main className="container mt-5">
-      <div className="d-flex justify-content-lg-between justify-content-center align-content-lg-center flex-wrap">
-        <section className="title__events text-center text-lg-center">
-          <h2>Event Terbaru, Yuk Ikutan!</h2>
-          <p>Daftarkan diri anda untuk mendapatkan pengalaman baru</p>
+      <div className="d-flex justify-content-lg-between mx-5 justify-content-center flex-wrap">
+        <section className="title__events text-lg-left text-center">
+          <h2 className="fw-bold">Event Terbaru, Yuk Ikutan!</h2>
+          <p className="mb-3">
+            Daftarkan diri anda untuk mendapatkan pengalaman baru
+          </p>
         </section>
         <section
           className="search__events mb-5 mb-lg-5"
-          style={{ width: "28rem" }}
+          style={{ width: "24rem" }}
         >
           <Form.Control
             className="mt-lg-4"
@@ -22,20 +35,44 @@ export default function Events() {
           />
         </section>
       </div>
-      <Card style={{ width: "18rem" }}>
-        <Card.Img
-          variant="top"
-          src="https://raw.githubusercontent.com/royanlord/RWD-EarthCare/c9e081385ee2feab4d0be819d8d5fdcc5b2276c5/assets/images/mencegah%20banjir.svg"
-        />
-        <Card.Body>
-          <Card.Title>Strategi Pengelolaan Sungai</Card.Title>
-          <Card.Text>ecoedu</Card.Text>
-          <Card.Text>14 Mei 2023</Card.Text>
-          <Card.Text>Online, zoom</Card.Text>
-
-          <Button variant="primary">Join Now</Button>
-        </Card.Body>
-      </Card>
+      <Row className="justify-content-center justify-content-lg-center mx-auto align-items-center">
+        {events.length === 0 ? (
+          <span>Loading....</span>
+        ) : (
+          events.map((data, index) => (
+            <Col
+              key={index}
+              xs={12}
+              md={6}
+              lg={4}
+              className="d-flex justify-content-lg-center align-items-center align-items-lg-center flex-column"
+            >
+              <Card className="card__events shadow mx-md-5 mx-0">
+                <Card.Img variant="top" src={data.gambar} />
+                <Card.Body>
+                  <h5 className="card-title">{data.judul}</h5>
+                  <p className="card-text">{data.pembuat}</p>
+                  <div className="date d-flex">
+                    <i className="d-flex mt-1 me-2">
+                      <FaCalendarAlt />
+                    </i>
+                    <p>{data.tanggal}</p>
+                  </div>
+                  <div className="location d-flex">
+                    <i className="d-flex mt-1 me-2">
+                      <FaMapMarker />
+                    </i>
+                    <p>{data.lokasi}</p>
+                  </div>
+                  <div className="d-grid">
+                    <Button variant="primary">Join Now</Button>
+                  </div>
+                </Card.Body>
+              </Card>
+            </Col>
+          ))
+        )}
+      </Row>
     </main>
   );
 }
