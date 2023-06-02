@@ -215,7 +215,7 @@ function Home() {
 
           <hr />
 
-          <div className="d-flex justify-content-center gap-4 flex-wrap">
+          <div className="d-flex justify-content-center gap-4 flex-wrap wrapper-event">
             <Card style={{ width: "22rem" }}>
               <Card.Img variant="top" src="holder.js/100px180" />
               <Card.Body>
@@ -279,6 +279,92 @@ function Home() {
               </Card.Body>
             </Card>
           </div>
+        </section>
+
+        <section>
+          <div class="fitur-article mt-3">
+        <div class="wrapper-article">
+          <div class="container">
+            <h2 class="text-center text-white fw-bold">Rekomendasi Artikel</h2>
+            <p class="text-center text-white-50 mb-5">
+              Beberapa rekomendasi artikel dari kami yang mungkin anda suka
+            </p>
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="card mb-3 left-article border-0">
+                  <img src="assets/images/article-image1.svg" class="card-img-top" alt="kebakaran hutan" />
+                  <div class="card-body">
+                    <h5 class="card-title">
+                      Penyebab Terjadinya Kebakaran Hutan dan Cara Mencegahnya
+                    </h5>
+                    <p class="card-text">
+                      Kebakaran hutan seringkali terjadi secara alami di daerah vegetasi kering. Kebakaran hutan disebut
+                      sebagai kebakaran semak atau kebakaran gurun tergantung pada area di mana hal ini terjadi.
+                      Kebakaran hutan ialah terbakarnya sesuatu yang menimbulkan bahaya atau mendatangkan bencana...
+                    </p>
+                    <div class="text-center btn-article">
+                      <a href="article.html" class="btn w-50">Read</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg">
+                <div class="row">
+                  <div class="col mid-article">
+                    <div class="card mb-3 right-article border-0">
+                      <div class="row g-0">
+                        <div class="col-md-4">
+                          <img src="assets/images/article-image2.svg" class="img-fluid rounded-start"
+                            alt="sampah menyebabkan banjir" />
+                        </div>
+                        <div class="col-md-8">
+                          <div class="card-body">
+                            <h5 class="card-title">Menumpuknya Sampah di Sungai Menjadi Penyebab Utama Banjir</h5>
+                            <p class="card-text">Bencana banjir yang terjadi disebabkan oleh curah hujan yang tinggi dan
+                              ulah warga setempat yang membuang sampah ke sungai sehingga menyebabkan airnya sungai
+                              meluap ke pemukiman warga. Membuang sampah sembarangan di sungai memberikan dampak...</p>
+                            <div class="text-center btn-article">
+                              <a href="article.html" class="btn w-50">Read</a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-lg">
+                    <div class="card mb-3 right-article border-0">
+                      <div class="row g-0">
+                        <div class="col-md-4">
+                          <img src="assets/images/article-image3.svg" class="img-fluid rounded-start"
+                            alt="polusi udara dari pabrik" />
+                        </div>
+                        <div class="col-md-8">
+                          <div class="card-body">
+                            <h5 class="card-title">Polusi Udara Serta Dampaknya Bagi Manusia dan Lingkungan</h5>
+                            <p class="card-text">Polusi udara menjadi bahaya yang mengancam kesehatan manusia. Kita bisa
+                              dengan mudah mengetahui adanya polusi dengan udara yang berwarna atau berbau. Polusi udara
+                              banyak ditemukan di daerah perkotaan. Menurut data...</p>
+                            <div class="text-center btn-article">
+                              <a href="article.html" class="btn w-50">Read</a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="text-center my-5">
+              <Button type="button" className="btn btn-showall-article" onclick="window.location.href='event.html'">
+                Show All Articles
+              </Button>
+            </div>
+          </div>
+        </div>
+        </div>
         </section>
       </main>
     </>
