@@ -36,10 +36,81 @@
   background-color: #e54201;
 }
 
-.btn-event {
+section .btn-event {
   background-color: #e54201;
   color: #fff;
   border: none;
+}
+
+.fa-calendar-days,
+.fa-location-dot {
+  color: #e54201;
+}
+
+.wrapper-article {
+  padding: 2rem 0;
+  background-color: #115810;
+  color: #000;
+}
+
+.btn-article a {
+  background-color: #115810;
+  color: #fff;
+  border: none;
+}
+
+.btn-article a:hover {
+  background-color: #56c054;
+  color: #fff;
+}
+
+.btn-article a:active {
+  background-color: #094508 !important;
+  color: #fff !important;
+}
+
+section .btn-showall-article {
+  border: 2px solid #fff;
+  color: #fff;
+  background-color: transparent;
+  font-weight: 500;
+}
+
+section .btn-showall-article:hover {
+  background-color: #e54201;
+  border: 2px solid #e54201;
+  color: #fff;
+}
+
+section .btn-showall-article:active {
+  border: 2px solid #ce3b01 !important;
+  background-color: #ce3b01 !important;
+  color: #fff !important;
+}
+
+.card-body h5 {
+  font-weight: bold;
+}
+
+.left-article {
+  height: 606px;
+}
+
+.left-article img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.right-article,
+.left-article {
+  box-shadow: 8px 9px 18px -7px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 8px 9px 18px -7px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 8px 9px 18px -7px rgba(0, 0, 0, 0.75);
+}
+
+.right-article img {
+  height: 100%;
+  object-fit: cover;
 }
 
 @media screen and (max-width: 992px) {
