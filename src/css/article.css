@@ -1,0 +1,25 @@
+#article {
+    margin-top: 7.5rem;
+}
+
+#article p {
+    text-align: justify;
+}
+
+#article .btn-primary {
+    background-color: #E54201 !important;
+}
+
+#article .btn-primary:hover {
+    background-color: #F36B35 !important;
+}
+
+#article .btn-primary:active {
+    background-color: #CE3B01 !important;
+}
+
+@media screen and (max-width: 992px) {
+    #article {
+        margin-top: 7rem;
+    }
+}
