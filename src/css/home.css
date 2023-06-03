@@ -36,6 +36,13 @@
   background-color: #e54201 !important;
 }
 
+section hr {
+  width: 50%;
+  margin: 0 auto;
+  color: #e54201;
+  margin-bottom: 2rem;
+}
+
 .btn-event {
   background-color: #e54201 !important;
   color: #fff;
