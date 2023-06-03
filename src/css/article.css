@@ -18,8 +18,33 @@
     background-color: #CE3B01 !important;
 }
 
+#detail-atc {
+    padding-top: 0.2rem;
+    margin-top: 6rem;
+}
+
+#detail-atc p {
+    text-align: justify;
+}
+
 @media screen and (max-width: 992px) {
     #article {
         margin-top: 7rem;
+    }
+
+    #article-detail #main-article {
+        width: 100% !important;
+    }
+
+    #article-detail h2 {
+        font-size: 1.1rem;
+    }
+
+    #article-detail .date-article {
+        font-size: 0.8rem;
+    }
+
+    #article-detail p {
+        font-size: 12px;
     }
 }
