@@ -65,6 +65,7 @@ export default function Events() {
             id="serach"
             placeholder="search events"
             aria-label="search events"
+            autoComplete="off"
             value={search}
             onChange={handleSearch}
           />
