@@ -146,4 +146,16 @@
   .wrapper-carousel {
     width: 80%;
   }
+
+    .left-article img {
+    height: 300px;
+  }
+
+  .left-article {
+    height: auto;
+  }
+
+  .mid-article {
+    margin: 10px 0 !important;
+  }
 }
