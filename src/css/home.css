@@ -33,18 +33,23 @@
 }
 
 .carousel-indicators .active {
-  background-color: #e54201;
+  background-color: #e54201 !important;
 }
 
-section .btn-event {
-  background-color: #e54201;
+.btn-event {
+  background-color: #e54201 !important;
   color: #fff;
-  border: none;
+  border: none !important;
 }
 
-.fa-calendar-days,
-.fa-location-dot {
-  color: #e54201;
+.btn-event:hover {
+  background-color: #f36b35 !important;
+  color: #fff;
+}
+
+.btn-event:active {
+  background-color: #ce3b01 !important;
+  color: #fff;
 }
 
 .wrapper-article {
@@ -69,20 +74,20 @@ section .btn-event {
   color: #fff !important;
 }
 
-section .btn-showall-article {
-  border: 2px solid #fff;
-  color: #fff;
-  background-color: transparent;
-  font-weight: 500;
+.btn-showall-article {
+  border: 2px solid #fff !important;
+  background-color: transparent !important;
+  color: #fff !important;
+  font-weight: 500 !important;
 }
 
-section .btn-showall-article:hover {
-  background-color: #e54201;
-  border: 2px solid #e54201;
-  color: #fff;
+.btn-showall-article:hover {
+  background-color: #e54201 !important;
+  border: 2px solid #e54201 !important;
+  color: #fff !important;
 }
 
-section .btn-showall-article:active {
+.btn-showall-article:active {
   border: 2px solid #ce3b01 !important;
   background-color: #ce3b01 !important;
   color: #fff !important;
