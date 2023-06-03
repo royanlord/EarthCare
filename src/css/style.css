@@ -15,9 +15,10 @@
 }
 
 .wrapper img {
-  height: 250px;
+  height: 200px;
 }
 
 .team {
   margin: 1rem 0 0 0;
+  padding: 0 20px;
 }
