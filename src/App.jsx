@@ -1,4 +1,4 @@
-import "./css/style.css";
+import "./css/about.css";
 import About from "./pages/About";
 
 function App() {
