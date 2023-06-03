@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 export default function Events() {
   const [events, setEvents] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [search, setSearch] = useState("");
 
   // useEffect(() => {
   //   fetch("https://644dfece4e86e9a4d8ef004c.mockapi.io/events")
@@ -35,6 +36,15 @@ export default function Events() {
     }
   };
 
+  // Search events
+  const handleSearch = (e) => {
+    setSearch(e.target.value);
+  };
+
+  const filteredEvents = events.filter((e) => {
+    return e.judul.toLowerCase().includes(search.toLowerCase());
+  });
+
   return (
     <main className="container mt-5">
       <div className="d-flex justify-content-lg-between mx-5 justify-content-center flex-wrap">
@@ -55,14 +65,18 @@ export default function Events() {
             id="serach"
             placeholder="search events"
             aria-label="search events"
+            value={search}
+            onChange={handleSearch}
           />
         </section>
       </div>
       <Row className="justify-content-center justify-content-lg-center mx-auto align-items-center">
         {isLoading ? (
-          <div className="text-center">Loading....</div>
+          <p className="text-center">Loading....</p>
+        ) : filteredEvents.length === 0 ? (
+          <p className="text-center fw-bold text-danger">No events found</p>
         ) : (
-          events.map((data, index) => (
+          filteredEvents.map((data, index) => (
             <Col
               key={index}
               xs={12}
