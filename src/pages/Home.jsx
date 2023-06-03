@@ -215,7 +215,7 @@ function Home() {
 
           <hr />
 
-          <div className="d-flex justify-content-center gap-4 flex-wrap wrapper-event">
+          <div className="d-flex justify-content-center gap-4 flex-wrap">
             <Card style={{ width: "22rem" }}>
               <Card.Img variant="top" src="holder.js/100px180" />
               <Card.Body>
