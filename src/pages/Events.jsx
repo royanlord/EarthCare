@@ -1,21 +1,44 @@
-import { Card, Button, Form, Col, Row } from "react-bootstrap";
+import { Card, Form, Col, Row } from "react-bootstrap";
 import { FaCalendarAlt, FaMapMarker } from "react-icons/fa";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function Events() {
   const [events, setEvents] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  // useEffect(() => {
+  //   fetch("https://644dfece4e86e9a4d8ef004c.mockapi.io/events")
+  //     .then((res) => res.json())
+  //     .then((result) => {
+  //       setEvents(result);
+  //     });
+  // }, []);
 
   useEffect(() => {
-    fetch("https://644dfece4e86e9a4d8ef004c.mockapi.io/events")
-      .then((res) => res.json())
-      .then((result) => {
-        setEvents(result);
-      });
+    fetchDataEvents();
   }, []);
+
+  const fetchDataEvents = async () => {
+    try {
+      const res = await fetch(
+        "https://644dfece4e86e9a4d8ef004c.mockapi.io/events"
+      );
+      if (!res.ok) {
+        throw new Error("Failed to access data events");
+      }
+      const data = await res.json();
+      setEvents(data);
+      setIsLoading(false);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <main className="container mt-5">
       <div className="d-flex justify-content-lg-between mx-5 justify-content-center flex-wrap">
-        <section className="title__events text-lg-left text-center">
+        <section className="title__events">
           <h2 className="fw-bold">Event Terbaru, Yuk Ikutan!</h2>
           <p className="mb-3">
             Daftarkan diri anda untuk mendapatkan pengalaman baru
@@ -36,8 +59,8 @@ export default function Events() {
         </section>
       </div>
       <Row className="justify-content-center justify-content-lg-center mx-auto align-items-center">
-        {events.length === 0 ? (
-          <span>Loading....</span>
+        {isLoading ? (
+          <div className="text-center">Loading....</div>
         ) : (
           events.map((data, index) => (
             <Col
@@ -64,8 +87,13 @@ export default function Events() {
                     </i>
                     <p>{data.lokasi}</p>
                   </div>
-                  <div className="d-grid">
-                    <Button variant="primary">Join Now</Button>
+                  <div className="d-grid btn__join">
+                    {/* <a href="./pages/DetailEvents" className="btn btn-primary">
+                      Join Now
+                    </a> */}
+                    <Link to={`/events/${data.id}`} className="btn btn-primary">
+                      Join Now
+                    </Link>
                   </div>
                 </Card.Body>
               </Card>
