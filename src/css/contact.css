@@ -1,0 +1,10 @@
+#jumbotron-contact {
+    margin-top: 4.4rem;
+  }
+  
+  #jumbotron-contact > div {
+    height: 75vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url("../assets/contact-jumbotron.svg") !important;
+    background-size: cover;
+  }
