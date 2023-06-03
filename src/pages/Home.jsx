@@ -416,6 +416,25 @@ function Home() {
             </div>
           </div>
         </section>
+
+        <section>
+      <div class="container mt-5">
+        <div class="row">
+          <div class="col-lg-6">
+            <img src="../src/assets/about us.svg" class="img-fluid" alt="ilustrasi peduli bumi" />
+          </div>
+          <div class="col-lg-6">
+            <p class="fs-3 fw-bold title">About Us</p>
+            <p>EarthCare adalah suatu platform aplikasi berbasis website yang berfokus pada kepedulian dan kelestarian
+              alam dimana pada mulanya terbentuk karena didasari atas rasa prihatin terhadap Bumi yang kian rapuh.
+              Greenpeace sebagai wadah dan tempat untuk mengedukasi dan mengajak masyarakat banyak agar lebih peduli
+              terhadap kelestarian alam dan juga turut serta untuk menjaganya.
+            </p>
+            <p>Memberi Solusi. Gerakkan Aksi. Ciptakan Perubahan.</p>
+          </div>
+        </div>
+      </div>
+    </section>
       </main>
     </>
   );
