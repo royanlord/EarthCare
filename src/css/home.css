@@ -52,6 +52,30 @@
   color: #fff;
 }
 
+.wrapper-showall-event{
+  display: flex;
+  justify-content: center;
+}
+
+.btn-showall-event {
+  border: 2px solid #e54201 !important;
+  background-color: transparent;
+  color: #e54201 !important;
+  font-weight: 500 !important;
+}
+
+.btn-showall-event:hover {
+  background-color: #f36b35 !important;
+  border: 2px solid #f36b35 !important;
+  color: #fff !important;
+}
+
+.btn-showall-event:active {
+  border: 2px solid #ce3b01 !important;
+  background-color: #ce3b01 !important;
+  color: #fff !important;
+}
+
 .wrapper-article {
   padding: 2rem 0;
   background-color: #115810;
@@ -98,7 +122,7 @@
 }
 
 .left-article {
-  height: 606px;
+  height: 583px !important;
 }
 
 .left-article img {
