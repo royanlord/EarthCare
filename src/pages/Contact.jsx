@@ -1,3 +1,4 @@
+import { ContactForm } from "../components/ContactForm"
 import "../css/contact.css"
 
 export const Contact = () => {
@@ -13,6 +14,7 @@ export const Contact = () => {
                         </div>
                     </div>
                 </section>
+                <ContactForm />
             </main>
         </>
     )
