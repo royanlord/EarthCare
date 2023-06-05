@@ -5,6 +5,7 @@ import { Link } from "react-router-dom"
 
 export const Article = () => {
     const [articles, setArticles] = useState([])
+    const [search, setSearch] = useState("");
     // const imgUrl = "../assets/"
 
     useEffect(() => {
@@ -15,14 +16,46 @@ export const Article = () => {
         })
     }, [])
 
+    // Search events
+  const handleSearch = (e) => {
+    setSearch(e.target.value);
+  };
+
+  const filteredArticles = articles.filter((e) => {
+    return e.titleArticle.toLowerCase().includes(search.toLowerCase());
+  });
+
     return (
         <>
             <main id="article">
                 <div class="container-fluid mt-5" id="article-content">
-                    {articles.length === 0 ? (
+                    <div className="row mx-3 mb-4 d-flex justify-content-center align-items-center">
+                        <div className="col-lg-8 title-articles">
+                            <h2>Blog, Postingan, dan Artikel</h2>
+                            <p className="mb-3">
+                                Blog, Postingan, dan Artikel yang mungkin relevan untuk Anda baca
+                            </p>
+                        </div>
+                        <div className="col-lg-4 search-articles">
+                            <div className="input-group input-group-lg">
+                                <input 
+                                    type="text" 
+                                    className="form-control form-control-lg py-lg-2 py-1" 
+                                    name="search"
+                                    id="search"
+                                    placeholder="Search"
+                                    aria-label="search articles"
+                                    autoComplete="off"
+                                    value={search}
+                                    onChange={handleSearch}
+                                />
+                            </div>
+                        </div>
+                    </div>
+                    {filteredArticles.length === 0 ? (
                         <span>Loading...</span>
                     ) : (
-                        articles.map((data,index) => (
+                        filteredArticles.map((data,index) => (
                             <div class="row mx-3 mb-4" key={index}>
                                 <div class="col-lg-6">
                                     <img src={data.image} class="img-fluid my-2 me-4 rounded-3" alt={data.titleArticle} />
