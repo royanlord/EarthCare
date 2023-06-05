@@ -1,0 +1,55 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;600;700&display=swap");
+
+* {
+  font-family: "Inter", sans-serif;
+}
+
+.detail__events main .card__image h3 {
+  margin-bottom: -0.5rem;
+  font-size: 24px;
+  font-weight: 600;
+  color: #000;
+}
+
+.detail__events main .card__image p {
+  margin-top: -0.5rem;
+  color: #000;
+  font-weight: 400;
+}
+
+.detail__events main .card__detail h4 {
+  color: #000;
+  font-weight: 700;
+}
+
+.detail__events main .card__detail .date-detail,
+.detail__events main .card__detail .time-detail,
+.detail__events main .card__detail .ticket-detail,
+.detail__events main .card__detail .location-detail,
+.detail__events main .card__detail .registration-detail {
+  color: #ce3b01;
+  font-size: 18px;
+}
+
+.detail__events main .card__detail p,
+.detail__events main .card__detail p,
+.detail__events main .card__detail p,
+.detail__events main .card__detail p,
+.detail__events main .card__detail p {
+  color: #000 !important;
+  font-weight: 400;
+}
+
+.detail__events main .card__detail a {
+  background: #ce3b01;
+  border: #ce3b01;
+  padding: 8px 12px;
+  font-weight: 600;
+  color: #fff;
+  transition: 0.2s ease-out;
+}
+
+.detail__events main .card__detail a:hover {
+  background: #e0612f;
+  border: #e0612f;
+}
