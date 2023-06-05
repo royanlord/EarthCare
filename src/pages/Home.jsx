@@ -1,5 +1,6 @@
 import Carousel from "react-bootstrap/Carousel";
 import { Card, Button } from "react-bootstrap";
+import { FaCalendarAlt, FaMapMarker } from "react-icons/fa";
 
 function Home() {
   return (
@@ -223,11 +224,15 @@ function Home() {
                 <Card.Text>
                   <p className="text-black-50">ecoedu</p>
                   <div class="date mb-2">
-                    <i class="fa-solid fa-calendar-days fa-lg"></i>
+                    <i class="mt-1 me-2">
+                      <FaCalendarAlt />
+                    </i>
                     <p class="d-inline text-muted ms-1">14 Mei 2023</p>
                   </div>
                   <div class="location">
-                    <i class="fa-solid fa-location-dot fa-lg"></i>
+                    <i class="mt-1 me-2">
+                      <FaMapMarker />
+                    </i>
                     <p class="d-inline text-muted ms-1">Online, zoom</p>
                   </div>
                 </Card.Text>
@@ -243,11 +248,15 @@ function Home() {
                 <Card.Text>
                   <p className="text-black-50">tkn_psl</p>
                   <div class="date mb-2">
-                    <i class="fa-solid fa-calendar-days fa-lg"></i>
+                    <i class="mt-1 me-2">
+                      <FaCalendarAlt />
+                    </i>
                     <p class="d-inline text-muted ms-1">8 April 2023</p>
                   </div>
                   <div class="location">
-                    <i class="fa-solid fa-location-dot fa-lg"></i>
+                    <i class="mt-1 me-2">
+                      <FaMapMarker />
+                    </i>
                     <p class="d-inline text-muted ms-1">
                       Halaman Masjid Raya Bintaro Jaya
                     </p>
@@ -265,11 +274,15 @@ function Home() {
                 <Card.Text>
                   <p className="text-black-50">ecoedu</p>
                   <div class="date mb-2">
-                    <i class="fa-solid fa-calendar-days fa-lg"></i>
+                    <i class="mt-1 me-2">
+                      <FaCalendarAlt />
+                    </i>
                     <p class="d-inline text-muted ms-1">16 Maret 2023</p>
                   </div>
                   <div class="location">
-                    <i class="fa-solid fa-location-dot fa-lg"></i>
+                    <i class="mt-1 me-2">
+                      <FaMapMarker />
+                    </i>
                     <p class="d-inline text-muted ms-1">Online, zoom</p>
                   </div>
                 </Card.Text>
@@ -418,23 +431,31 @@ function Home() {
         </section>
 
         <section>
-      <div class="container mt-5">
-        <div class="row">
-          <div class="col-lg-6">
-            <img src="../src/assets/about us.svg" class="img-fluid" alt="ilustrasi peduli bumi" />
+          <div class="container mt-5">
+            <div class="row">
+              <div class="col-lg-6">
+                <img
+                  src="../src/assets/about us.svg"
+                  class="img-fluid"
+                  alt="ilustrasi peduli bumi"
+                />
+              </div>
+              <div class="col-lg-6">
+                <p class="fs-3 fw-bold title">About Us</p>
+                <p>
+                  EarthCare adalah suatu platform aplikasi berbasis website yang
+                  berfokus pada kepedulian dan kelestarian alam dimana pada
+                  mulanya terbentuk karena didasari atas rasa prihatin terhadap
+                  Bumi yang kian rapuh. Greenpeace sebagai wadah dan tempat
+                  untuk mengedukasi dan mengajak masyarakat banyak agar lebih
+                  peduli terhadap kelestarian alam dan juga turut serta untuk
+                  menjaganya.
+                </p>
+                <p>Memberi Solusi. Gerakkan Aksi. Ciptakan Perubahan.</p>
+              </div>
+            </div>
           </div>
-          <div class="col-lg-6">
-            <p class="fs-3 fw-bold title">About Us</p>
-            <p>EarthCare adalah suatu platform aplikasi berbasis website yang berfokus pada kepedulian dan kelestarian
-              alam dimana pada mulanya terbentuk karena didasari atas rasa prihatin terhadap Bumi yang kian rapuh.
-              Greenpeace sebagai wadah dan tempat untuk mengedukasi dan mengajak masyarakat banyak agar lebih peduli
-              terhadap kelestarian alam dan juga turut serta untuk menjaganya.
-            </p>
-            <p>Memberi Solusi. Gerakkan Aksi. Ciptakan Perubahan.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+        </section>
       </main>
     </>
   );
