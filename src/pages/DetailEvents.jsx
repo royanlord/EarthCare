@@ -8,10 +8,13 @@ import {
   FaTicketAlt,
   FaLink,
 } from "react-icons/fa";
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
 
 export default function DetailEvents() {
   const { id } = useParams();
   const [detailEvents, setDetailEvents] = useState("");
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     fetchDetailEvents();
@@ -27,14 +30,25 @@ export default function DetailEvents() {
       }
       const data = await res.json();
       setDetailEvents(data);
+      setIsLoading(false);
     } catch (error) {
       console.log(error);
     }
   };
 
-  if (!detailEvents) {
-    return <p className="text-center mt-4">Loading....</p>;
+  if (isLoading) {
+    return <p className="loading">Loading....</p>;
   }
+
+  // Test sweet alert
+  const MySwal = withReactContent(Swal);
+  const handleClick = () => {
+    MySwal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: "Something went wrong!",
+    });
+  };
 
   return (
     <div className="detail__events d-flex justify-content-center align-items-center">
@@ -54,7 +68,7 @@ export default function DetailEvents() {
           </Col>
 
           <Col xs={12} lg={4}>
-            <div className="card card__detail mt-5">
+            <div className="bg-white shadow card card__detail mt-5">
               <div className="card-body">
                 <h4 className="card-title mb-2">{detailEvents.judul}</h4>
                 <Badge bg="success me-2 mb-3">Lingkungan</Badge>
@@ -89,10 +103,10 @@ export default function DetailEvents() {
                     {detailEvents.pendaftaran}
                   </p>
                 </div>
-                <div className="d-grid mt-2 mt-3 btn-detail-event">
-                  <a href="" className="btn btn-primary">
+                <div className="d-grid mt-4 btn-detail-event">
+                  <button onClick={handleClick} className="btn btn-primary">
                     Daftar Event
-                  </a>
+                  </button>
                 </div>
               </div>
             </div>
