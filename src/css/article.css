@@ -32,6 +32,13 @@
         margin-top: 7rem;
     }
 
+    .title-articles h2 {
+        text-align: center;
+    }
+    .title-articles p {
+        text-align: center !important;
+    }
+
     #article-detail #main-article {
         width: 100% !important;
     }
