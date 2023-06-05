@@ -1,7 +1,8 @@
-import { Card, Form, Col, Row } from "react-bootstrap";
+import { Card, Form, Col, Row, InputGroup } from "react-bootstrap";
 import { FaCalendarAlt, FaMapMarker } from "react-icons/fa";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import notifyNoEvents from "../assets/notify no events.svg";
 
 export default function Events() {
   const [events, setEvents] = useState([]);
@@ -47,35 +48,37 @@ export default function Events() {
 
   return (
     <main className="container mt-5">
-      <div className="d-flex justify-content-lg-between mx-5 justify-content-center flex-wrap">
+      <div className="d-flex justify-content-lg-between mx-3 justify-content-center flex-wrap">
         <section className="title__events">
-          <h2 className="fw-bold">Event Terbaru, Yuk Ikutan!</h2>
+          <h2>Event Terbaru, Yuk Ikutan!</h2>
           <p className="mb-3">
             Daftarkan diri anda untuk mendapatkan pengalaman baru
           </p>
         </section>
-        <section
-          className="search__events mb-5 mb-lg-5"
-          style={{ width: "24rem" }}
-        >
-          <Form.Control
-            className="mt-lg-4"
-            type="text"
-            name="search"
-            id="serach"
-            placeholder="search events"
-            aria-label="search events"
-            autoComplete="off"
-            value={search}
-            onChange={handleSearch}
-          />
+        <section className="search__events mb-5 mb-lg-5">
+          <InputGroup size="lg">
+            <Form.Control
+              className="mt-lg-4"
+              type="text"
+              name="search"
+              id="serach"
+              placeholder="search events"
+              aria-label="search events"
+              autoComplete="off"
+              value={search}
+              onChange={handleSearch}
+            />
+          </InputGroup>
         </section>
       </div>
-      <Row className="justify-content-center justify-content-lg-center mx-auto align-items-center">
+      <Row className="justify-content-center justify-content-lg-center mx-auto align-items-center ">
         {isLoading ? (
           <p className="text-center">Loading....</p>
         ) : filteredEvents.length === 0 ? (
-          <p className="text-center fw-bold text-danger">No events found</p>
+          <div className="notify d-flex justify-content-center align-items-center flex-column">
+            <img src={notifyNoEvents} alt="events tidak ditemukan" />
+            <p className="d-flex text-center">No events found</p>
+          </div>
         ) : (
           filteredEvents.map((data, index) => (
             <Col
@@ -85,8 +88,12 @@ export default function Events() {
               lg={4}
               className="d-flex justify-content-lg-center align-items-center align-items-lg-center flex-column"
             >
-              <Card className="card__events shadow mx-md-5 mx-0">
-                <Card.Img variant="top" src={data.gambar} />
+              <Card className="card__events shadow mx-md-5 mx-0 h-100">
+                <Card.Img
+                  className="img-fluid h-100"
+                  variant="top"
+                  src={data.gambar}
+                />
                 <Card.Body>
                   <h5 className="card-title">{data.judul}</h5>
                   <p className="card-text">{data.pembuat}</p>
@@ -103,9 +110,6 @@ export default function Events() {
                     <p>{data.lokasi}</p>
                   </div>
                   <div className="d-grid btn__join">
-                    {/* <a href="./pages/DetailEvents" className="btn btn-primary">
-                      Join Now
-                    </a> */}
                     <Link to={`/events/${data.id}`} className="btn btn-primary">
                       Join Now
                     </Link>
