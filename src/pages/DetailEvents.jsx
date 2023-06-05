@@ -64,31 +64,31 @@ export default function DetailEvents() {
                   <Badge bg="success">Events</Badge>
                   <div className="date-detail mb-3 mt-3">
                     <FaCalendarAlt />
-                    <p className="d-inline text-muted ms-1">
+                    <p className="d-inline text-muted ms-3">
                       {detailEvents.tanggal}
                     </p>
                   </div>
                   <div className="time-detail mb-3">
                     <FaClock />
-                    <p className="d-inline text-muted ms-1">
+                    <p className="d-inline text-muted ms-3">
                       {detailEvents.waktu}
                     </p>
                   </div>
                   <div className="ticket-detail mb-3">
                     <FaTicketAlt />
-                    <p className="d-inline text-muted ms-1">
+                    <p className="d-inline text-muted ms-3">
                       {detailEvents.tiket}
                     </p>
                   </div>
                   <div className="location-detail mb-3">
                     <FaMapMarker />
-                    <p className="d-inline text-muted ms-1">
+                    <p className="d-inline text-muted ms-3">
                       {detailEvents.lokasi}
                     </p>
                   </div>
                   <div className="registration-detail mb-3">
                     <FaLink />
-                    <p className="d-inline text-muted ms-1">
+                    <p className="d-inline text-muted ms-3">
                       {detailEvents.pendaftaran}
                     </p>
                   </div>
