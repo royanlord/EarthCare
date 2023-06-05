@@ -43,6 +43,12 @@ section hr {
   margin-bottom: 2rem;
 }
 
+.date i,
+.location i {
+  color: #ce3b01;
+  font-size: 18px;
+}
+
 .btn-event {
   background-color: #e54201 !important;
   color: #fff;
@@ -126,6 +132,10 @@ section hr {
 
 .card-body h5 {
   font-weight: bold;
+}
+
+.card-text {
+  text-align: justify;
 }
 
 .left-article {
