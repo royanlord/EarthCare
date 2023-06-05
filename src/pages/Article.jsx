@@ -2,18 +2,43 @@ import { useEffect, useState } from "react"
 import React from "react"
 import "../css/article.css";
 import { Link } from "react-router-dom"
+import { Loading } from "../components/Loading";
 
 export const Article = () => {
     const [articles, setArticles] = useState([])
     const [search, setSearch] = useState("");
+    const [isLoading, setIsLoading] = useState(true);
     // const imgUrl = "../assets/"
 
     useEffect(() => {
-        fetch("https://644e5c2c4e86e9a4d8f6d279.mockapi.io/article")
-        .then(response => response.json())
-        .then((result) => {
-            setArticles(result)
-        })
+        const loadData = async () => {
+            try {
+                const url = "https://644e5c2c4e86e9a4d8f6d279.mockapi.io/article"
+                const response = await fetch(url)
+                const data = await response.json()
+
+                setArticles(data)
+            } catch (error) {
+                console.log("error: " + error);
+            }
+            setTimeout(() => {
+                setIsLoading(false)
+            }, 2000)
+        }
+
+        loadData()
+
+        // fetch("https://644e5c2c4e86e9a4d8f6d279.mockapi.io/article")
+        // .then(response => response.json())
+        // .then((result) => {
+        //     setArticles(result)
+        //     setTimeout(() => {
+        //         setIsLoading(false)
+        //     }, 2000)
+        // })
+        // .catch((error) => {
+        //     console.log("error: " + error);
+        // })
     }, [])
 
     // Search events
@@ -27,6 +52,11 @@ export const Article = () => {
 
     return (
         <>
+            {isLoading ? (
+                    // <span>Loading...</span>
+                    <Loading />
+                ) : (
+                    
             <main id="article">
                 <div class="container-fluid mt-5" id="article-content">
                     <div className="row mx-3 mb-4 d-flex justify-content-center align-items-center">
@@ -37,7 +67,7 @@ export const Article = () => {
                             </p>
                         </div>
                         <div className="col-lg-4 search-articles">
-                            <div className="input-group input-group-lg">
+                            <div className="input-group">
                                 <input 
                                     type="text" 
                                     className="form-control form-control-lg py-lg-2 py-1" 
@@ -53,7 +83,10 @@ export const Article = () => {
                         </div>
                     </div>
                     {filteredArticles.length === 0 ? (
-                        <span>Loading...</span>
+                        <div className="notify d-flex justify-content-center align-items-center flex-column">
+                            {/* <img src={notifyNoEvents} alt="events tidak ditemukan" /> */}
+                            <p className="d-flex text-center">No events found</p>
+                        </div>
                     ) : (
                         filteredArticles.map((data,index) => (
                             <div class="row mx-3 mb-4" key={index}>
@@ -80,6 +113,8 @@ export const Article = () => {
                     )}
                 </div>
             </main>
+                )
+            }
         </>
     )
 }
