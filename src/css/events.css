@@ -1,9 +1,60 @@
-.card__events {
-  width: 22rem;
-  height: auto;
-  margin-bottom: 3.8rem;
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;600;700&display=swap");
+
+* {
+  font-family: "Inter", sans-serif;
 }
 
+/* Input search events */
+main .search__events {
+  width: 26rem;
+}
+
+main .notify p {
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 1rem;
+  color: #000;
+}
+
+main .notify img {
+  width: 350px;
+  height: 350px;
+  object-position: center;
+  object-fit: cover;
+}
+
+/* Custom fonts events */
+main .title__events h2 {
+  color: #000;
+  font-weight: 700;
+}
+
+main .title__events p {
+  color: #000;
+  font-weight: 400;
+}
+
+main .card__events h5 {
+  font-weight: 600;
+}
+
+main .card__events .card-text {
+  color: #f36b35;
+  font-weight: 400;
+}
+
+main .card__events .date p,
+main .card-text .location p {
+  color: #000;
+  font-weight: 400;
+}
+
+/* Custom card events */
+.card__events {
+  width: 26rem;
+  height: 100%;
+  margin-bottom: 2.5rem;
+}
 .card__events .date i,
 .card__events .location i {
   color: #ce3b01;
@@ -23,33 +74,39 @@
   border: #e0612f;
 }
 
+/* Responsive card evens */
+
+@media (max-width: 1400px) {
+  .card__events {
+    width: 22rem;
+    height: 100%;
+  }
+}
+@media (max-width: 1190px) {
+  .card__events {
+    width: 18.5rem;
+    height: 100%;
+  }
+}
+
 @media (max-width: 1159px) {
   .card__events {
     width: 18rem;
-    height: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    height: 100%;
   }
 }
 
 @media (max-width: 1028px) {
   .card__events {
-    width: 18rem;
-    height: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 20rem;
+    height: 100%;
   }
 }
 
 @media (max-width: 1000px) {
   .card__events {
-    width: 18rem;
-    height: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 20rem;
+    height: 100%;
   }
 }
 
@@ -60,9 +117,7 @@
 
   .card__events {
     width: 20rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    height: 100%;
   }
 }
 @media (max-width: 768px) {
@@ -71,10 +126,15 @@
   }
 
   .card__events {
-    width: 20rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 22rem;
+    height: 100%;
+  }
+
+  main .notify img {
+    width: 280px;
+    height: 280px;
+    object-position: center;
+    object-fit: cover;
   }
 }
 
@@ -89,7 +149,8 @@
     margin-bottom: 1.5rem;
   }
   .card__events {
-    width: 20rem;
     margin-top: -0.5rem;
+    width: 20rem;
+    height: 100%;
   }
 }
