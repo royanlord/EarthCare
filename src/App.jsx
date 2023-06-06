@@ -1,10 +1,9 @@
-import "./css/about.css";
-import About from "./pages/About";
+import "./css/style.css";
 
 function App() {
   return (
     <>
-      <About />
+      <h1>Hello, React JS</h1>
     </>
   );
 }
