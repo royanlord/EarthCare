@@ -7,7 +7,6 @@ function App() {
   return (
     <>
       {/* <h1>Hello, React JS</h1> */}
-      {/* <Article /> */}
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Article />} />
