@@ -1,6 +1,7 @@
 import Carousel from "react-bootstrap/Carousel";
 import { Card, Button } from "react-bootstrap";
 import { FaCalendarAlt, FaMapMarker } from "react-icons/fa";
+import "../css/home.css";
 
 function Home() {
   return (
