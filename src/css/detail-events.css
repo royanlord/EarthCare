@@ -14,8 +14,8 @@
 }
 
 .detail__events main .card__image h3 {
-  margin-bottom: -0.5rem;
-  font-size: 20px;
+  margin-bottom: -1rem;
+  font-size: 22px;
   font-weight: 600;
   color: #000;
 }
@@ -60,7 +60,8 @@
   transition: 0.2s ease-out;
 }
 
-.detail__events main .card__detail .btn-primary:hover {
+.detail__events main .card__detail .btn-primary:hover,
+.daftar__events main .card__detail .btn-primary:hover {
   background: #e0612f;
   border: #e0612f;
 }
@@ -73,4 +74,45 @@
   padding: 8px 12px;
   font-weight: 600;
   margin-bottom: 1.8rem;
+}
+
+/* Daftar Events */
+.daftar__events main .card__detail {
+  background: #f0f0f0;
+}
+
+.daftar__events main h4 {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.daftar__events main .text__date {
+  color: #ce3b01;
+}
+
+.daftar__events main .ticket__detail {
+  color: #ce3b01;
+  margin-right: 10px;
+}
+
+.daftar__events main .card__detail input {
+  height: 45px;
+}
+
+.daftar__events main .card__detail textarea {
+  height: 90px;
+}
+
+.daftar__events main .card__detail h3 {
+  color: #000;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.daftar__events main .card__detail .btn-primary {
+  background: #e54201;
+  border: #e54201;
+  padding: 8px 12px;
+  font-weight: 600;
+  transition: 0.2s ease-out;
 }
