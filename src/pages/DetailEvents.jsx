@@ -1,15 +1,14 @@
 import { useEffect, useState } from "react";
 import { Badge, Col, Row } from "react-bootstrap";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import {
   FaCalendarAlt,
   FaMapMarker,
   FaClock,
   FaTicketAlt,
   FaLink,
+  FaArrowLeft,
 } from "react-icons/fa";
-import Swal from "sweetalert2";
-import withReactContent from "sweetalert2-react-content";
 
 export default function DetailEvents() {
   const { id } = useParams();
@@ -41,14 +40,14 @@ export default function DetailEvents() {
   }
 
   // Test sweet alert
-  const MySwal = withReactContent(Swal);
-  const handleClick = () => {
-    MySwal.fire({
-      icon: "error",
-      title: "Oops...",
-      text: "Something went wrong!",
-    });
-  };
+  // const MySwal = withReactContent(Swal);
+  // const handleClick = () => {
+  //   MySwal.fire({
+  //     icon: "error",
+  //     title: "Oops...",
+  //     text: "Something went wrong!",
+  //   });
+  // };
 
   return (
     <div className="detail__events d-flex justify-content-center align-items-center">
@@ -63,7 +62,10 @@ export default function DetailEvents() {
               />
               <h3 className="mt-2">Detail Events</h3>
               <hr color="black" />
-              <p style={{ textAlign: "justify" }}>{detailEvents.detail}</p>
+              <p>{detailEvents.detail}</p>
+              <Link className="btn btn-dark" to={"http://127.0.0.1:5173/"}>
+                <FaArrowLeft /> Back to events
+              </Link>
             </div>
           </Col>
 
@@ -104,9 +106,12 @@ export default function DetailEvents() {
                   </p>
                 </div>
                 <div className="d-grid mt-4 btn-detail-event">
-                  <button onClick={handleClick} className="btn btn-primary">
+                  {/* <button className="btn btn-primary">
                     Daftar Event
-                  </button>
+                  </button> */}
+                  <Link className="btn btn-primary" to={`/daftarevents/${id}`}>
+                    Daftar Events
+                  </Link>
                 </div>
               </div>
             </div>
