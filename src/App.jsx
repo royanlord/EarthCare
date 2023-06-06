@@ -1,13 +1,13 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Navbar } from "./components/Navbar";
 import "./css/style.css";
-import Event from "./pages/Event";
-import { Contact } from "./pages/Contact";
+
 
 function App() {
   return (
     <>
       <BrowserRouter>
+        <Navbar />
         <Routes>
           {/* <Route path="/login" element={<Login />}></Route> */}
           {/* <Route path="/" element={<Home />}></Route> */}
