@@ -1,10 +1,9 @@
-import "./css/home.css";
-import Home from "./pages/Home";
+import "./css/style.css";
 
 function App() {
   return (
     <>
-      <Home />
+      <h1>Hello, React JS</h1>
     </>
   );
 }
