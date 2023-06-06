@@ -15,13 +15,14 @@
 
 .detail__events main .card__image h3 {
   margin-bottom: -0.5rem;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 600;
   color: #000;
 }
 
 .detail__events main .card__image p {
   margin-top: -0.5rem;
+  font-size: 16px;
   color: #000;
   font-weight: 400;
 }
@@ -29,6 +30,7 @@
 .detail__events main .card__detail h4 {
   color: #000;
   font-weight: 700;
+  font-size: 24px;
 }
 
 .detail__events main .card__detail .date-detail,
@@ -37,7 +39,7 @@
 .detail__events main .card__detail .location-detail,
 .detail__events main .card__detail .registration-detail {
   color: #ce3b01;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .detail__events main .card__detail p,
@@ -61,4 +63,14 @@
 .detail__events main .card__detail .btn-primary:hover {
   background: #e0612f;
   border: #e0612f;
+}
+
+.detail__events main .card__image p {
+  text-align: justify;
+}
+
+.detail__events main .card__image .btn-dark {
+  padding: 8px 12px;
+  font-weight: 600;
+  margin-bottom: 1.8rem;
 }
