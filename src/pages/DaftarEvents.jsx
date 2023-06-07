@@ -1,14 +1,7 @@
 import { useEffect, useState } from "react";
 import { Form, Col, Row, Button, Card } from "react-bootstrap";
-import { Link, useParams } from "react-router-dom";
-import {
-  FaCalendarAlt,
-  FaMapMarker,
-  FaClock,
-  FaTicketAlt,
-  FaInfoCircle,
-  FaLink,
-} from "react-icons/fa";
+import { useParams } from "react-router-dom";
+import { FaTicketAlt, FaInfoCircle } from "react-icons/fa";
 import withReactContent from "sweetalert2-react-content";
 import Swal from "sweetalert2";
 
@@ -23,7 +16,7 @@ export default function DaftarEvents() {
   const fetchDaftarEvents = async () => {
     try {
       const res = await fetch(
-        `https://644dfece4e86e9a4d8ef004c.mockapi.io/events/${id}`
+        `https://644dfece4e86e9a4d8ef004c.mockapi.io/detail-events/${id}`
       );
       if (!res.ok) {
         throw new Error("Failed to access data detail events");
@@ -36,6 +29,10 @@ export default function DaftarEvents() {
     }
   };
 
+  if (isLoading) {
+    return <p className="loading">Loading....</p>;
+  }
+
   // Test sweet alert
   const MySwal = withReactContent(Swal);
   const handleDaftarEvent = () => {
@@ -46,12 +43,8 @@ export default function DaftarEvents() {
     });
   };
 
-  if (isLoading) {
-    return <p>Loading....</p>;
-  }
-
   return (
-    <div className="detail__events d-flex justify-content-center align-items-center">
+    <div className="daftar__events d-flex justify-content-center align-items-center">
       <main className="d-flex container mx-5">
         <Row>
           <Col xs={12} lg={7}>
@@ -62,49 +55,64 @@ export default function DaftarEvents() {
                 alt="ilustrasi detail events"
               />
               {/* Sementara */}
-              <h4 className="mt-4 fw-bold">{daftarEvents.judul}</h4>
-              <p className="mt-2" style={{ color: "#ce3b01" }}>
+              <h4 className="mt-4">{daftarEvents.judul}</h4>
+              <p className="text__date mt-2">
                 <FaInfoCircle className="mb-1" /> Batas pendaftaran sampai
                 tanggal {daftarEvents.tanggal}
               </p>
               <p className="mt-2">
-                <FaTicketAlt
-                  style={{ color: "#ce3b01", marginRight: "10px" }}
-                />
+                <FaTicketAlt className="ticket__detail" />
                 Gratis
               </p>
             </div>
           </Col>
 
           <Col xs={12} lg={5}>
-            <Card className="p-4 mt-5" style={{ background: "#F0F0F0" }}>
-              <h4 className="text-lg-center text-right mb-4">
-                Formulir Daftar Event
-              </h4>
+            <Card className="card__detail p-4 mt-lg-5 mt-sm-2 mb-lg-0 mb-sm-4">
+              <h3 className="text-lg-center text-right mb-4">
+                Lengkapi Data Anda
+              </h3>
               <Form>
                 <Form.Group className="mb-3" controlId="formGroupFullName">
-                  <Form.Label>Fullname</Form.Label>
-                  <Form.Control type="text" placeholder="Fullname" />
+                  <Form.Label>Nama Lengkap</Form.Label>
+                  <Form.Control
+                    type="text"
+                    placeholder="Masukkan Nama Lengkap"
+                    required
+                  />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formGroupEmail">
-                  <Form.Label>Email</Form.Label>
-                  <Form.Control type="email" placeholder="Email address" />
+                  <Form.Label>Alamat Email</Form.Label>
+                  <Form.Control
+                    type="email"
+                    placeholder="Masukkan Alamat Email"
+                    required
+                  />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formGroupPhone">
-                  <Form.Label>Phone</Form.Label>
-                  <Form.Control type="number" placeholder="My Number Phone" />
+                  <Form.Label>Nomor Ponsel</Form.Label>
+                  <Form.Control
+                    type="number"
+                    placeholder="Masukkan Nomor Ponsel"
+                    required
+                  />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formGroupAddress">
-                  <Form.Label>Address</Form.Label>
+                  <Form.Label>Alamat</Form.Label>
                   <Form.Control
                     as="textarea"
                     type="text"
-                    placeholder="Address"
+                    placeholder="Masukkan Alamat"
+                    required
                   />
                 </Form.Group>
 
                 <div className="d-grid">
-                  <Button className="btn btn-primary" type="submit">
+                  <Button
+                    className="btn btn-primary"
+                    type="submit"
+                    onClick={handleDaftarEvent}
+                  >
                     Pesan Sekarang
                   </Button>
                 </div>
