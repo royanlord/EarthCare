@@ -40,6 +40,10 @@ header .bg-dark {
   .navbar .btn:active {
     background-color: #ce3b01 !important;
   }
+
+  .navbar li>.active {
+    color: white;
+  }
   
   /* animation dropdown */
   @media (min-width: 200px) {
