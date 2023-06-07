@@ -3,6 +3,7 @@ import React from "react"
 import "../css/article.css";
 import { Link } from "react-router-dom"
 import { Loading } from "../components/Loading";
+import notifyNoEvents from "../assets/notify no events.svg";
 
 export const Article = () => {
     const [articles, setArticles] = useState([])
@@ -84,8 +85,8 @@ export const Article = () => {
                         </div>
                         {filteredArticles.length === 0 ? (
                             <div className="notify d-flex justify-content-center align-items-center flex-column">
-                                {/* <img src={notifyNoEvents} alt="events tidak ditemukan" /> */}
-                                <p className="d-flex text-center">No events found</p>
+                                <img src={notifyNoEvents} alt="events tidak ditemukan" />
+                                <p className="d-flex text-center">No articles found</p>
                             </div>
                         ) : (
                             filteredArticles.map((data,index) => (
