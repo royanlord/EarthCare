@@ -3,6 +3,7 @@ import { FaCalendarAlt, FaMapMarker } from "react-icons/fa";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import notifyNoEvents from "../assets/notify no events.svg";
+import "../css/events.css";
 
 export default function Events() {
   const [events, setEvents] = useState([]);
@@ -88,7 +89,7 @@ export default function Events() {
               lg={4}
               className="d-flex justify-content-lg-center align-items-center align-items-lg-center flex-column"
             >
-              <Card className="card__events shadow mx-md-5 mx-0 h-100">
+              <Card className="card__events shadow mx-md-5 mx-0">
                 <Card.Img
                   className="img-fluid h-100"
                   variant="top"
