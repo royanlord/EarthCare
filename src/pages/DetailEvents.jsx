@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Badge, Col, Row } from "react-bootstrap";
+import { Badge, Card, Col, Row } from "react-bootstrap";
 import { Link, useParams } from "react-router-dom";
 import {
   FaCalendarAlt,
@@ -70,7 +70,7 @@ export default function DetailEvents() {
           </Col>
 
           <Col xs={12} lg={4}>
-            <div className="bg-white shadow card card__detail mt-5">
+            <Card className="bg-white shadow card card__detail p-2 mt-5">
               <div className="card-body">
                 <h4 className="card-title mb-2">{detailEvents.judul}</h4>
                 <Badge bg="success me-2 mb-3">Lingkungan</Badge>
@@ -114,7 +114,7 @@ export default function DetailEvents() {
                   </Link>
                 </div>
               </div>
-            </div>
+            </Card>
           </Col>
         </Row>
       </main>
