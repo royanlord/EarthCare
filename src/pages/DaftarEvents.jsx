@@ -10,6 +10,11 @@ export default function DaftarEvents() {
   const { id } = useParams();
   const [daftarEvents, setDaftarEvents] = useState("");
   const [isLoading, setIsLoading] = useState(true);
+  const [fullname, setFullname] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [address, setAddress] = useState("");
+
   useEffect(() => {
     fetchDaftarEvents();
   }, []);
@@ -34,14 +39,91 @@ export default function DaftarEvents() {
     return <p className="loading">Loading....</p>;
   }
 
-  // Test sweet alert
-  const MySwal = withReactContent(Swal);
+  // Validation fullname
+  const validateFullname = () => {
+    if (!fullname) {
+      Swal.fire({
+        icon: "error",
+        title: "Nama lengkap harus diisi",
+      });
+      return false;
+    }
+    return true;
+  };
+
+  // Validation Email
+  const validateEmail = () => {
+    if (!email) {
+      Swal.fire({
+        icon: "error",
+        title: "Email harus diisi",
+      });
+      return false;
+    }
+
+    const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
+    if (!emailRegex.test(email)) {
+      Swal.fire({
+        icon: "error",
+        title: "Alamat Email tidak valid",
+      });
+      return false;
+    }
+
+    return true;
+  };
+
+  // Validation Phone
+  const validatePhone = () => {
+    if (!phone) {
+      Swal.fire({
+        icon: "error",
+        title: "Nomor ponsel harus diisi",
+      });
+      return false;
+    }
+    return true;
+  };
+
+  // Validation Address
+  const validateAddress = () => {
+    if (!address) {
+      Swal.fire({
+        icon: "error",
+        title: "Alamat harus diisi",
+      });
+      return false;
+    }
+
+    if (address < 6) {
+      Swal.fire({
+        icon: "error",
+        title: "Alamat harus memiliki minimal 6 karakter",
+      });
+      return false;
+    }
+    return true;
+  };
+
+  // Check Validation
   const handleDaftarEvent = () => {
-    MySwal.fire({
-      icon: "success",
-      title: "Anda Berhasil Terdaftar ke Acara",
-      text: "Silahkan tunggu konfirmasi email dari kami dan kami akan menginformasikan secepat mungkin!",
-    });
+    if (
+      validateFullname() &&
+      validateEmail() &&
+      validatePhone() &&
+      validateAddress()
+    ) {
+      // Success Validation Register Events
+      const MySwal = withReactContent(Swal);
+      MySwal.fire({
+        icon: "success",
+        title: "Anda Berhasil Terdaftar Ke Acara",
+      });
+      setFullname("");
+      setEmail("");
+      setPhone("");
+      setAddress("");
+    }
   };
 
   return (
@@ -79,7 +161,9 @@ export default function DaftarEvents() {
                   <Form.Control
                     type="text"
                     placeholder="Masukkan Nama Lengkap"
-                    required
+                    name="fullname"
+                    value={fullname}
+                    onChange={(e) => setFullname(e.target.value)}
                   />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formGroupEmail">
@@ -87,7 +171,9 @@ export default function DaftarEvents() {
                   <Form.Control
                     type="email"
                     placeholder="Masukkan Alamat Email"
-                    required
+                    name="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                   />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formGroupPhone">
@@ -95,23 +181,26 @@ export default function DaftarEvents() {
                   <Form.Control
                     type="number"
                     placeholder="Masukkan Nomor Ponsel"
-                    required
+                    name="phone"
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value)}
                   />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formGroupAddress">
                   <Form.Label>Alamat</Form.Label>
                   <Form.Control
                     as="textarea"
-                    type="text"
                     placeholder="Masukkan Alamat"
-                    required
+                    name="address"
+                    value={address}
+                    onChange={(e) => setAddress(e.target.value)}
                   />
                 </Form.Group>
 
                 <div className="d-grid">
                   <Button
                     className="btn btn-primary"
-                    type="submit"
+                    type="button"
                     onClick={handleDaftarEvent}
                   >
                     Pesan Sekarang
