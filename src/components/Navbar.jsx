@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom"
 import "../css/navbar.css"
 import { Dropdown } from "bootstrap"
+import logoNav from "../assets/logo-nav.png"
 
 export const Navbar = () => {
     return (
@@ -9,8 +10,8 @@ export const Navbar = () => {
                 <nav className="navbar fixed-top navbar-expand-lg navbar-dark bg-dark" data-bs-theme="dark">
                     <div className="container">
                         <Link className="navbar-brand text-white" to="/">
-                            {/* <img src="" className="logo-nav" alt="logo navbar" height="50" /> */}
-                            EarthCare
+                            <img src={logoNav} className="logo-nav" alt="logo navbar" height="50" />
+                            &nbsp;EarthCare
                         </Link>
                         <button 
                             className="navbar-toggler" 
