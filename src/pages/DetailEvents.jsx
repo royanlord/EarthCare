@@ -9,6 +9,7 @@ import {
   FaLink,
   FaArrowLeft,
 } from "react-icons/fa";
+import "../css/detail-events.css";
 
 export default function DetailEvents() {
   const { id } = useParams();
