@@ -9,12 +9,12 @@ function App() {
       <BrowserRouter>
         <Navbar />
         <Routes>
-          {/* <Route path="/login" element={<Login />}></Route> */}
-          {/* <Route path="/" element={<Home />}></Route> */}
+          {/* <Route path="/login" element={<Login />} /> */}
+          {/* <Route path="/" element={<Home />} /> */}
           {/* <Route path="/event" element={<Event />} /> */}
-          {/* <Route path="/article" element={<Article />}></Route> */}
+          {/* <Route path="/article" element={<Article />} /> */}
           {/* <Route path="/detailArticle/:id" element={<DetailArticle />} /> */}
-          {/* <Route path="/about" element={<About />}></Route> */}
+          {/* <Route path="/about" element={<About />} /> */}
           {/* <Route path="/contact" element={<Contact />} /> */}
         </Routes>
       </BrowserRouter>
