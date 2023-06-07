@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Form, Col, Row, Button, Card } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import { FaTicketAlt, FaInfoCircle } from "react-icons/fa";
-import withReactContent from "sweetalert2-react-content";
+// import withReactContent from "sweetalert2-react-content";
 import Swal from "sweetalert2";
 import "../css/detail-events.css";
 
@@ -114,8 +114,8 @@ export default function DaftarEvents() {
       validateAddress()
     ) {
       // Success Validation Register Events
-      const MySwal = withReactContent(Swal);
-      MySwal.fire({
+      // const MySwal = withReactContent(Swal);
+      Swal.fire({
         icon: "success",
         title: "Anda Berhasil Terdaftar Ke Acara",
       });

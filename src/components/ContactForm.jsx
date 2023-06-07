@@ -1,10 +1,10 @@
 import { useState } from "react"
 import Swal from "sweetalert2"
-import withReactContent from "sweetalert2-react-content"
+// import withReactContent from "sweetalert2-react-content"
 import {BsFillExclamationCircleFill} from "react-icons/bs"
 
 export const ContactForm = () => {
-    const MySwal = withReactContent(Swal)
+    // const MySwal = withReactContent(Swal)
     const [inputEmail, setInputEmail] = useState("")
     const [inputFullname, setInputFullname] = useState("")
     const [inputMessage, setInputMessage] = useState("")
@@ -19,7 +19,7 @@ export const ContactForm = () => {
     const handleSubmitContact = (e) => {
         e.preventDefault()
         if (inputEmail !== "" && inputFullname !== "" && inputMessage !== "") {
-            MySwal.fire({
+            Swal.fire({
                 position: 'top-center',
                 icon: 'success',
                 title: 'Message sent successfully',
