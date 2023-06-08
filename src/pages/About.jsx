@@ -3,7 +3,7 @@ import "../css/about.css";
 function About() {
   return (
     <>
-      <section>
+      <section id="about">
         <div className="container about">
           <div className="row">
             <div className="col-lg-6">
@@ -30,7 +30,7 @@ function About() {
             </div>
           </div>
 
-          <div className="row my-5">
+          <div id="goals" className="row my-5">
             <div className="col-lg-6">
               <p className="fs-3 fw-bold title">
                 Goals, <br />
@@ -60,7 +60,7 @@ function About() {
               <img
                 src="../src/assets/image2.svg"
                 alt=""
-                className="img-fluid"
+                className="img-fluid rounded-3"
               />
             </div>
           </div>

@@ -2,9 +2,9 @@
   box-sizing: border-box;
 }
 
-/* .about {
-  margin-top: 100px;
-} */
+#about {
+  margin-top: 7.5rem;
+}
 
 .title {
   color: #e54201;
@@ -21,4 +21,11 @@
 .team {
   margin: 1rem 0 0 0;
   padding: 0 20px;
+}
+
+@media screen and (max-width: 992px) {
+  #goals {
+    display: flex;
+    flex-direction: column-reverse;
+  }
 }
