@@ -5,6 +5,7 @@ import { FaTicketAlt, FaInfoCircle } from "react-icons/fa";
 // import withReactContent from "sweetalert2-react-content";
 import Swal from "sweetalert2";
 import "../css/detail-events.css";
+import { Loading } from "../components/Loading";
 
 export default function DaftarEvents() {
   const { id } = useParams();
@@ -29,14 +30,17 @@ export default function DaftarEvents() {
       }
       const data = await res.json();
       setDaftarEvents(data);
-      setIsLoading(false);
+
+      setTimeout(() => {
+        setIsLoading(false);
+      }, 2000)
     } catch (error) {
       console.log(error);
     }
   };
 
   if (isLoading) {
-    return <p className="loading">Loading....</p>;
+    return <Loading />
   }
 
   // Validation fullname

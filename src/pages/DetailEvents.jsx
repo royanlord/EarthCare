@@ -10,6 +10,7 @@ import {
   FaArrowLeft,
 } from "react-icons/fa";
 import "../css/detail-events.css";
+import { Loading } from "../components/Loading";
 
 export default function DetailEvents() {
   const { id } = useParams();
@@ -30,14 +31,17 @@ export default function DetailEvents() {
       }
       const data = await res.json();
       setDetailEvents(data);
-      setIsLoading(false);
+
+      setTimeout(() => {
+        setIsLoading(false);
+      }, 2000)
     } catch (error) {
       console.log(error);
     }
   };
 
   if (isLoading) {
-    return <p className="loading">Loading....</p>;
+    return <Loading />
   }
 
   // Test sweet alert

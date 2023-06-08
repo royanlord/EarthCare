@@ -4,6 +4,10 @@
   font-family: "Inter", sans-serif;
 }
 
+.detail__events {
+  margin-top: 5rem;
+}
+
 .loading {
   display: flex;
   justify-content: center;
@@ -77,6 +81,10 @@
 }
 
 /* Daftar Events */
+.daftar__events {
+  margin-top: 5rem;
+}
+
 .daftar__events main .card__detail {
   background: #f0f0f0;
 }
