@@ -62,7 +62,7 @@ export const Article = () => {
                     <div class="container-fluid mt-5" id="article-content">
                         <div className="row mx-3 mb-4 d-flex justify-content-center align-items-center">
                             <div className="col-lg-8 title-articles">
-                                <h2>Blog, Postingan, dan Artikel</h2>
+                                <h2 className="fw-bold">Blog, Postingan, dan Artikel</h2>
                                 <p className="mb-3">
                                     Blog, Postingan, dan Artikel yang mungkin relevan untuk Anda baca
                                 </p>
