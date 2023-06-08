@@ -41,15 +41,6 @@ export const Login = () => {
                   placeholder="Password"
                 />
               </div>
-              <div className="col-md-12 mb-4">
-                <div className="form-check">
-                  <input
-                    className="form-check-input"
-                    type="checkbox"
-                    id="gridCheck"
-                  />
-                </div>
-              </div>
               <div className="d-grid">
                 <button
                   id="btn_login"
