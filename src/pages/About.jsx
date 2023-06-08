@@ -13,13 +13,13 @@ function About() {
                 className="img-fluid"
               />
             </div>
-            <div className="col-lg-6">
+            <div className="col-lg-6" style={{textAlign: "justify"}}>
               <p className="fs-3 fw-bold title">
                 EarthCare, <br />
                 <span className="fs-1">What is it?</span>
               </p>
               <p>
-                EarthCare adalah suatu platform aplikasi berbasis website yang
+                &nbsp; &nbsp; &nbsp;EarthCare adalah suatu platform aplikasi berbasis website yang
                 berfokus pada kepedulian dan kelestarian alam dimana pada
                 mulanya terbentuk karena didasari atas rasa prihatin terhadap
                 Bumi yang kian rapuh. Greenpeace sebagai wadah dan tempat untuk
