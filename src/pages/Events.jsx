@@ -71,7 +71,7 @@ export default function Events() {
                     type="text"
                     name="search"
                     id="serach"
-                    placeholder="search events"
+                    placeholder="Search"
                     aria-label="search events"
                     autoComplete="off"
                     value={search}
