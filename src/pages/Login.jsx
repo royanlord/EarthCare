@@ -1,61 +1,78 @@
-import "../css/auth.css"
-import authImg from "../assets/auth.gif"
-import { useLayoutEffect } from "react"
-import { Link } from "react-router-dom"
-
+import "../css/auth.css";
+import authImg from "../assets/auth.gif";
+import { useLayoutEffect } from "react";
+import { Link } from "react-router-dom";
 
 export const Login = () => {
-    useLayoutEffect(() => {
-        document.body.style.backgroundColor = "#115810"
-    })
+  useLayoutEffect(() => {
+    document.body.style.backgroundColor = "#115810";
+  });
 
-    return (
-        <>
-            <div class="container mt-5">
-                <div class="row mx-4">
-                    <div class="col-md-6">
-                        <img class="img-fluid mb-sm-3" src={authImg} alt="LottieFiles Register" />
-                    </div>
-                    <div class="col-md-6 col-lg-6">
-                        <h1 class="text-center mb-5 title-login">login</h1>
-                        <form>
-                            <div class="mb-4">
-                                <input type="email" class="form-control form-control-lg" name="emailAddress" id="emailAddress"
-                                    placeholder="Email" autocomplete="off" />
-                            </div>
-                            <div class="mb-4">
-                                <input type="password" class="form-control form-control-lg" name="passwordAddress"
-                                    id="passwordAddress" placeholder="Password" />
-                            </div>
-                            <div class="col-md-12 mb-4">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="gridCheck" />
-                                    <label class="form-check-label" for="gridCheck">Remember me</label>
-                                </div>
-                            </div>
-                            <div class="d-grid">
-                                <button 
-                                    id="btn_login" 
-                                    class="btn btn-success btn-lg" 
-                                    // onclick="dataAuthLogin()"
-                                >
-                                    Login
-                                </button>
-                                <span class="text-center mt-4">
-                                    Don't have an account yet?&nbsp; 
-                                    <Link class="text-register" to="/">
-                                        Let's register!
-                                    </Link>
-                                    {/* <a href="login.html" class="text-register">
+  return (
+    <>
+      <div className="container mt-5">
+        <div className="row mx-4">
+          <div className="col-md-6">
+            <img
+              className="img-fluid mb-sm-3"
+              src={authImg}
+              alt="LottieFiles Register"
+            />
+          </div>
+          <div className="col-md-6 col-lg-6">
+            <h1 className="text-center mb-5 title-login">login</h1>
+            <form>
+              <div className="mb-4">
+                <input
+                  type="email"
+                  className="form-control form-control-lg"
+                  name="emailAddress"
+                  id="emailAddress"
+                  placeholder="Email"
+                  autoComplete="off"
+                />
+              </div>
+              <div className="mb-4">
+                <input
+                  type="password"
+                  className="form-control form-control-lg"
+                  name="passwordAddress"
+                  id="passwordAddress"
+                  placeholder="Password"
+                />
+              </div>
+              <div className="col-md-12 mb-4">
+                <div className="form-check">
+                  <input
+                    className="form-check-input"
+                    type="checkbox"
+                    id="gridCheck"
+                  />
+                  <label className="form-check-label">Remember me</label>
+                </div>
+              </div>
+              <div className="d-grid">
+                <button
+                  id="btn_login"
+                  className="btn btn-success btn-lg"
+                  // onclick="dataAuthLogin()"
+                >
+                  Login
+                </button>
+                <span className="text-center mt-4">
+                  Don't have an account yet?&nbsp;
+                  <Link className="text-register" to="/">
+                    Let's register!
+                  </Link>
+                  {/* <a href="login.html" className="text-register">
                                         Login in here
                                     </a> */}
-                                </span>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </>
-    )
-
-}
+                </span>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
