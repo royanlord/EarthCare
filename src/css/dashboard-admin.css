@@ -1,0 +1,16 @@
+.side__left {
+  height: 100vh;
+  width: 45vh !important;
+}
+
+.side__left .nav a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.side__left .nav a:first-child {
+  font-size: 24px;
+  font-weight: bold;
+}
