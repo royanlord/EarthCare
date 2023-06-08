@@ -2,6 +2,7 @@ import Carousel from "react-bootstrap/Carousel";
 import { Card, Button } from "react-bootstrap";
 import { FaCalendarAlt, FaMapMarker } from "react-icons/fa";
 import "../css/home.css";
+import { ContactForm } from "../components/ContactForm"
 
 function Home() {
   return (
@@ -457,6 +458,8 @@ function Home() {
             </div>
           </div>
         </section>
+
+        <ContactForm />
       </main>
     </>
   );
