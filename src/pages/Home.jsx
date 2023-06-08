@@ -137,17 +137,17 @@ function Home() {
               src="../src/assets/carousel-image1.png"
               alt="First slide"
             />
-            <div class="overlay position-absolute top-0 bottom-0 start-0 end-0 w-100 h-100 text-white d-flex justify-content-center align-items-center">
-              <div class="text-center wrapper-carousel">
-                <h1 class="fw-bold text-wrap">
+            <div className="overlay position-absolute top-0 bottom-0 start-0 end-0 w-100 h-100 text-white d-flex justify-content-center align-items-center">
+              <div className="text-center wrapper-carousel">
+                <h1 className="fw-bold text-wrap">
                   Menanam Pohon Selamatkan Kehidupan
                 </h1>
-                <p class="text-wrap">
+                <p className="text-wrap">
                   Gerakan menanam pohon sebagai upaya melakukan penghijauan dan
                   memperbaiki paru-paru kota
                 </p>
                 <button
-                  class="btn-carousel"
+                  className="btn-carousel"
                   onclick="window.location.href='event.html'"
                 >
                   Join Now
@@ -162,17 +162,17 @@ function Home() {
               alt="Second slide"
             />
 
-            <div class="overlay position-absolute top-0 bottom-0 start-0 end-0 w-100 h-100 text-white d-flex justify-content-center align-items-center">
-              <div class="text-center wrapper-carousel">
-                <h1 class="fw-bold text-wrap">
+            <div className="overlay position-absolute top-0 bottom-0 start-0 end-0 w-100 h-100 text-white d-flex justify-content-center align-items-center">
+              <div className="text-center wrapper-carousel">
+                <h1 className="fw-bold text-wrap">
                   Menanam Pohon Selamatkan Kehidupan
                 </h1>
-                <p class="text-wrap">
+                <p className="text-wrap">
                   Gerakan menanam pohon sebagai upaya melakukan penghijauan dan
                   memperbaiki paru-paru kota
                 </p>
                 <button
-                  class="btn-carousel"
+                  className="btn-carousel"
                   onclick="window.location.href='event.html'"
                 >
                   Join Now
@@ -187,17 +187,17 @@ function Home() {
               alt="Third slide"
             />
 
-            <div class="overlay position-absolute top-0 bottom-0 start-0 end-0 w-100 h-100 text-white d-flex justify-content-center align-items-center">
-              <div class="text-center wrapper-carousel">
-                <h1 class="fw-bold text-wrap">
+            <div className="overlay position-absolute top-0 bottom-0 start-0 end-0 w-100 h-100 text-white d-flex justify-content-center align-items-center">
+              <div className="text-center wrapper-carousel">
+                <h1 className="fw-bold text-wrap">
                   Menanam Pohon Selamatkan Kehidupan
                 </h1>
-                <p class="text-wrap">
+                <p className="text-wrap">
                   Gerakan menanam pohon sebagai upaya melakukan penghijauan dan
                   memperbaiki paru-paru kota
                 </p>
                 <button
-                  class="btn-carousel"
+                  className="btn-carousel"
                   onclick="window.location.href='event.html'"
                 >
                   Join Now
@@ -208,9 +208,9 @@ function Home() {
         </Carousel>
 
         <section>
-          <div class="container mt-5">
-            <h2 class="text-center fw-bold">Event Terbaru, Yuk Ikutan!</h2>
-            <p class="text-center text-black-50">
+          <div className="container mt-5">
+            <h2 className="text-center fw-bold">Event Terbaru, Yuk Ikutan!</h2>
+            <p className="text-center text-black-50">
               Daftarkan diri anda untuk mendapatkan pengalaman baru
             </p>
           </div>
@@ -224,17 +224,17 @@ function Home() {
                 <Card.Title>Strategi Pengelolaan Sungai</Card.Title>
                 <Card.Text>
                   <p className="text-black-50">ecoedu</p>
-                  <div class="date mb-2">
-                    <i class="mt-1 me-2">
+                  <div className="date mb-2">
+                    <i className="mt-1 me-2">
                       <FaCalendarAlt />
                     </i>
-                    <p class="d-inline text-muted ms-1">14 Mei 2023</p>
+                    <p className="d-inline text-muted ms-1">14 Mei 2023</p>
                   </div>
-                  <div class="location">
-                    <i class="mt-1 me-2">
+                  <div className="location">
+                    <i className="mt-1 me-2">
                       <FaMapMarker />
                     </i>
-                    <p class="d-inline text-muted ms-1">Online, zoom</p>
+                    <p className="d-inline text-muted ms-1">Online, zoom</p>
                   </div>
                 </Card.Text>
                 <Button variant="primary" className="btn-event w-100">
@@ -248,17 +248,17 @@ function Home() {
                 <Card.Title>Gerakan Sedekah Sampah</Card.Title>
                 <Card.Text>
                   <p className="text-black-50">tkn_psl</p>
-                  <div class="date mb-2">
-                    <i class="mt-1 me-2">
+                  <div className="date mb-2">
+                    <i className="mt-1 me-2">
                       <FaCalendarAlt />
                     </i>
-                    <p class="d-inline text-muted ms-1">8 April 2023</p>
+                    <p className="d-inline text-muted ms-1">8 April 2023</p>
                   </div>
-                  <div class="location">
-                    <i class="mt-1 me-2">
+                  <div className="location">
+                    <i className="mt-1 me-2">
                       <FaMapMarker />
                     </i>
-                    <p class="d-inline text-muted ms-1">
+                    <p className="d-inline text-muted ms-1">
                       Halaman Masjid Raya Bintaro Jaya
                     </p>
                   </div>
@@ -274,17 +274,17 @@ function Home() {
                 <Card.Title>Perhitungan Gas Rumah Kaca</Card.Title>
                 <Card.Text>
                   <p className="text-black-50">ecoedu</p>
-                  <div class="date mb-2">
-                    <i class="mt-1 me-2">
+                  <div className="date mb-2">
+                    <i className="mt-1 me-2">
                       <FaCalendarAlt />
                     </i>
-                    <p class="d-inline text-muted ms-1">16 Maret 2023</p>
+                    <p className="d-inline text-muted ms-1">16 Maret 2023</p>
                   </div>
-                  <div class="location">
-                    <i class="mt-1 me-2">
+                  <div className="location">
+                    <i className="mt-1 me-2">
                       <FaMapMarker />
                     </i>
-                    <p class="d-inline text-muted ms-1">Online, zoom</p>
+                    <p className="d-inline text-muted ms-1">Online, zoom</p>
                   </div>
                 </Card.Text>
                 <Button variant="primary" className="btn-event w-100">
@@ -296,7 +296,7 @@ function Home() {
           <div className="wrapper-showall-event">
             <button
               type="button"
-              class="btn my-5 btn-showall-event"
+              className="btn my-5 btn-showall-event"
               onclick="window.location.href='event.html'"
             >
               Show All Events
@@ -305,29 +305,29 @@ function Home() {
         </section>
 
         <section>
-          <div class="fitur-article mt-3">
-            <div class="wrapper-article">
-              <div class="container">
-                <h2 class="text-center text-white fw-bold">
+          <div className="fitur-article mt-3">
+            <div className="wrapper-article">
+              <div className="container">
+                <h2 className="text-center text-white fw-bold">
                   Rekomendasi Artikel
                 </h2>
-                <p class="text-center text-white-50 mb-5">
+                <p className="text-center text-white-50 mb-5">
                   Beberapa rekomendasi artikel dari kami yang mungkin anda suka
                 </p>
-                <div class="row">
-                  <div class="col-lg-6">
-                    <div class="card mb-3 left-article border-0">
+                <div className="row">
+                  <div className="col-lg-6">
+                    <div className="card mb-3 left-article border-0">
                       <img
                         src="../src/assets/article-image1.svg"
-                        class="card-img-top"
+                        className="card-img-top"
                         alt="kebakaran hutan"
                       />
-                      <div class="card-body">
-                        <h5 class="card-title">
+                      <div className="card-body">
+                        <h5 className="card-title">
                           Penyebab Terjadinya Kebakaran Hutan dan Cara
                           Mencegahnya
                         </h5>
-                        <p class="card-text">
+                        <p className="card-text">
                           Kebakaran hutan seringkali terjadi secara alami di
                           daerah vegetasi kering. Kebakaran hutan disebut
                           sebagai kebakaran semak atau kebakaran gurun
@@ -335,33 +335,33 @@ function Home() {
                           Kebakaran hutan ialah terbakarnya sesuatu yang
                           menimbulkan bahaya atau mendatangkan bencana...
                         </p>
-                        <div class="text-center btn-article">
-                          <a href="" class="btn w-50">
+                        <div className="text-center btn-article">
+                          <a href="" className="btn w-50">
                             Read
                           </a>
                         </div>
                       </div>
                     </div>
                   </div>
-                  <div class="col-lg">
-                    <div class="row">
-                      <div class="col mid-article">
-                        <div class="card mb-3 right-article border-0">
-                          <div class="row g-0">
-                            <div class="col-md-4">
+                  <div className="col-lg">
+                    <div className="row">
+                      <div className="col mid-article">
+                        <div className="card mb-3 right-article border-0">
+                          <div className="row g-0">
+                            <div className="col-md-4">
                               <img
                                 src="../src/assets/article-image2.svg"
-                                class="img-fluid rounded-start"
+                                className="img-fluid rounded-start"
                                 alt="sampah menyebabkan banjir"
                               />
                             </div>
-                            <div class="col-md-8">
-                              <div class="card-body">
-                                <h5 class="card-title">
+                            <div className="col-md-8">
+                              <div className="card-body">
+                                <h5 className="card-title">
                                   Menumpuknya Sampah di Sungai Menjadi Penyebab
                                   Utama Banjir
                                 </h5>
-                                <p class="card-text">
+                                <p className="card-text">
                                   Bencana banjir yang terjadi disebabkan oleh
                                   curah hujan yang tinggi dan ulah warga
                                   setempat yang membuang sampah ke sungai
@@ -369,8 +369,8 @@ function Home() {
                                   pemukiman warga. Membuang sampah sembarangan
                                   di sungai memberikan dampak...
                                 </p>
-                                <div class="text-center btn-article">
-                                  <a href="" class="btn w-50">
+                                <div className="text-center btn-article">
+                                  <a href="" className="btn w-50">
                                     Read
                                   </a>
                                 </div>
@@ -380,32 +380,32 @@ function Home() {
                         </div>
                       </div>
                     </div>
-                    <div class="row">
-                      <div class="col-lg">
-                        <div class="card mb-3 right-article border-0">
-                          <div class="row g-0">
-                            <div class="col-md-4">
+                    <div className="row">
+                      <div className="col-lg">
+                        <div className="card mb-3 right-article border-0">
+                          <div className="row g-0">
+                            <div className="col-md-4">
                               <img
                                 src="../src/assets/article-image3.svg"
-                                class="img-fluid rounded-start"
+                                className="img-fluid rounded-start"
                                 alt="polusi udara dari pabrik"
                               />
                             </div>
-                            <div class="col-md-8">
-                              <div class="card-body">
-                                <h5 class="card-title">
+                            <div className="col-md-8">
+                              <div className="card-body">
+                                <h5 className="card-title">
                                   Polusi Udara Serta Dampaknya Bagi Manusia dan
                                   Lingkungan
                                 </h5>
-                                <p class="card-text">
+                                <p className="card-text">
                                   Polusi udara menjadi bahaya yang mengancam
                                   kesehatan manusia. Kita bisa dengan mudah
                                   mengetahui adanya polusi dengan udara yang
                                   berwarna atau berbau. Polusi udara banyak
                                   ditemukan di daerah perkotaan. Menurut data...
                                 </p>
-                                <div class="text-center btn-article">
-                                  <a href="" class="btn w-50">
+                                <div className="text-center btn-article">
+                                  <a href="" className="btn w-50">
                                     Read
                                   </a>
                                 </div>
@@ -417,7 +417,7 @@ function Home() {
                     </div>
                   </div>
                 </div>
-                <div class="text-center my-5">
+                <div className="text-center my-5">
                   <Button
                     type="button"
                     className="btn btn-showall-article"
@@ -432,17 +432,17 @@ function Home() {
         </section>
 
         <section>
-          <div class="container mt-5">
-            <div class="row">
-              <div class="col-lg-6">
+          <div className="container mt-5">
+            <div className="row">
+              <div className="col-lg-6">
                 <img
                   src="../src/assets/about us.svg"
-                  class="img-fluid"
+                  className="img-fluid"
                   alt="ilustrasi peduli bumi"
                 />
               </div>
-              <div class="col-lg-6">
-                <p class="fs-3 fw-bold title">About Us</p>
+              <div className="col-lg-6">
+                <p className="fs-3 fw-bold title">About Us</p>
                 <p>
                   EarthCare adalah suatu platform aplikasi berbasis website yang
                   berfokus pada kepedulian dan kelestarian alam dimana pada
