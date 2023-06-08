@@ -22,10 +22,13 @@ export const Article = () => {
             } catch (error) {
                 console.log("error: " + error);
             }
+            document.title = "Loading.."
             setTimeout(() => {
                 setIsLoading(false)
+                document.title = "Articles"
             }, 2000)
         }
+
 
         loadData()
 

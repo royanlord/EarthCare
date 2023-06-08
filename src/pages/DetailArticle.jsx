@@ -16,6 +16,7 @@ export const DetailArticle = () => {
             } catch (error) {
                 console.log("error: " + error);
             }
+            document.title = "Loading.."
             setTimeout(() => {
                 setIsLoading(false)
             }, 2000)
@@ -49,6 +50,7 @@ export const DetailArticle = () => {
                                     console.log(data, id);
                                     return data.articleId == id
                                 }).map((data,index) => {
+                                    document.title = `${data.title}`
                                     return (
                                         <div class="row mt-4 mx-4" key={index}>
                                             <div class="col-12 rounded-3 mb-lg-4">
