@@ -48,7 +48,6 @@ export const Login = () => {
                     type="checkbox"
                     id="gridCheck"
                   />
-                  <label className="form-check-label">Remember me</label>
                 </div>
               </div>
               <div className="d-grid">
