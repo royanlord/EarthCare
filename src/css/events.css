@@ -6,6 +6,10 @@
 }
 
 /* Input search events */
+#events {
+  margin-top: 7.5rem;
+}
+
 main .search__events {
   width: 26rem;
 }

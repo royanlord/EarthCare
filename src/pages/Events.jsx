@@ -48,7 +48,7 @@ export default function Events() {
   });
 
   return (
-    <main className="container mt-5">
+    <main id="events" className="container">
       <div className="d-flex justify-content-lg-between mx-3 justify-content-center flex-wrap">
         <section className="title__events">
           <h2>Event Terbaru, Yuk Ikutan!</h2>
