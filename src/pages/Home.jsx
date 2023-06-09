@@ -218,12 +218,14 @@ function Home() {
           <hr />
 
           <div className="d-flex justify-content-center gap-4 flex-wrap">
-            <Card style={{ width: "22rem" }}>
+            <Card style={{ width: "22rem" }} className="card-event">
               <Card.Img variant="top" src="../src/assets/event-image1.svg" />
               <Card.Body>
-                <Card.Title>Strategi Pengelolaan Sungai</Card.Title>
+                <Card.Title className="title-card">
+                  Strategi Pengelolaan Sungai
+                </Card.Title>
                 <Card.Text>
-                  <p className="text-black-50">ecoedu</p>
+                  <p className="text-black-50 card-text-event">ecoedu</p>
                   <div class="date mb-2">
                     <i class="mt-1 me-2">
                       <FaCalendarAlt />
@@ -242,12 +244,14 @@ function Home() {
                 </Button>
               </Card.Body>
             </Card>
-            <Card style={{ width: "22rem" }}>
+            <Card style={{ width: "22rem" }} className="card-event">
               <Card.Img variant="top" src="../src/assets/event-image2.svg" />
               <Card.Body>
-                <Card.Title>Gerakan Sedekah Sampah</Card.Title>
+                <Card.Title className="title-card">
+                  Gerakan Sedekah Sampah
+                </Card.Title>
                 <Card.Text>
-                  <p className="text-black-50">tkn_psl</p>
+                  <p className="text-black-50 card-text-event">tkn_psl</p>
                   <div class="date mb-2">
                     <i class="mt-1 me-2">
                       <FaCalendarAlt />
@@ -268,12 +272,14 @@ function Home() {
                 </Button>
               </Card.Body>
             </Card>
-            <Card style={{ width: "22rem" }}>
+            <Card style={{ width: "22rem" }} className="card-event">
               <Card.Img variant="top" src="../src/assets/event-image3.svg" />
               <Card.Body>
-                <Card.Title>Perhitungan Gas Rumah Kaca</Card.Title>
+                <Card.Title className="title-card">
+                  Perhitungan Gas Rumah Kaca
+                </Card.Title>
                 <Card.Text>
-                  <p className="text-black-50">ecoedu</p>
+                  <p className="text-black-50 card-text-event">ecoedu</p>
                   <div class="date mb-2">
                     <i class="mt-1 me-2">
                       <FaCalendarAlt />
