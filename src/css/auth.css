@@ -13,20 +13,21 @@
     font-weight: 700;
   }
   
-  html {
-    height: 100vh;
-  }
   
   body {
     background: #115810;
     font-family: "Inter", sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   
   .container {
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 70% !important;
+    max-width: 80% !important;
     background: #ffffff;
     padding: 3rem;
     border-radius: 20px;
@@ -69,15 +70,20 @@
   @media screen and (max-width: 768px) {
     .container {
       max-width: 90% !important;
+      padding: 2rem;
     }
     .container img {
-      margin-top: 5rem;
+      margin-top: 3rem;
     }
   }
   
   @media screen and (max-width: 576px) {
     .container {
       max-width: 90% !important;
+    }
+
+    .container img {
+      display: none;
     }
   
     input {
