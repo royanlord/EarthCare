@@ -4,6 +4,9 @@ import { Register } from "./pages/Register";
 import { Login } from "./pages/Login";
 
 function App() {
+
+  console.log(import.meta.env.VITE_REGISTER_API);
+  
   return (
     <>
       {/* <h1>Hello, React JS</h1> */}
@@ -14,6 +17,7 @@ function App() {
           <Route path="/login" element={<Login />} />
         </Routes>
       </BrowserRouter>
+
     </>
   );
 }
