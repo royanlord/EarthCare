@@ -6,6 +6,10 @@
 }
 
 /* Input search events */
+#events {
+  margin-top: 7.5rem;
+}
+
 main .search__events {
   width: 26rem;
 }
@@ -80,6 +84,14 @@ main .card-text .location p {
 .card__events .btn__join a:hover {
   background: #e0612f;
   border: #e0612f;
+}
+
+input#searchEvent {
+  border: solid 2px #dee2e6 !important;
+}
+
+input#searchEvent:focus {
+  border: solid 2px #115810 !important;
 }
 
 /* Responsive card evens */

@@ -41,6 +41,14 @@
     font-size: 0.8rem;
   }
 
+  input#emailContact, input#fullnameContact, textarea#messageContact {
+    border: solid 1.6px transparent !important;
+  }
+
+  input#emailContact:focus, input#fullnameContact:focus, textarea#messageContact:focus {
+    border: solid 1.6px #e54201 !important;
+  }
+
   @media screen and (max-width: 992px) {
     #content-form > .rounded-5 {
         border-radius: 20px !important;
