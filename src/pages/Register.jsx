@@ -40,13 +40,13 @@ export const Register = () => {
 
   return (
     <>
-      <div className="container mt-5">
+      <div className="container mx-auto d-flex justify-content-center align-items-center">
         <div className="row mx-4">
           <div className="col-md-6">
             <img className="img-fluid mb-sm-3" src={authImg} alt="LottieFiles Register" />
           </div>
           <div className="col-md-6 col-lg-6">
-            <h1 className="text-center mb-5 title-login">register</h1>
+            <h1 className="text-center mb-lg-5 mb-4 title-login">register</h1>
             <form>
               <div className="mb-4">
                 <input
