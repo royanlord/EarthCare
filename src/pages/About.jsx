@@ -72,7 +72,7 @@ function About() {
       <section>
         <div class="container py-5">
           <p class="fs-2 fw-bold text-center">Our Team</p>
-          <div class="wrapper p-5 d-flex justify-content-center gap-5 rounded-4 flex-wrap text-center text-white lh-1">
+          <div class="wrapper mx-auto p-5 d-flex justify-content-center gap-5 rounded-4 flex-wrap text-center text-white lh-1">
             <div>
               <img
                 src="../src/assets/nabil.svg"

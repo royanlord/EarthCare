@@ -11,6 +11,7 @@
 }
 
 .wrapper {
+  width: 90% !important;
   background-color: #115810;
 }
 
@@ -27,5 +28,9 @@
   #goals {
     display: flex;
     flex-direction: column-reverse;
+  }
+
+  .wrapper {
+    width: 95% !important;
   }
 }
