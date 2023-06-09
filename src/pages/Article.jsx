@@ -78,9 +78,9 @@ export const Article = () => {
                                 <div className="input-group">
                                     <input 
                                         type="text" 
-                                        className="form-control form-control-lg py-lg-2 py-1" 
+                                        className="form-control form-control-lg py-lg-2 py-1 shadow-none" 
                                         name="search"
-                                        id="search"
+                                        id="searchArticle"
                                         placeholder="Search"
                                         aria-label="search articles"
                                         autoComplete="off"

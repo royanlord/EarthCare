@@ -86,6 +86,14 @@ main .card-text .location p {
   border: #e0612f;
 }
 
+input#searchEvent {
+  border: solid 2px #dee2e6 !important;
+}
+
+input#searchEvent:focus {
+  border: solid 2px #115810 !important;
+}
+
 /* Responsive card evens */
 
 @media (max-width: 1400px) {

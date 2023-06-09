@@ -71,10 +71,10 @@ export default function Events() {
               <section className="search__events mb-5 mb-lg-5">
                 <InputGroup size="lg">
                   <Form.Control
-                    className="mt-lg-4"
+                    className="mt-lg-4 shadow-none"
                     type="text"
                     name="search"
-                    id="serach"
+                    id="searchEvent"
                     placeholder="Search"
                     aria-label="search events"
                     autoComplete="off"
