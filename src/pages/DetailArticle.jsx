@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { Loading } from "../components/Loading";
+import { Navbar } from "../components/Navbar";
 
 export const DetailArticle = () => {
     const [article, setArticle] = useState([])
@@ -33,6 +34,7 @@ export const DetailArticle = () => {
 
     return (
         <>
+            <Navbar />
             {isLoading ? (
                 <Loading />
             ) : (

@@ -4,10 +4,12 @@ import { FaCalendarAlt, FaMapMarker } from "react-icons/fa";
 import "../css/home.css";
 import { ContactForm } from "../components/ContactForm"
 import { Link } from "react-router-dom";
+import { Navbar } from "../components/Navbar";
 
 function Home() {
   return (
     <>
+      <Navbar />
       <main>
         {/* <div
           id="carouselExampleAutoplaying"

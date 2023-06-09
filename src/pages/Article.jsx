@@ -4,6 +4,7 @@ import "../css/article.css";
 import { Link } from "react-router-dom"
 import { Loading } from "../components/Loading";
 import notifyNoEvents from "../assets/notify no events.svg";
+import { Navbar } from "../components/Navbar";
 
 export const Article = () => {
     const [articles, setArticles] = useState([])
@@ -56,6 +57,7 @@ export const Article = () => {
 
     return (
         <>
+            <Navbar />
             {isLoading ? (
                 // <span>Loading...</span>
                 <Loading />

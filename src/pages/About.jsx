@@ -1,8 +1,10 @@
+import { Navbar } from "../components/Navbar";
 import "../css/about.css";
 
 function About() {
   return (
     <>
+      <Navbar />
       <section id="about">
         <div className="container about">
           <div className="row">

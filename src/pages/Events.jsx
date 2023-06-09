@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { Loading } from "../components/Loading";
 import notifyNoEvents from "../assets/notify no events.svg";
 import "../css/events.css";
+import { Navbar } from "../components/Navbar";
 
 export default function Events() {
   const [events, setEvents] = useState([]);
@@ -53,6 +54,7 @@ export default function Events() {
 
   return (
     <>
+      <Navbar />
       {isLoading ? (
           <Loading />
         ) : (
@@ -117,9 +119,15 @@ export default function Events() {
                           <p>{data.lokasi}</p>
                         </div>
                         <div className="d-grid btn__join">
-                          <Link to={`/events/${data.id}`} className="btn btn-primary">
-                            Join Now
-                          </Link>
+                            <Link to={`/events/${data.id}`} className="btn btn-primary">
+                              Join Now
+                            </Link>
+                          {/* {isLogin ? (
+                          ) : (
+                            <Link to="/login" className="btn btn-primary">
+                              Join Now
+                            </Link>
+                          )} */}
                         </div>
                       </Card.Body>
                     </Card>
