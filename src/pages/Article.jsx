@@ -3,6 +3,8 @@ import React from "react"
 import "../css/article.css";
 import { Link } from "react-router-dom"
 import { Loading } from "../components/Loading";
+import notifyNoEvents from "../assets/notify no events.svg";
+import { Navbar } from "../components/Navbar";
 
 export const Article = () => {
     const [articles, setArticles] = useState([])
@@ -11,6 +13,8 @@ export const Article = () => {
     // const imgUrl = "../assets/"
 
     useEffect(() => {
+        document.title = "Loading.."
+        
         const loadData = async () => {
             try {
                 const url = "https://644e5c2c4e86e9a4d8f6d279.mockapi.io/article"
@@ -21,10 +25,13 @@ export const Article = () => {
             } catch (error) {
                 console.log("error: " + error);
             }
+            
             setTimeout(() => {
                 setIsLoading(false)
+                document.title = "Articles"
             }, 2000)
         }
+
 
         loadData()
 
@@ -52,6 +59,7 @@ export const Article = () => {
 
     return (
         <>
+            <Navbar />
             {isLoading ? (
                 // <span>Loading...</span>
                 <Loading />
@@ -61,7 +69,7 @@ export const Article = () => {
                     <div class="container-fluid mt-5" id="article-content">
                         <div className="row mx-3 mb-4 d-flex justify-content-center align-items-center">
                             <div className="col-lg-8 title-articles">
-                                <h2>Blog, Postingan, dan Artikel</h2>
+                                <h2 className="fw-bold">Blog, Postingan, dan Artikel</h2>
                                 <p className="mb-3">
                                     Blog, Postingan, dan Artikel yang mungkin relevan untuk Anda baca
                                 </p>
@@ -70,9 +78,9 @@ export const Article = () => {
                                 <div className="input-group">
                                     <input 
                                         type="text" 
-                                        className="form-control form-control-lg py-lg-2 py-1" 
+                                        className="form-control form-control-lg py-lg-2 py-1 shadow-none" 
                                         name="search"
-                                        id="search"
+                                        id="searchArticle"
                                         placeholder="Search"
                                         aria-label="search articles"
                                         autoComplete="off"
@@ -84,8 +92,8 @@ export const Article = () => {
                         </div>
                         {filteredArticles.length === 0 ? (
                             <div className="notify d-flex justify-content-center align-items-center flex-column">
-                                {/* <img src={notifyNoEvents} alt="events tidak ditemukan" /> */}
-                                <p className="d-flex text-center">No events found</p>
+                                <img src={notifyNoEvents} alt="events tidak ditemukan" />
+                                <p className="d-flex text-center">No articles found</p>
                             </div>
                         ) : (
                             filteredArticles.map((data,index) => (
@@ -101,7 +109,7 @@ export const Article = () => {
                                             <p class="d-inline text-muted ms-1">{data.datePost}</p>
                                         </div>
                                         <div class="button-more">
-                                            <Link to={`./detailArticle/:${data.id}?id=${data.id}`} 
+                                            <Link to={`/detailArticle/:${data.id}?id=${data.id}`} 
                                                 class="btn btn-primary border-0 px-3 py-2" 
                                                 id="btnSelengkapnya">
                                                     Selengkapnya

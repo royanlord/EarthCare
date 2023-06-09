@@ -2,15 +2,16 @@
   box-sizing: border-box;
 }
 
-/* .about {
-  margin-top: 100px;
-} */
+#about {
+  margin-top: 8.5rem;
+}
 
 .title {
   color: #e54201;
 }
 
 .wrapper {
+  width: 90% !important;
   background-color: #115810;
 }
 
@@ -21,4 +22,15 @@
 .team {
   margin: 1rem 0 0 0;
   padding: 0 20px;
+}
+
+@media screen and (max-width: 992px) {
+  #goals {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .wrapper {
+    width: 95% !important;
+  }
 }

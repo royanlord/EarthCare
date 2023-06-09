@@ -1,9 +1,11 @@
+import { Navbar } from "../components/Navbar";
 import "../css/about.css";
 
 function About() {
   return (
     <>
-      <section>
+      <Navbar />
+      <section id="about">
         <div className="container about">
           <div className="row">
             <div className="col-lg-6">
@@ -13,13 +15,13 @@ function About() {
                 className="img-fluid"
               />
             </div>
-            <div className="col-lg-6">
+            <div className="col-lg-6" style={{textAlign: "justify"}}>
               <p className="fs-3 fw-bold title">
                 EarthCare, <br />
                 <span className="fs-1">What is it?</span>
               </p>
               <p>
-                EarthCare adalah suatu platform aplikasi berbasis website yang
+                &nbsp; &nbsp; &nbsp;EarthCare adalah suatu platform aplikasi berbasis website yang
                 berfokus pada kepedulian dan kelestarian alam dimana pada
                 mulanya terbentuk karena didasari atas rasa prihatin terhadap
                 Bumi yang kian rapuh. Greenpeace sebagai wadah dan tempat untuk
@@ -30,7 +32,7 @@ function About() {
             </div>
           </div>
 
-          <div className="row my-5">
+          <div id="goals" className="row my-5">
             <div className="col-lg-6">
               <p className="fs-3 fw-bold title">
                 Goals, <br />
@@ -60,7 +62,7 @@ function About() {
               <img
                 src="../src/assets/image2.svg"
                 alt=""
-                className="img-fluid"
+                className="img-fluid rounded-3"
               />
             </div>
           </div>
@@ -70,7 +72,7 @@ function About() {
       <section>
         <div class="container py-5">
           <p class="fs-2 fw-bold text-center">Our Team</p>
-          <div class="wrapper p-5 d-flex justify-content-center gap-5 rounded-4 flex-wrap text-center text-white lh-1">
+          <div class="wrapper mx-auto p-5 d-flex justify-content-center gap-5 rounded-4 flex-wrap text-center text-white lh-1">
             <div>
               <img
                 src="../src/assets/nabil.svg"

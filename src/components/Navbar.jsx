@@ -1,18 +1,21 @@
-import { Link } from "react-router-dom"
+import { Link, NavLink } from "react-router-dom"
 import "../css/navbar.css"
 import { Dropdown } from "bootstrap"
 import logoNav from "../assets/logo-nav.png"
+import { FaUser } from "react-icons/fa"
+import { useState } from "react"
 
 export const Navbar = () => {
+    const [isLogin, setIsLogin] = useState(true)
     return (
         <>
             <header>
                 <nav className="navbar fixed-top navbar-expand-lg navbar-dark bg-dark" data-bs-theme="dark">
                     <div className="container">
-                        <Link className="navbar-brand text-white" to="/">
+                        <NavLink className="navbar-brand text-white" to="/">
                             <img src={logoNav} className="logo-nav" alt="logo navbar" height="50" />
                             &nbsp;EarthCare
-                        </Link>
+                        </NavLink>
                         <button 
                             className="navbar-toggler" 
                             type="button" 
@@ -27,7 +30,7 @@ export const Navbar = () => {
                         <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
                             <ul className="navbar-nav ms-auto mb-2 mb-lg-0 d-flex align-items-lg-center text-center">
                                 <li className="nav-item">
-                                    <Link className="nav-link" aria-current="page" to="/">Home</Link>
+                                    <NavLink className="nav-link" aria-current="page" to="/" activeclassname="active">Home</NavLink>
                                 </li>
                                 <li className="nav-item dropdown">
                                     <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -47,16 +50,43 @@ export const Navbar = () => {
                                     </ul>
                                 </li>
                                 <li className="nav-item">
-                                    <Link className="nav-link" aria-current="page" to="/about">About</Link>
-                                </li>
-                                <li className="nav-item me-lg-4">
-                                    <Link className="nav-link active" to="/contact">Contact Us</Link>
+                                    <NavLink className="nav-link" aria-current="page" to="/about" activeclassname="active">About</NavLink>
                                 </li>
                                 <li className="nav-item">
-                                    <Link className="nav-link" to="/login">
-                                        <button className="btn btn-primary px-3 border-0" type="submit">Login</button>
-                                    </Link>
+                                    <NavLink className="nav-link" to="/contact" activeclassname="active">Contact Us</NavLink>
                                 </li>
+                                {isLogin ? (
+                                    <li className="nav-item dropdown profile-btn">
+                                        <Link 
+                                            className="nav-link dropdown-toggle d-flex align-items-center justify-content-center" 
+                                            href="#"
+                                            role="button" 
+                                            data-bs-toggle="dropdown" 
+                                            aria-expanded="false"
+                                        >
+                                            <div id="user-profile" className="rounded-pill me-2">
+                                                <FaUser className="fa-solid fa-user" style={{color: "#ffffff"}} />
+                                            </div>
+                                            <div className="my-auto text-white" id="profileUserNavbar">
+                                                Royan Farid Fathurrahman
+                                            </div>
+                                        </Link>
+                                        <ul className="dropdown-menu animate slideIn dropdown-menu-dark ms-lg-5 mx-5">
+                                            <li>
+                                                <Link to="/" className="dropdown-item text-lg-start text-center" id="logout" href="index.html"
+                                            >
+                                                    Logout
+                                                </Link>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                ) : (
+                                    <li className="nav-item">
+                                        <NavLink className="nav-link" to="/login">
+                                            <button className="btn btn-primary px-3 border-0" type="submit">Login</button>
+                                        </NavLink>
+                                    </li>
+                                )}
                             </ul>
                         </div>
                     </div>

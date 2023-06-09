@@ -40,6 +40,10 @@ header .bg-dark {
   .navbar .btn:active {
     background-color: #ce3b01 !important;
   }
+
+  .navbar li>.active {
+    color: white;
+  }
   
   /* animation dropdown */
   @media (min-width: 200px) {
@@ -89,17 +93,21 @@ header .bg-dark {
   /* user profile display after login */
   #user-profile {
     background-color: #e54201;
-    padding: 0.6rem 0.8rem;
+    padding: 0.8rem 0.8rem;
   }
   
-  #user-profile i {
+  #user-profile .fa-user {
     font-size: 1.6rem !important;
   }
   
   #profileUserNavbar {
-    width: 48% !important;
+    width: 35% !important;
     text-overflow: ellipsis;
     overflow: hidden;
+  }
+
+  .profile-btn .ms-lg-5 {
+    margin-left: 5rem !important;
   }
 
   @media screen and (max-width: 992px) {

@@ -2,10 +2,14 @@ import Carousel from "react-bootstrap/Carousel";
 import { Card, Button } from "react-bootstrap";
 import { FaCalendarAlt, FaMapMarker } from "react-icons/fa";
 import "../css/home.css";
+import { ContactForm } from "../components/ContactForm"
+import { Link } from "react-router-dom";
+import { Navbar } from "../components/Navbar";
 
 function Home() {
   return (
     <>
+      <Navbar />
       <main>
         {/* <div
           id="carouselExampleAutoplaying"
@@ -294,13 +298,14 @@ function Home() {
             </Card>
           </div>
           <div className="wrapper-showall-event">
-            <button
+            <Link
+              to="/event"
               type="button"
               class="btn my-5 btn-showall-event"
               onclick="window.location.href='event.html'"
             >
-              Show All Events
-            </button>
+                Show All Events
+            </Link>
           </div>
         </section>
 
@@ -418,13 +423,14 @@ function Home() {
                   </div>
                 </div>
                 <div class="text-center my-5">
-                  <Button
+                  <Link
+                    to="/article"
                     type="button"
                     className="btn btn-showall-article"
                     onclick="window.location.href='event.html'"
                   >
                     Show All Articles
-                  </Button>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -457,6 +463,8 @@ function Home() {
             </div>
           </div>
         </section>
+
+        <ContactForm />
       </main>
     </>
   );
