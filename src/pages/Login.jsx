@@ -1,12 +1,51 @@
 import "../css/auth.css";
 import authImg from "../assets/auth.gif";
-import { useLayoutEffect } from "react";
+import { useLayoutEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 export const Login = () => {
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+
+  const payload = {
+    email,
+    password
+  }
+
   useLayoutEffect(() => {
     document.body.style.backgroundColor = "#115810";
   });
+
+  const handleLogin = (e) => {
+    e.preventDefault()
+    if (email === "" || password === "") {
+      alert("tidak boleh kosong")
+    }
+
+    axios
+    .get("https://6461981c185dd9877e3f45ca.mockapi.io/register", payload)
+    .then((response) => {
+      const users = response.data;
+      const user = users.find(
+        (user) => user.email === email && user.password === password
+      );
+
+      if (user) {
+        localStorage.setItem("MyToken", user.token);
+        alert("Login successful");
+      } else {
+        alert("Invalid email or password");
+      }
+    })
+    .catch((error) => {
+      console.log(error);
+      alert("Login failed");
+    });
+
+    
+
+  }
 
   return (
     <>
@@ -30,6 +69,8 @@ export const Login = () => {
                   id="emailAddress"
                   placeholder="Email"
                   autoComplete="off"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
               <div className="mb-4">
@@ -39,13 +80,15 @@ export const Login = () => {
                   name="passwordAddress"
                   id="passwordAddress"
                   placeholder="Password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
                 />
               </div>
               <div className="d-grid">
                 <button
                   id="btn_login"
                   className="btn btn-success btn-lg"
-                  // onclick="dataAuthLogin()"
+                  onClick={handleLogin}
                 >
                   Login
                 </button>
@@ -66,3 +109,20 @@ export const Login = () => {
     </>
   );
 };
+
+
+// axios
+    //   .get(
+    //     "https://6461981c185dd9877e3f45ca.mockapi.io/register",
+    //     payload
+    //   )
+    //   .then((response) => {
+    //     const res = response
+    //     localStorage.setItem("stringify", JSON.stringify(res))
+    //     localStorage.setItem("MyToken", res.data.token)
+    //     alert("login berhasil")
+    //   })
+    //   .catch((error) => {
+    //     console.log(error);
+    //     alert("gagal")
+    //   })
