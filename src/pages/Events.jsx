@@ -21,6 +21,7 @@ export default function Events() {
   // }, []);
 
   useEffect(() => {
+    document.title = "Loading.."
     fetchDataEvents();
   }, []);
 
@@ -37,6 +38,7 @@ export default function Events() {
 
       setTimeout(() => {
         setIsLoading(false);
+        document.title = "Events"
       }, 2000)
     } catch (error) {
       console.log(error);

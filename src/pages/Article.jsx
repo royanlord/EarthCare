@@ -13,6 +13,8 @@ export const Article = () => {
     // const imgUrl = "../assets/"
 
     useEffect(() => {
+        document.title = "Loading.."
+        
         const loadData = async () => {
             try {
                 const url = "https://644e5c2c4e86e9a4d8f6d279.mockapi.io/article"
@@ -23,7 +25,7 @@ export const Article = () => {
             } catch (error) {
                 console.log("error: " + error);
             }
-            document.title = "Loading.."
+            
             setTimeout(() => {
                 setIsLoading(false)
                 document.title = "Articles"

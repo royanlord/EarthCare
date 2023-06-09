@@ -33,6 +33,7 @@ export default function DetailEvents() {
       const data = await res.json();
       setDetailEvents(data);
 
+      document.title = "Loading.."
       setTimeout(() => {
         setIsLoading(false);
       }, 2000)
@@ -57,6 +58,7 @@ export default function DetailEvents() {
 
   return (
     <>
+      {document.title = `${detailEvents.judul}`}
       <Navbar />
       <div className="detail__events d-flex justify-content-center align-items-center">
         <main className="d-flex container mx-5">
