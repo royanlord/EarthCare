@@ -10,7 +10,7 @@ export const Login = () => {
 
   return (
     <>
-      <div className="container mt-5">
+      <div className="container mt-5 my-5">
         <div className="row mx-4">
           <div className="col-md-6">
             <img
@@ -20,7 +20,7 @@ export const Login = () => {
             />
           </div>
           <div className="col-md-6 col-lg-6">
-            <h1 className="text-center mb-5 title-login">login</h1>
+            <h1 className="text-center mb-lg-5 mb-4 title-login">login</h1>
             <form>
               <div className="mb-4">
                 <input
