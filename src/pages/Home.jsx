@@ -5,8 +5,12 @@ import "../css/home.css";
 import { ContactForm } from "../components/ContactForm"
 import { Link } from "react-router-dom";
 import { Navbar } from "../components/Navbar";
+import { useLayoutEffect } from "react";
 
 function Home() {
+    useLayoutEffect(() => {
+    document.body.style.backgroundColor = "none";
+  });
   return (
     <>
       <Navbar />
