@@ -17,7 +17,7 @@
   body {
     /* background: #115810; */
     font-family: "Inter", sans-serif;
-    height: 100vh;
+    /* height: 100vh; */
     /* display: flex;
     justify-content: center;
     align-items: center; */
@@ -27,7 +27,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 80% !important;
+    max-width: 70% !important;
     background: #ffffff;
     padding: 3rem;
     border-radius: 20px;
