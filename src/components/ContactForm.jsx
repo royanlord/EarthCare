@@ -1,10 +1,10 @@
 import { useState } from "react"
 import Swal from "sweetalert2"
-import withReactContent from "sweetalert2-react-content"
+// import withReactContent from "sweetalert2-react-content"
 import {BsFillExclamationCircleFill} from "react-icons/bs"
 
 export const ContactForm = () => {
-    const MySwal = withReactContent(Swal)
+    // const MySwal = withReactContent(Swal)
     const [inputEmail, setInputEmail] = useState("")
     const [inputFullname, setInputFullname] = useState("")
     const [inputMessage, setInputMessage] = useState("")
@@ -19,7 +19,7 @@ export const ContactForm = () => {
     const handleSubmitContact = (e) => {
         e.preventDefault()
         if (inputEmail !== "" && inputFullname !== "" && inputMessage !== "") {
-            MySwal.fire({
+            Swal.fire({
                 position: 'top-center',
                 icon: 'success',
                 title: 'Message sent successfully',
@@ -83,8 +83,8 @@ export const ContactForm = () => {
                                     <label htmlFor="email" class="form-label">Email</label>
                                     <input 
                                         type="email" 
-                                        class="form-control form-control-lg" 
-                                        id="email" 
+                                        class="form-control form-control-lg shadow-none" 
+                                        id="emailContact" 
                                         placeholder="Masukkan email" 
                                         value={inputEmail}
                                         onChange={e => {
@@ -97,8 +97,8 @@ export const ContactForm = () => {
                                     <label htmlFor="fullname" class="form-label">Full Name</label>
                                     <input 
                                         type="text" 
-                                        class="form-control form-control-lg" 
-                                        id="fullname"
+                                        class="form-control form-control-lg shadow-none" 
+                                        id="fullnameContact"
                                         placeholder="Masukkan nama lengkap" 
                                         value={inputFullname}
                                         onChange={e => {
@@ -110,8 +110,8 @@ export const ContactForm = () => {
                                 <div class="mb-3">
                                     <label htmlFor="message" class="form-label">Message</label>
                                     <textarea 
-                                        class="form-control form-control-lg" 
-                                        id="message"   
+                                        class="form-control form-control-lg shadow-none" 
+                                        id="messageContact"   
                                         rows="6" 
                                         style={{resize: "none"}}
                                         placeholder="Tulis pertanyaan"

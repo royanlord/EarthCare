@@ -27,6 +27,14 @@
     text-align: justify;
 }
 
+input#searchArticle {
+    border: solid 2px #dee2e6 !important;
+}
+
+input#searchArticle:focus {
+    border: solid 2px #115810 !important;
+}
+
 @media screen and (max-width: 992px) {
     #article {
         margin-top: 7rem;

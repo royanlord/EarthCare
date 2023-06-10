@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { Loading } from "../components/Loading";
+import { Navbar } from "../components/Navbar";
 
 export const DetailArticle = () => {
     const [article, setArticle] = useState([])
@@ -16,6 +17,7 @@ export const DetailArticle = () => {
             } catch (error) {
                 console.log("error: " + error);
             }
+            document.title = "Loading.."
             setTimeout(() => {
                 setIsLoading(false)
             }, 2000)
@@ -32,6 +34,7 @@ export const DetailArticle = () => {
 
     return (
         <>
+            <Navbar />
             {isLoading ? (
                 <Loading />
             ) : (
@@ -49,6 +52,7 @@ export const DetailArticle = () => {
                                     console.log(data, id);
                                     return data.articleId == id
                                 }).map((data,index) => {
+                                    document.title = `${data.title}`
                                     return (
                                         <div class="row mt-4 mx-4" key={index}>
                                             <div class="col-12 rounded-3 mb-lg-4">

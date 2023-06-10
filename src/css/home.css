@@ -134,6 +134,21 @@ section hr {
   font-weight: bold;
 }
 
+.card-event {
+  background-color: #f0f0f0;
+  box-shadow: 8px 9px 18px -7px rgba(135, 135, 135, 0.75);
+  -webkit-box-shadow: 8px 9px 18px -7px rgba(135, 135, 135, 0.75);
+  -moz-box-shadow: 8px 9px 18px -7px rgba(135, 135, 135, 0.75);
+}
+
+.card-event .card-text-event {
+  color: #f36b35 !important;
+}
+
+.card-event .title-card {
+  font-weight: 700;
+}
+
 .card-text {
   text-align: justify;
 }
