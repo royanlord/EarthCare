@@ -14,14 +14,14 @@
   }
   
   
-  /* body {
-    background: #115810;
+  body {
+    /* background: #115810; */
     font-family: "Inter", sans-serif;
     height: 100vh;
-    display: flex;
+    /* display: flex;
     justify-content: center;
-    align-items: center;
-  } */
+    align-items: center; */
+  }
   
   .auth {
     display: flex;
