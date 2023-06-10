@@ -67,7 +67,7 @@ export const ContactForm = () => {
     return (
         <>
             <section id="content-form">
-                <div class="container-fluid mx-auto mt-5 pt-5 pb-5 rounded-5">
+                <div class="container-fluid mx-auto mt-5 py-3 rounded-5">
                     <div class="row my-5">
                         <div class="col-lg-6 col-md-12 px-5 text-center text-lg-start">
                             <h5 class="text-white fw-medium">Questions, Comments, Concerns?</h5>
