@@ -9,6 +9,8 @@ import {Article} from "./pages/Article"
 import {DetailArticle} from "./pages/DetailArticle"
 import About from "./pages/About"
 import {Contact} from "./pages/Contact"
+import {Login} from "./pages/Login"
+import {Register} from "./pages/Register"
 
 function App() {
 
@@ -21,6 +23,8 @@ function App() {
         <Routes>
           {/* <Route path="/login" element={<Login />} /> */}
           <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
           <Route path="/event" element={<Events />} />
           <Route path="/events/:id" element={<DetailEvents />} />
           <Route path="/daftarevents/:id" element={<DaftarEvents />} />
