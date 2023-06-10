@@ -14,16 +14,16 @@
   }
   
   
-  body {
+  /* body {
     background: #115810;
     font-family: "Inter", sans-serif;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-  }
+  } */
   
-  .container {
+  .auth {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -52,37 +52,37 @@
   }
   
   @media screen and (max-width: 1024px) {
-    .container {
+    .auth {
       max-width: 90% !important;
     }
-    .container img {
+    .auth img {
       margin-top: 5rem;
     }
   }
   @media screen and (max-width: 820px) {
-    .container {
+    .auth {
       max-width: 90% !important;
     }
-    .container img {
+    .auth img {
       margin-top: 5rem;
     }
   }
   @media screen and (max-width: 768px) {
-    .container {
+    .auth {
       max-width: 90% !important;
       padding: 2rem;
     }
-    .container img {
+    .auth img {
       margin-top: 3rem;
     }
   }
   
   @media screen and (max-width: 576px) {
-    .container {
+    .auth {
       max-width: 90% !important;
     }
 
-    .container img {
+    .auth img {
       display: none;
     }
   
