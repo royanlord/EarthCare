@@ -40,7 +40,7 @@ export const Register = () => {
 
   return (
     <>
-      <div className="container mx-auto d-flex justify-content-center align-items-center">
+      <div className="container auth mx-auto d-flex justify-content-center align-items-center">
         <div className="row mx-4">
           <div className="col-md-6">
             <img className="img-fluid mb-sm-3" src={authImg} alt="LottieFiles Register" />

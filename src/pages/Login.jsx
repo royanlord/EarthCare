@@ -52,7 +52,7 @@ export const Login = () => {
 
   return (
     <>
-      <div className="container mt-5 my-5">
+      <div className="container auth mt-5 my-5">
         <div className="row mx-4">
           <div className="col-md-6">
             <img
