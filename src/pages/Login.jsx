@@ -1,12 +1,13 @@
 import "../css/auth.css";
 import authImg from "../assets/auth.gif";
 import { useLayoutEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 export const Login = () => {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
+  const navigation = useNavigate()
 
   const payload = {
     email,
@@ -34,6 +35,8 @@ export const Login = () => {
       if (user) {
         localStorage.setItem("MyToken", user.token);
         alert("Login successful");
+        navigation(`/`)
+        console.log(user);
       } else {
         alert("Invalid email or password");
       }
@@ -60,7 +63,7 @@ export const Login = () => {
           </div>
           <div className="col-md-6 col-lg-6">
             <h1 className="text-center mb-lg-5 mb-4 title-login">login</h1>
-            <form>
+            <form onSubmit={handleLogin}>
               <div className="mb-4">
                 <input
                   type="email"
@@ -86,9 +89,9 @@ export const Login = () => {
               </div>
               <div className="d-grid">
                 <button
+                  type="submit"
                   id="btn_login"
                   className="btn btn-success btn-lg"
-                  onClick={handleLogin}
                 >
                   Login
                 </button>
