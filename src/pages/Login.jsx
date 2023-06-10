@@ -97,7 +97,7 @@ export const Login = () => {
                 </button>
                 <span className="text-center mt-4">
                   Don't have an account yet?&nbsp;
-                  <Link className="text-register" to="/">
+                  <Link className="text-register" to="/register">
                     Let's register!
                   </Link>
                   {/* <a href="login.html" className="text-register">
