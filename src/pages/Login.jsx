@@ -33,10 +33,12 @@ export const Login = () => {
       );
 
       if (user) {
-        localStorage.setItem("MyToken", user.token);
+        // localStorage.setItem("MyToken", user.token);
+        localStorage.setItem("MyToken", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c");
         alert("Login successful");
+        localStorage.setItem("user", JSON.stringify(user))
         navigation(`/`)
-        console.log(user);
+        // console.log(user);
       } else {
         alert("Invalid email or password");
       }
@@ -45,8 +47,6 @@ export const Login = () => {
       console.log(error);
       alert("Login failed");
     });
-
-    
 
   }
 
