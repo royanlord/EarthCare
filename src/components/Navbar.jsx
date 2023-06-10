@@ -8,14 +8,16 @@ import { useEffect, useState } from "react"
 export const Navbar = () => {
     const [isLogin, setIsLogin] = useState(false)
     const [user, setUser] = useState({
-        fullName: '',
-        email: '',
-        id: '',
+        fullName: "",
+        email: "",
+        id: "",
     })
     useEffect(() => {
+        // setIsLogin(localStorage.getItem("MyToken") !== null);
+        // setUser(JSON.parse(localStorage.getItem("user")||"{'fullname':'','email':'','id':''}"))
+        // console.log(user);
         setIsLogin(localStorage.getItem("MyToken") != "")
-        setUser(JSON.parse(localStorage.getItem("user")||"{'fullname':'','email':'','id':''}"))
-        console.log(user)
+        setUser(JSON.parse(localStorage.getItem("user") || '{"fullname":"","email":"","id":""}'));
     },[]) 
 
     const userLogout = () => {
