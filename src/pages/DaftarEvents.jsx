@@ -137,10 +137,9 @@ export default function DaftarEvents() {
                 src={daftarEvents.gambar}
                 alt="ilustrasi detail events"
               />
-              {/* Sementara */}
               <h4 className="mt-4">{daftarEvents.judul}</h4>
               <p className="text__date mt-2">
-                <FaInfoCircle className="mb-1" /> Batas pendaftaran sampai
+                <FaInfoCircle className="mb-1 me-2" /> Batas pendaftaran sampai
                 tanggal {daftarEvents.tanggal}
               </p>
               <p className="mt-2">
@@ -155,6 +154,7 @@ export default function DaftarEvents() {
               <h3 className="text-lg-center text-right mb-4">
                 Lengkapi Data Anda
               </h3>
+              <div className="border__bottom"></div>
               <Form>
                 <Form.Group className="mb-3" controlId="formGroupFullName">
                   <Form.Label>Nama Lengkap</Form.Label>
