@@ -164,6 +164,7 @@ export default function DaftarEvents() {
                     name="fullname"
                     value={fullname}
                     onChange={(e) => setFullname(e.target.value)}
+                    autoComplete="off"
                   />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formGroupEmail">
@@ -174,6 +175,7 @@ export default function DaftarEvents() {
                     name="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
+                    autoComplete="off"
                   />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formGroupPhone">
@@ -184,6 +186,7 @@ export default function DaftarEvents() {
                     name="phone"
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
+                    autoComplete="off"
                   />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formGroupAddress">
@@ -194,6 +197,7 @@ export default function DaftarEvents() {
                     name="address"
                     value={address}
                     onChange={(e) => setAddress(e.target.value)}
+                    autoComplete="off"
                   />
                 </Form.Group>
 
@@ -202,6 +206,7 @@ export default function DaftarEvents() {
                     className="btn btn-primary"
                     type="button"
                     onClick={handleDaftarEvent}
+                    autoComplete="off"
                   >
                     Pesan Sekarang
                   </Button>
