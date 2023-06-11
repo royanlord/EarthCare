@@ -14,6 +14,7 @@ export default function DaftarEvents() {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [address, setAddress] = useState("");
+  const [registerClose, setRegisterClose] = useState(false);
 
   useEffect(() => {
     fetchDaftarEvents();
@@ -30,10 +31,18 @@ export default function DaftarEvents() {
       const data = await res.json();
       setDaftarEvents(data);
       setIsLoading(false);
+
+      // Check register end
+      const registerDate = new Date(data.tanggal);
+      const currentDate = new Date();
+      if(currentDate > registerDate) {
+        setRegisterClose(true);
+      }
     } catch (error) {
       console.log(error);
     }
   };
+
 
   if (isLoading) {
     return <p className="loading">Loading....</p>;
@@ -165,6 +174,7 @@ export default function DaftarEvents() {
                     value={fullname}
                     onChange={(e) => setFullname(e.target.value)}
                     autoComplete="off"
+                    disabled={registerClose}
                   />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formGroupEmail">
@@ -176,6 +186,7 @@ export default function DaftarEvents() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     autoComplete="off"
+                    disabled={registerClose}
                   />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formGroupPhone">
@@ -187,6 +198,7 @@ export default function DaftarEvents() {
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
                     autoComplete="off"
+                    disabled={registerClose}
                   />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formGroupAddress">
@@ -198,17 +210,20 @@ export default function DaftarEvents() {
                     value={address}
                     onChange={(e) => setAddress(e.target.value)}
                     autoComplete="off"
+                    disabled={registerClose}
                   />
                 </Form.Group>
 
                 <div className="d-grid">
+                
                   <Button
                     className="btn btn-primary"
                     type="button"
                     onClick={handleDaftarEvent}
                     autoComplete="off"
-                  >
-                    Pesan Sekarang
+                    disabled={registerClose}
+                    >
+                    {registerClose ? "Pendaftaran Ditutup" : "Pesan Sekarang"}
                   </Button>
                 </div>
               </Form>
