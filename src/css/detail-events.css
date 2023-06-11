@@ -81,6 +81,16 @@
   background: #f0f0f0;
 }
 
+.card__detail >  h3 {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.card__detail .border__bottom {
+  border: 1px solid rgba(164, 164, 164, 0.2);
+  margin-bottom: 1.5rem;
+}
+
 .daftar__events main h4 {
   font-size: 24px;
   font-weight: 600;
