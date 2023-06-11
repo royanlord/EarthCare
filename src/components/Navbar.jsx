@@ -1,23 +1,28 @@
-import { Link, NavLink } from "react-router-dom"
+import { Link, NavLink, useNavigate } from "react-router-dom"
 import "../css/navbar.css"
 import { Dropdown } from "bootstrap"
 import logoNav from "../assets/logo-nav.png"
 import { FaUser } from "react-icons/fa"
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
+import { LoginContext } from "../context/LoginProvider"
+import { UserContext } from "../context/UserProvider"
 
 export const Navbar = () => {
-    const [isLogin, setIsLogin] = useState(false)
-    const [user, setUser] = useState({
-        fullName: "",
-        email: "",
-        id: "",
-    })
+    const {isLogin, setIsLogin} = useContext(LoginContext)
+    const {user, setUser} = useContext(UserContext)
+    const navigation = useNavigate()
+    // const [isLogin, setIsLogin] = useState(false)
+    // const [user, setUser] = useState({
+    //     fullName: "",
+    //     email: "",
+    //     id: "",
+    // })
     useEffect(() => {
-        // setIsLogin(localStorage.getItem("MyToken") !== null);
+        setIsLogin(sessionStorage.getItem("MyToken") !== null);
         // setUser(JSON.parse(localStorage.getItem("user")||"{'fullname':'','email':'','id':''}"))
         // console.log(user);
-        setIsLogin(localStorage.getItem("MyToken") != "")
-        setUser(JSON.parse(localStorage.getItem("user") || '{"fullname":"","email":"","id":""}'));
+        // setIsLogin(localStorage.getItem("MyToken") != "")
+        setUser(JSON.parse(sessionStorage.getItem("user") || '{"fullname":"","email":"","id":""}'));
     },[]) 
 
     const userLogout = () => {
@@ -27,7 +32,8 @@ export const Navbar = () => {
             id: '',
         })
         setIsLogin(false)
-        localStorage.clear()
+        sessionStorage.clear()
+        navigation("/")
     }
 
     return (
