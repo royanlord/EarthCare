@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Form, Col, Row, Button, Card } from "react-bootstrap";
-import { useParams } from "react-router-dom";
-import { FaTicketAlt, FaInfoCircle } from "react-icons/fa";
+import { Link, useParams } from "react-router-dom";
+import { FaTicketAlt, FaInfoCircle, FaArrowLeft } from "react-icons/fa";
 import withReactContent from "sweetalert2-react-content";
 import Swal from "sweetalert2";
 import "../css/detail-events.css";
@@ -155,12 +155,15 @@ export default function DaftarEvents() {
                 <FaTicketAlt className="ticket__detail" />
                 Gratis
               </p>
+               <Link className="btn btn-dark mb-4 mb-sm-4" to={"http://127.0.0.1:5173/events/2"}>
+                <FaArrowLeft /> Back to detail event
+              </Link>
             </div>
           </Col>
 
           <Col xs={12} lg={5}>
-            <Card className="card__detail p-4 mt-lg-5 mt-sm-2 mb-lg-0 mb-sm-4">
-              <h3 className="text-lg-center text-right mb-4">
+            <Card className="card__detail p-4 mt-lg-5 mt-sm-5 mb-sm-5 mb-5">
+              <h3 className="text-lg-center text-right mb-lg-2">
                 Lengkapi Data Anda
               </h3>
               <div className="border__bottom"></div>
