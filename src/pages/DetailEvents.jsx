@@ -61,7 +61,7 @@ export default function DetailEvents() {
                 src={detailEvents.gambar}
                 alt="ilustrasi detail events"
               />
-              <h3 className="mt-2">Detail Events</h3>
+              <h3 className="mt-3 mb-1">Detail Events</h3>
               <hr color="black" />
               <p>{detailEvents.detail}</p>
               <Link className="btn btn-dark" to={"http://127.0.0.1:5173/"}>
@@ -71,7 +71,7 @@ export default function DetailEvents() {
           </Col>
 
           <Col xs={12} lg={4}>
-            <Card className="bg-white shadow card card__detail p-2 mt-5">
+            <Card className="bg-white shadow card card__detail p-2 mt-lg-5 mt-sm-2">
               <div className="card-body">
                 <h4 className="card-title mb-2">{detailEvents.judul}</h4>
                 <Badge bg="success me-2 mb-3">Lingkungan</Badge>
