@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Badge, Card, Col, Row } from "react-bootstrap";
 import { Link, useParams } from "react-router-dom";
 import {
@@ -12,11 +12,20 @@ import {
 import "../css/detail-events.css";
 import { Loading } from "../components/Loading";
 import { Navbar } from "../components/Navbar";
+import { LoginContext } from "../context/LoginProvider";
 
 export default function DetailEvents() {
   const { id } = useParams();
   const [detailEvents, setDetailEvents] = useState("");
   const [isLoading, setIsLoading] = useState(true);
+
+  const {isLogin, setIsLogin} = useContext(LoginContext)
+
+  if (isLogin) {
+    document.body.style.backgroundColor = "white";
+  } else {
+    document.body.style.backgroundColor = "white";
+  }
 
   useEffect(() => {
     fetchDetailEvents();

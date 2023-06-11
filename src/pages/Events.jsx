@@ -21,6 +21,12 @@ export default function Events() {
   //     });
   // }, []);
 
+  if (isLogin) {
+    document.body.style.backgroundColor = "white";
+  } else {
+    document.body.style.backgroundColor = "white";
+  }
+
   useEffect(() => {
     document.title = "Loading.."
     fetchDataEvents();

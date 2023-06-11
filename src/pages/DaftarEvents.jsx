@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Form, Col, Row, Button, Card } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import { FaTicketAlt, FaInfoCircle } from "react-icons/fa";
@@ -7,6 +7,7 @@ import Swal from "sweetalert2";
 import "../css/detail-events.css";
 import { Loading } from "../components/Loading";
 import { Navbar } from "../components/Navbar";
+import { LoginContext } from "../context/LoginProvider";
 
 export default function DaftarEvents() {
   const { id } = useParams();
@@ -16,6 +17,14 @@ export default function DaftarEvents() {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [address, setAddress] = useState("");
+
+  const {isLogin, setIsLogin} = useContext(LoginContext)
+
+  if (isLogin) {
+    document.body.style.backgroundColor = "white";
+  } else {
+    document.body.style.backgroundColor = "white";
+  }
 
   useEffect(() => {
     fetchDaftarEvents();
