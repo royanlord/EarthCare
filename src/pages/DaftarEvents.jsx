@@ -21,30 +21,7 @@ export default function DaftarEvents() {
     fetchDaftarEvents();
   }, []);
 
-  // const fetchDaftarEvents = async () => {
-  //   try {
-  //     const res = await fetch(
-  //       `https://644dfece4e86e9a4d8ef004c.mockapi.io/detail-events/${id}`
-  //     );
-  //     if (!res.ok) {
-  //       throw new Error("Failed to access data detail events");
-  //     }
-  //     const data = await res.json();
-  //     setDaftarEvents(data);
-  //     setIsLoading(false);
-
-  //     // Check register end
-  //     const registerDate = new Date(data.tanggal);
-  //     const currentDate = new Date();
-  //     if(currentDate > registerDate) {
-  //       setRegisterClose(true);
-  //     }
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
-
-    const fetchDaftarEvents = async () => {
+  const fetchDaftarEvents = async () => {
     try {
       const res = await axios.get(
         `https://644dfece4e86e9a4d8ef004c.mockapi.io/detail-events/${id}`
@@ -55,7 +32,7 @@ export default function DaftarEvents() {
       // Check register end
       const registerDate = new Date(res.data.tanggal);
       const currentDate = new Date();
-      if(currentDate > registerDate) {
+      if (currentDate > registerDate) {
         setRegisterClose(true);
       }
     } catch (error) {
@@ -110,14 +87,14 @@ export default function DaftarEvents() {
       });
       return false;
     }
-    
-    if (phone.length !== 11) {
-      Swal.fire({
-        icon: "error",
-        title: "Nomor Telepon Harus 11 angka",
-      });
-      return false;
-    }
+
+    // if (phone.length === 11) {
+    //   Swal.fire({
+    //     icon: "error",
+    //     title: "Nomor Telepon Harus 11 angka",
+    //   });
+    //   return false;
+    // }
     return true;
   };
 
@@ -166,14 +143,18 @@ export default function DaftarEvents() {
         email,
         phone,
         address,
-      }
-      axios.post("https://6486fcc9beba6297278f9d83.mockapi.io/form-events", data)
-      .then(res => {
-        console.log("Pendaftaran event berhasil dikirim ke server",res.data);
-      })
-      .catch(error => {
-        console.error("Gagal melakukan pengiriman pendaftaran event ke server", error);
-      })
+      };
+      axios
+        .post("https://6486fcc9beba6297278f9d83.mockapi.io/form-events", data)
+        .then((res) => {
+          console.log("Pendaftaran event berhasil dikirim ke server", res.data);
+        })
+        .catch((error) => {
+          console.error(
+            "Gagal melakukan pengiriman pendaftaran event ke server",
+            error
+          );
+        });
     }
   };
 
@@ -197,7 +178,10 @@ export default function DaftarEvents() {
                 <FaTicketAlt className="ticket__detail" />
                 Gratis
               </p>
-               <Link className="btn btn-dark mb-4 mb-sm-4 fw-semibold" to={"http://127.0.0.1:5173/events/2"}>
+              <Link
+                className="btn btn-dark mb-4 mb-sm-4 fw-semibold"
+                to={"http://127.0.0.1:5173/events/2"}
+              >
                 <FaArrowLeft /> Back to detail event
               </Link>
             </div>
@@ -260,14 +244,13 @@ export default function DaftarEvents() {
                 </Form.Group>
 
                 <div className="d-grid">
-                
                   <Button
                     className="btn btn-primary"
                     type="button"
                     onClick={handleDaftarEvent}
                     autoComplete="off"
                     disabled={registerClose}
-                    >
+                  >
                     {registerClose ? "Pendaftaran Ditutup" : "Pesan Sekarang"}
                   </Button>
                 </div>
