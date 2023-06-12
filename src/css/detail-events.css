@@ -59,6 +59,7 @@
   font-weight: 600;
   color: #fff;
   transition: 0.2s ease-out;
+  cursor: pointer;
 }
 
 .detail__events main .card__detail .btn-primary:hover,
@@ -75,6 +76,7 @@
   padding: 8px 12px;
   font-weight: 600;
   margin-bottom: 1.8rem;
+  cursor: pointer;
 }
 
 /* Daftar Events */
@@ -118,6 +120,7 @@
   color: #000;
   font-size: 22px;
   font-weight: 600;
+  cursor: pointer;
 }
 
 .daftar__events main .card__detail .btn-primary {
@@ -125,5 +128,6 @@
   border: #e54201;
   padding: 8px 12px;
   font-weight: 600;
+  cursor: pointer;
   transition: 0.2s ease-out;
 }
