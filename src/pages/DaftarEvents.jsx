@@ -76,13 +76,6 @@ export default function DaftarEvents() {
       });
       return false;
     }
-
-    if(fullname.length < 5) {
-      Swal.fire({
-        icon: "error",
-        title: "Nama minimal 5 karakter",
-      });
-    }
     return true;
   };
 
