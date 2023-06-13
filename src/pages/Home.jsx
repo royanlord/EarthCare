@@ -7,11 +7,13 @@ import { Link } from "react-router-dom";
 import { Navbar } from "../components/Navbar";
 import { useContext, useEffect, useState } from "react";
 import { LoginContext } from "../context/LoginProvider";
+import { ArticlesContext } from "../context/ArticlesProvider";
 
 function Home() {
   const { isLogin, setIsLogin } = useContext(LoginContext);
   const [event, setEvent] = useState([]);
-  const [article, setArticle] = useState([]);
+  // const [article, setArticle] = useState([]);
+  const {articles, setArticles} = useContext(ArticlesContext)
 
   if (isLogin) {
     document.body.style.backgroundColor = "white";
@@ -41,7 +43,7 @@ function Home() {
     fetchEvent();
   }, []);
 
-  let sortedArticles = article.sort(
+  let sortedArticles = articles.sort(
     (a, b) =>
       new Date(b.datePost.split("/").reverse()) -
       new Date(a.datePost.split("/").reverse())
@@ -52,7 +54,7 @@ function Home() {
         const url = "https://644e5c2c4e86e9a4d8f6d279.mockapi.io/article";
         const response = await fetch(url);
         const data = await response.json();
-        setArticle(data.slice(0, 3));
+        setArticles(data.slice(0, 3));
       } catch (error) {
         console.log("error: " + error);
       }
