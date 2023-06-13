@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import Events from "./pages/Events";
 import DetailEvents from "./pages/DetailEvents";
 import DaftarEvents from "./pages/DaftarEvents";
+import NotifikasiEvents from "./pages/NotifikasiEvents";
 import { Article } from "./pages/Article";
 import { DetailArticle } from "./pages/DetailArticle";
 import About from "./pages/About";
@@ -21,6 +22,7 @@ function App() {
           <Route path="/event" element={<Events />} />
           <Route path="/events/:id" element={<DetailEvents />} />
           <Route path="/daftarevents/:id" element={<DaftarEvents />} />
+          <Route path="/notifikasi/:id" element={<NotifikasiEvents />} />
           <Route path="/article" element={<Article />} />
           <Route path="/detailArticle/:id" element={<DetailArticle />} />
           <Route path="/about" element={<About />} />
