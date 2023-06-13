@@ -1,7 +1,8 @@
+import { Link } from "react-router-dom";
 import eventSuccess from "../assets/notify events success.svg";
 import "../css/detail-events.css";
 
-export function NotifikasiEvents() {
+export default function NotifikasiEvents() {
   return (
     <main className="notifikasi container">
       <div className="notifikasi__events d-flex justify-content-center align-items-center flex-column">
@@ -15,9 +16,9 @@ export function NotifikasiEvents() {
           Silahkan tunggu konfirmasi email dari kami dan kami akan
           menginformasikan secepat mungkin!
         </p>
-        <button type="submit" className="btn btn-success mb-5">
+        <Link to={"http://127.0.0.1:5173/"} className="btn btn-success mb-5">
           Back to Home
-        </button>
+        </Link>
       </div>
     </main>
   );
