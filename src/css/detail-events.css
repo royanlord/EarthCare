@@ -142,12 +142,11 @@
 
 /* Notifikasi Events */
 .notifikasi {
-  /* background-color: violet; */
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
   width: 100%;
+  margin-top: 8rem;
 }
 
 main .notifikasi__events h1 {
@@ -167,8 +166,8 @@ main .notifikasi__events p {
 }
 
 main .notifikasi__events img {
-  width: 400px;
-  height: 400px;
+  width: 350px;
+  height: 350px;
   object-fit: cover;
 }
 
@@ -188,6 +187,12 @@ main .notifikasi__events .btn-success:hover {
 }
 
 @media (max-width: 576px) {
+  main .notifikasi {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   main .notifikasi__events img {
     width: 290px;
     height: 290px;
