@@ -87,14 +87,6 @@ export default function DaftarEvents() {
       });
       return false;
     }
-
-    // if (phone.length === 11) {
-    //   Swal.fire({
-    //     icon: "error",
-    //     title: "Nomor Telepon Harus 11 angka",
-    //   });
-    //   return false;
-    // }
     return true;
   };
 
@@ -148,6 +140,7 @@ export default function DaftarEvents() {
         .post("https://6486fcc9beba6297278f9d83.mockapi.io/form-events", data)
         .then((res) => {
           console.log("Pendaftaran event berhasil dikirim ke server", res.data);
+          window.location.href = `/notifikasi/${id}`;
         })
         .catch((error) => {
           console.error(
