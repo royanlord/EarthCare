@@ -7,6 +7,7 @@ import Swal from "sweetalert2";
 import axios from "axios";
 import emailjs from "@emailjs/browser";
 import "../css/detail-events.css";
+// import { env } from "process";
 
 export default function DaftarEvents() {
   const { id } = useParams();
@@ -160,10 +161,10 @@ export default function DaftarEvents() {
 
     emailjs
       .sendForm(
-        import.meta.env.VITE_APP_SERVICE_ID,
-        import.meta.env.VITE_APP_TEMPLATE_ID,
+        "service_a0ds3ae",
+        "template_u397uty",
         form.current,
-        import.meta.env.VITE_APP_YOUR_PUBLIC_KEY
+        "XM4ogZzyYOFFnUQzU"
       )
       .then(
         (result) => {
@@ -174,6 +175,7 @@ export default function DaftarEvents() {
         }
       );
   };
+  // console.log(import.meta.env.VITE_APP_SERVICE_ID);
 
   return (
     <div className="daftar__events d-flex justify-content-center align-items-center">
@@ -216,7 +218,7 @@ export default function DaftarEvents() {
                   <Form.Control
                     type="text"
                     placeholder="Masukkan Nama Lengkap"
-                    name="fullname"
+                    name="user_name"
                     value={fullname}
                     onChange={(e) => setFullname(e.target.value)}
                     autoComplete="off"
@@ -226,9 +228,9 @@ export default function DaftarEvents() {
                 <Form.Group className="mb-3" controlId="formGroupEmail">
                   <Form.Label>Alamat Email</Form.Label>
                   <Form.Control
-                    type="email"
+                    type="user_email"
                     placeholder="Masukkan Alamat Email"
-                    name="email"
+                    name="user_email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     autoComplete="off"
