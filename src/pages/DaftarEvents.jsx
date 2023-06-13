@@ -129,7 +129,7 @@ export default function DaftarEvents() {
   };
 
   // Check Validation
-  const handleDaftarEvent = (e) => {
+  const handleDaftarEvent = async (e) => {
     e.preventDefault();
     if (
       validateFullname() &&
@@ -137,17 +137,6 @@ export default function DaftarEvents() {
       validatePhone() &&
       validateAddress()
     ) {
-      // Success Validation Register Events
-      const MySwal = withReactContent(Swal);
-      MySwal.fire({
-        icon: "success",
-        title: "Anda Berhasil Terdaftar Ke Acara",
-      });
-      setFullname("");
-      setEmail("");
-      setPhone("");
-      setAddress("");
-
       // Send data register event for api
       const data = {
         fullname,
@@ -155,7 +144,42 @@ export default function DaftarEvents() {
         phone,
         address,
       };
-      axios
+
+      await emailjs
+      .send(
+        "service_a0ds3ae",
+        "template_u397uty",
+        {
+          from_name: "EarthCare",
+          user_name: fullname,
+          judul: daftarEvents.judul,
+          user_email: email,
+          reply_to: "-",
+        },
+        "XM4ogZzyYOFFnUQzU"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          console.log("emailjs", result)
+          // Success Validation Register Events
+          const MySwal = withReactContent(Swal);
+          MySwal.fire({
+            icon: "success",
+            title: "Anda Berhasil Terdaftar Ke Acara",
+          });
+          setFullname("");
+          setEmail("");
+          setPhone("");
+          setAddress("");
+        },
+        (error) => {
+          console.log(error.text);
+          console.log("emailjs", error)
+        }
+      );
+      
+      await axios
         .post("https://6486fcc9beba6297278f9d83.mockapi.io/form-events", data)
         .then((res) => {
           console.log("Pendaftaran event berhasil dikirim ke server", res.data);
@@ -171,25 +195,50 @@ export default function DaftarEvents() {
   };
 
   // Send email notification events
-  const sendEmailEvents = (e) => {
+  const sendEmailEvents = async (e) => {
     e.preventDefault();
 
-    emailjs
-      .sendForm(
-        "service_a0ds3ae",
-        "template_u397uty",
-        form.current,
-        "XM4ogZzyYOFFnUQzU"
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      );
+    const data = {
+      from_name: "EarthCare",
+      user_name: fullname,
+      judul: daftarEvents.judul,
+      user_email: email,
+      reply_to: "-",
+    }
+
+    // emailjs.send("service_a0ds3ae","template_u397uty",{
+    //   from_name: "EarthCare",
+    //   user_name: "Royan",
+    //   judul: "hai",
+    //   user_email: "rikowizard123@gmail.com",
+    //   reply_to: "-",
+    //   });
+
+    // await emailjs
+    //   .send(
+    //     "service_a0ds3ae",
+    //     "template_u397uty",
+    //     {
+    //       from_name: "EarthCare",
+    //       user_name: "royan",
+    //       judul: "hai",
+    //       user_email: "rikowizard123@gmail",
+    //       reply_to: "-",
+    //     },
+    //     "XM4ogZzyYOFFnUQzU"
+    //   )
+    //   .then(
+    //     (result) => {
+    //       console.log(result.text);
+    //       console.log("emailjs", result.toString())
+    //     },
+    //     (error) => {
+    //       console.log(error.text);
+    //       console.log("emailjs", error.toString())
+    //     }
+    //   );
   };
+  // console.log(form.current);
   // console.log(import.meta.env.VITE_APP_SERVICE_ID);
 
   return (
