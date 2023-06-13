@@ -228,7 +228,7 @@ export default function DaftarEvents() {
                 <Form.Group className="mb-3" controlId="formGroupEmail">
                   <Form.Label>Alamat Email</Form.Label>
                   <Form.Control
-                    type="user_email"
+                    type="email"
                     placeholder="Masukkan Alamat Email"
                     name="user_email"
                     value={email}
