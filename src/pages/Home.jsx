@@ -385,14 +385,14 @@ function Home() {
 
                 {sortedArticles.map((data, index) => (
                   <div class="row mx-3 mb-4 card-article" key={index}>
-                    <div class="col-lg-6">
+                    <div class="col-lg-6 d-flex align-items-center">
                       <img
                         src={data.image}
                         class="img-fluid me-4 rounded-3"
                         alt={data.titleArticle}
                       />
                     </div>
-                    <div class="col-lg-6 d-flex flex-column justify-content-center">
+                    <div class="col-lg-6 d-flex flex-column justify-content-center align-items-center">
                       <div className="wrapper-text">
                         <h2 class="fw-bold">{data.titleArticle}</h2>
                         <p className="mt-2">{data.description}</p>
@@ -403,9 +403,13 @@ function Home() {
                           </p>
                         </div>
                         <div className="btn-article">
-                          <a href="" className="btn">
-                            Read
-                          </a>
+                          <Link 
+                              to={`/detailArticle/:${data.id}?id=${data.id}`} 
+                              class="btn btn-primary border-0 px-3 py-2" 
+                              id="btnSelengkapnya"
+                          >
+                                Selengkapnya
+                          </Link>
                         </div>
                       </div>
                     </div>
