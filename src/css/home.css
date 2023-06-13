@@ -98,23 +98,23 @@ section hr {
 .wrapper-text {
   background-color: #fff;
   border-radius: 8px;
-  height: 100%;
-  padding: 10px 40px;
+  height: auto;
+  padding: 2rem 2rem;
 }
 
-.btn-article a {
-  width: 40%;
+.btn-article .btn-primary {
+  /* width: 40%; */
   background-color: #e54201 !important;
   color: #fff;
   border: none !important;
 }
 
-.btn-article a:hover {
+.btn-article .btn-primary:hover {
   background-color: #f36b35 !important;
   color: #fff;
 }
 
-.btn-article a:active {
+.btn-article .btn-primary:active {
   background-color: #ce3b01 !important;
   color: #fff;
 }
@@ -171,6 +171,10 @@ section hr {
 @media screen and (max-width: 992px) {
   .wrapper-carousel {
     width: 80%;
+  }
+
+  #btnSelengkapnya {
+    font-size: 12px !important;
   }
 
   .wrapper-article img {
