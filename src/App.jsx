@@ -11,6 +11,7 @@ import About from "./pages/About"
 import {Contact} from "./pages/Contact"
 import {Login} from "./pages/Login"
 import {Register} from "./pages/Register"
+import NotifikasiEvents from "./pages/NotifikasiEvents";
 
 function App() {
 
@@ -19,7 +20,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        {/* <Navbar /> */}
+        <Navbar />
         <Routes>
           {/* <Route path="/login" element={<Login />} /> */}
           <Route path="/" element={<Home />} />
@@ -28,6 +29,7 @@ function App() {
           <Route path="/event" element={<Events />} />
           <Route path="/events/:id" element={<DetailEvents />} />
           <Route path="/daftarevents/:id" element={<DaftarEvents />} />
+          <Route path="/notifikasi/:id" element={<NotifikasiEvents />} />
           <Route path="/article" element={<Article />} />
           <Route path="/detailArticle/:id" element={<DetailArticle />} />
           <Route path="/about" element={<About />} />

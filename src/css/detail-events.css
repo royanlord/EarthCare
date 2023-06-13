@@ -2,6 +2,7 @@
 
 * {
   font-family: "Inter", sans-serif;
+  box-sizing: border-box;
 }
 
 .detail__events {
@@ -62,6 +63,7 @@
   font-weight: 600;
   color: #fff;
   transition: 0.2s ease-out;
+  cursor: pointer;
 }
 
 .detail__events main .card__detail .btn-primary:hover,
@@ -78,6 +80,7 @@
   padding: 8px 12px;
   font-weight: 600;
   margin-bottom: 1.8rem;
+  cursor: pointer;
 }
 
 /* Daftar Events */
@@ -87,6 +90,16 @@
 
 .daftar__events main .card__detail {
   background: #f0f0f0;
+}
+
+.card__detail > h3 {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.card__detail .border__bottom {
+  border: 1px solid rgba(164, 164, 164, 0.2);
+  margin-bottom: 1.5rem;
 }
 
 .daftar__events main h4 {
@@ -115,6 +128,7 @@
   color: #000;
   font-size: 22px;
   font-weight: 600;
+  cursor: pointer;
 }
 
 .daftar__events main .card__detail .btn-primary {
@@ -122,5 +136,94 @@
   border: #e54201;
   padding: 8px 12px;
   font-weight: 600;
+  cursor: pointer;
   transition: 0.2s ease-out;
+}
+
+/* Notifikasi Events */
+.notifikasi {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 8rem;
+}
+
+main .notifikasi__events h1 {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 600;
+  color: #000;
+  width: 80%;
+}
+
+main .notifikasi__events p {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 400;
+  color: #000;
+  width: 50%;
+}
+
+main .notifikasi__events img {
+  width: 350px;
+  height: 350px;
+  object-fit: cover;
+}
+
+main .notifikasi__events .btn-success {
+  background: #ce3b01;
+  border: #ce3b01;
+  padding: 8px 18px;
+  font-weight: 600;
+  color: #fff;
+  transition: 0.2s ease-out;
+  cursor: pointer;
+}
+
+main .notifikasi__events .btn-success:hover {
+  background: #e0612f;
+  border: #e0612f;
+}
+
+@media (max-width: 576px) {
+  main .notifikasi {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  main .notifikasi__events img {
+    width: 290px;
+    height: 290px;
+    object-fit: cover;
+  }
+
+  main .notifikasi__events h1 {
+    text-align: center;
+    font-size: 22px;
+    font-weight: 600;
+    color: #000;
+    width: 80%;
+    margin-top: 1rem;
+  }
+
+  main .notifikasi__events p {
+    text-align: center;
+    font-size: 12px;
+    font-weight: 400;
+    color: #000;
+    width: 80%;
+  }
+
+  main .notifikasi__events .btn-success {
+    background: #ce3b01;
+    border: #ce3b01;
+    padding: 8px 12px;
+    font-weight: 600;
+    color: #fff;
+    transition: 0.2s ease-out;
+    cursor: pointer;
+    margin-bottom: 0;
+  }
 }
