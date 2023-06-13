@@ -9,7 +9,7 @@ export default function NotifikasiEvents() {
         <img
           src={eventSuccess}
           alt="Ilustration events success"
-          className="d-flex img-fluid mt-lg-2 mt-sm-0"
+          className="d-flex img-fluid"
         ></img>
         <h1 className="mt-lg-4 mt-sm-3">Anda Berhasil Mendaftarkan ke Acara</h1>
         <p className="mt-lg-2 mt-sm-1">
