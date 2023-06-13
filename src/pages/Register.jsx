@@ -3,6 +3,8 @@ import authImg from "../assets/auth.gif";
 import { useLayoutEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { FaEye } from "react-icons/fa"
+import { FaEyeSlash } from "react-icons/fa"
 
 export const Register = () => {
   useLayoutEffect(() => {
@@ -12,6 +14,7 @@ export const Register = () => {
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [passwordShown, setPasswordShown] = useState(false)
 
   const handleRegister = () => {
     if (!fullName || !email || !password) {
@@ -37,6 +40,10 @@ export const Register = () => {
         alert("Registrasi gagal");
       });
   };
+
+  const passwordToggle = () => {
+    setPasswordShown(!passwordShown);
+  }
 
   return (
     <>
@@ -74,7 +81,7 @@ export const Register = () => {
               </div>
               <div className="mb-4">
                 <input
-                  type="password"
+                  type={passwordShown ? "text" : "password"}
                   className="form-control form-control-lg"
                   name="passwordAddress"
                   id="passwordAddress"
@@ -82,6 +89,13 @@ export const Register = () => {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                 />
+                <div className="d-flex justify-content-end">
+                  {passwordShown ? (
+                    <FaEyeSlash className="passwordToggle text-muted" onClick={passwordToggle} />
+                  ) : (
+                    <FaEye className="passwordToggle text-muted" onClick={passwordToggle} />
+                  )}
+                </div>
               </div>
               <div className="d-grid">
                 <button

@@ -3,10 +3,13 @@ import authImg from "../assets/auth.gif";
 import { useLayoutEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import { FaEye } from "react-icons/fa"
+import { FaEyeSlash } from "react-icons/fa"
 
 export const Login = () => {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
+  const [passwordShown, setPasswordShown] = useState(false)
   const navigation = useNavigate()
 
   const payload = {
@@ -50,6 +53,10 @@ export const Login = () => {
 
   }
 
+  const passwordToggle = () => {
+    setPasswordShown(!passwordShown);
+  }
+
   return (
     <>
       <div className="container auth mt-5 my-5">
@@ -78,7 +85,7 @@ export const Login = () => {
               </div>
               <div className="mb-4">
                 <input
-                  type="password"
+                  type={passwordShown ? "text" : "password"}
                   className="form-control form-control-lg"
                   name="passwordAddress"
                   id="passwordAddress"
@@ -86,6 +93,13 @@ export const Login = () => {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                 />
+                <div className="d-flex justify-content-end">
+                  {passwordShown ? (
+                    <FaEyeSlash className="passwordToggle text-muted" onClick={passwordToggle} />
+                  ) : (
+                    <FaEye className="passwordToggle text-muted" onClick={passwordToggle} />
+                  )}
+                </div>
               </div>
               <div className="d-grid">
                 <button
