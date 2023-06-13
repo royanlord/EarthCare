@@ -1,10 +1,11 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Form, Col, Row, Button, Card } from "react-bootstrap";
 import { Link, useParams } from "react-router-dom";
 import { FaTicketAlt, FaInfoCircle, FaArrowLeft } from "react-icons/fa";
 import withReactContent from "sweetalert2-react-content";
 import Swal from "sweetalert2";
 import axios from "axios";
+import emailjs from "@emailjs/browser";
 import "../css/detail-events.css";
 
 export default function DaftarEvents() {
@@ -16,6 +17,7 @@ export default function DaftarEvents() {
   const [phone, setPhone] = useState("");
   const [address, setAddress] = useState("");
   const [registerClose, setRegisterClose] = useState(false);
+  const form = useRef();
 
   useEffect(() => {
     fetchDaftarEvents();
@@ -111,7 +113,8 @@ export default function DaftarEvents() {
   };
 
   // Check Validation
-  const handleDaftarEvent = () => {
+  const handleDaftarEvent = (e) => {
+    e.preventDefault();
     if (
       validateFullname() &&
       validateEmail() &&
@@ -151,6 +154,27 @@ export default function DaftarEvents() {
     }
   };
 
+  // Send email notification events
+  const sendEmailEvents = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        import.meta.env.VITE_APP_SERVICE_ID,
+        import.meta.env.VITE_APP_TEMPLATE_ID,
+        form.current,
+        import.meta.env.VITE_APP_YOUR_PUBLIC_KEY
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+  };
+
   return (
     <div className="daftar__events d-flex justify-content-center align-items-center">
       <main className="d-flex container mx-5">
@@ -186,7 +210,7 @@ export default function DaftarEvents() {
                 Lengkapi Data Anda
               </h3>
               <div className="border__bottom"></div>
-              <Form>
+              <Form ref={form} onSubmit={sendEmailEvents}>
                 <Form.Group className="mb-3" controlId="formGroupFullName">
                   <Form.Label>Nama Lengkap</Form.Label>
                   <Form.Control
