@@ -1,10 +1,18 @@
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import { Loading } from "../components/Loading";
 import { Navbar } from "../components/Navbar";
+import { LoginContext } from "../context/LoginProvider";
 
 export const DetailArticle = () => {
     const [article, setArticle] = useState([])
     const [isLoading, setIsLoading] = useState(true);
+    const {isLogin, setIsLogin} = useContext(LoginContext)
+
+    if (isLogin) {
+        document.body.style.backgroundColor = "white";
+    } else {
+        document.body.style.backgroundColor = "white";
+    }
 
     useEffect(() => {
         const loadData = async () => {
@@ -75,6 +83,24 @@ export const DetailArticle = () => {
                                                 </p>
                                                 <p class="text-wrap">
                                                     {data.fourthDetail}
+                                                </p>
+                                                <p class="text-wrap">
+                                                    {data.fifthDetail}
+                                                </p>
+                                                <p class="text-wrap">
+                                                    {data.sixthDetail}
+                                                </p>
+                                                <p class="text-wrap">
+                                                    {data.seventhDetail}
+                                                </p>
+                                                <p class="text-wrap">
+                                                    {data.eighthDetail}
+                                                </p>
+                                                <p class="text-wrap">
+                                                    {data.ninthDetail}
+                                                </p>
+                                                <p class="text-wrap">
+                                                    {data.tenthDetail}
                                                 </p>
                                             </div>
                                         </div> 

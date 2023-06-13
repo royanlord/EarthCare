@@ -1,16 +1,25 @@
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import React from "react"
 import "../css/article.css";
 import { Link } from "react-router-dom"
 import { Loading } from "../components/Loading";
 import notifyNoEvents from "../assets/notify no events.svg";
 import { Navbar } from "../components/Navbar";
+import { LoginContext } from "../context/LoginProvider";
 
 export const Article = () => {
     const [articles, setArticles] = useState([])
     const [search, setSearch] = useState("");
     const [isLoading, setIsLoading] = useState(true);
     // const imgUrl = "../assets/"
+
+    const {isLogin, setIsLogin} = useContext(LoginContext)
+
+    if (isLogin) {
+        document.body.style.backgroundColor = "white";
+    } else {
+        document.body.style.backgroundColor = "white";
+    }
 
     useEffect(() => {
         document.title = "Loading.."

@@ -1,12 +1,41 @@
-import { Link, NavLink } from "react-router-dom"
+import { Link, NavLink, useNavigate } from "react-router-dom"
 import "../css/navbar.css"
 import { Dropdown } from "bootstrap"
 import logoNav from "../assets/logo-nav.png"
 import { FaUser } from "react-icons/fa"
-import { useState } from "react"
+import { useContext, useEffect, useState } from "react"
+import { LoginContext } from "../context/LoginProvider"
+import { UserContext } from "../context/UserProvider"
 
 export const Navbar = () => {
-    const [isLogin, setIsLogin] = useState(true)
+    const {isLogin, setIsLogin} = useContext(LoginContext)
+    const {user, setUser} = useContext(UserContext)
+    const navigation = useNavigate()
+    // const [isLogin, setIsLogin] = useState(false)
+    // const [user, setUser] = useState({
+    //     fullName: "",
+    //     email: "",
+    //     id: "",
+    // })
+    useEffect(() => {
+        setIsLogin(sessionStorage.getItem("MyToken") !== null);
+        // setUser(JSON.parse(localStorage.getItem("user")||"{'fullname':'','email':'','id':''}"))
+        // console.log(user);
+        // setIsLogin(localStorage.getItem("MyToken") != "")
+        setUser(JSON.parse(sessionStorage.getItem("user") || '{"fullname":"","email":"","id":""}'));
+    },[]) 
+
+    const userLogout = () => {
+        setUser({
+            fullName: '',
+            email: '',
+            id: '',
+        })
+        setIsLogin(false)
+        sessionStorage.clear()
+        navigation("/")
+    }
+
     return (
         <>
             <header>
@@ -68,15 +97,15 @@ export const Navbar = () => {
                                                 <FaUser className="fa-solid fa-user" style={{color: "#ffffff"}} />
                                             </div>
                                             <div className="my-auto text-white" id="profileUserNavbar">
-                                                Royan Farid Fathurrahman
+                                                {user.fullName}
                                             </div>
                                         </Link>
                                         <ul className="dropdown-menu animate slideIn dropdown-menu-dark ms-lg-5 mx-5">
                                             <li>
-                                                <Link to="/" className="dropdown-item text-lg-start text-center" id="logout" href="index.html"
+                                                <button className="dropdown-item text-lg-start text-center" id="logout" href="index.html" onClick={() => userLogout()}
                                             >
                                                     Logout
-                                                </Link>
+                                                </button>
                                             </li>
                                         </ul>
                                     </li>

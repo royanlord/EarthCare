@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useState, useRef } from "react";
 import { Form, Col, Row, Button, Card } from "react-bootstrap";
 import { Link, useParams } from "react-router-dom";
 import { FaTicketAlt, FaInfoCircle, FaArrowLeft } from "react-icons/fa";
@@ -7,6 +7,9 @@ import Swal from "sweetalert2";
 import axios from "axios";
 import emailjs from "@emailjs/browser";
 import "../css/detail-events.css";
+import { Loading } from "../components/Loading";
+import { Navbar } from "../components/Navbar";
+import { LoginContext } from "../context/LoginProvider";
 // import { env } from "process";
 
 export default function DaftarEvents() {
@@ -20,7 +23,16 @@ export default function DaftarEvents() {
   const [registerClose, setRegisterClose] = useState(false);
   const form = useRef();
 
+  const {isLogin, setIsLogin} = useContext(LoginContext)
+
+  if (isLogin) {
+    document.body.style.backgroundColor = "white";
+  } else {
+    document.body.style.backgroundColor = "white";
+  }
+
   useEffect(() => {
+    document.title = "Loading.."
     fetchDaftarEvents();
   }, []);
 
@@ -30,7 +42,10 @@ export default function DaftarEvents() {
         `https://644dfece4e86e9a4d8ef004c.mockapi.io/detail-events/${id}`
       );
       setDaftarEvents(res.data);
-      setIsLoading(false);
+      
+      setTimeout(() => {
+        setIsLoading(false);
+      }, 2000)
 
       // Check register end
       const registerDate = new Date(res.data.tanggal);
@@ -43,9 +58,9 @@ export default function DaftarEvents() {
     }
   };
 
-  if (isLoading) {
-    return <p className="loading">Loading....</p>;
-  }
+  // if (isLoading) {
+  //   return <p className="loading">Loading....</p>;
+  // }
 
   // Validation fullname
   const validateFullname = () => {
@@ -178,106 +193,114 @@ export default function DaftarEvents() {
   // console.log(import.meta.env.VITE_APP_SERVICE_ID);
 
   return (
-    <div className="daftar__events d-flex justify-content-center align-items-center">
-      <main className="d-flex container mx-5">
-        <Row>
-          <Col xs={12} lg={7}>
-            <div className="card__image">
-              <img
-                className="img-fluid mt-5"
-                src={daftarEvents.gambar}
-                alt="ilustrasi detail events"
-              />
-              <h4 className="mt-4">{daftarEvents.judul}</h4>
-              <p className="text__date mt-2">
-                <FaInfoCircle className="mb-1 me-2" /> Batas pendaftaran sampai
-                tanggal {daftarEvents.tanggal}
-              </p>
-              <p className="mt-2">
-                <FaTicketAlt className="ticket__detail" />
-                Gratis
-              </p>
-              <Link
-                className="btn btn-dark mb-4 mb-sm-4 fw-semibold"
-                to={"http://127.0.0.1:5173/events/2"}
-              >
-                <FaArrowLeft /> Back to detail event
-              </Link>
-            </div>
-          </Col>
-
-          <Col xs={12} lg={5}>
-            <Card className="card__detail p-4 mt-lg-5 mt-sm-5 mb-sm-5 mb-5">
-              <h3 className="text-lg-center text-right mb-lg-2">
-                Lengkapi Data Anda
-              </h3>
-              <div className="border__bottom"></div>
-              <Form ref={form} onSubmit={sendEmailEvents}>
-                <Form.Group className="mb-3" controlId="formGroupFullName">
-                  <Form.Label>Nama Lengkap</Form.Label>
-                  <Form.Control
-                    type="text"
-                    placeholder="Masukkan Nama Lengkap"
-                    name="user_name"
-                    value={fullname}
-                    onChange={(e) => setFullname(e.target.value)}
-                    autoComplete="off"
-                    disabled={registerClose}
+    <>
+      {document.title = "Registrasi Event"}
+      <Navbar />
+      {isLoading ? (
+        <Loading />
+      ) : (
+        <div className="daftar__events d-flex justify-content-center align-items-center">
+          <main className="d-flex container mx-5">
+            <Row>
+              <Col xs={12} lg={7}>
+                <div className="card__image">
+                  <img
+                    className="img-fluid mt-5"
+                    src={daftarEvents.gambar}
+                    alt="ilustrasi detail events"
                   />
-                </Form.Group>
-                <Form.Group className="mb-3" controlId="formGroupEmail">
-                  <Form.Label>Alamat Email</Form.Label>
-                  <Form.Control
-                    type="email"
-                    placeholder="Masukkan Alamat Email"
-                    name="user_email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    autoComplete="off"
-                    disabled={registerClose}
-                  />
-                </Form.Group>
-                <Form.Group className="mb-3" controlId="formGroupPhone">
-                  <Form.Label>Nomor Ponsel</Form.Label>
-                  <Form.Control
-                    type="number"
-                    placeholder="Masukkan Nomor Ponsel"
-                    name="phone"
-                    value={phone}
-                    onChange={(e) => setPhone(e.target.value)}
-                    autoComplete="off"
-                    disabled={registerClose}
-                  />
-                </Form.Group>
-                <Form.Group className="mb-3" controlId="formGroupAddress">
-                  <Form.Label>Alamat</Form.Label>
-                  <Form.Control
-                    as="textarea"
-                    placeholder="Masukkan Alamat"
-                    name="address"
-                    value={address}
-                    onChange={(e) => setAddress(e.target.value)}
-                    autoComplete="off"
-                    disabled={registerClose}
-                  />
-                </Form.Group>
-
-                <div className="d-grid">
-                  <Button
-                    className="btn btn-primary"
-                    type="button"
-                    onClick={handleDaftarEvent}
-                    autoComplete="off"
-                    disabled={registerClose}
+                  <h4 className="mt-4">{daftarEvents.judul}</h4>
+                  <p className="text__date mt-2">
+                    <FaInfoCircle className="mb-1 me-2" /> Batas pendaftaran sampai
+                    tanggal {daftarEvents.tanggal}
+                  </p>
+                  <p className="mt-2">
+                    <FaTicketAlt className="ticket__detail" />
+                    Gratis
+                  </p>
+                  <Link
+                    className="btn btn-dark mb-4 mb-sm-4 fw-semibold"
+                    to={"http://127.0.0.1:5173/events/2"}
                   >
-                    {registerClose ? "Pendaftaran Ditutup" : "Pesan Sekarang"}
-                  </Button>
+                    <FaArrowLeft /> Back to detail event
+                  </Link>
                 </div>
-              </Form>
-            </Card>
-          </Col>
-        </Row>
-      </main>
-    </div>
+              </Col>
+
+              <Col xs={12} lg={5}>
+                <Card className="card__detail p-4 mt-lg-5 mt-sm-5 mb-sm-5 mb-5">
+                  <h3 className="text-lg-center text-right mb-lg-2">
+                    Lengkapi Data Anda
+                  </h3>
+                  <div className="border__bottom"></div>
+                  <Form ref={form} onSubmit={sendEmailEvents}>
+                    <Form.Group className="mb-3" controlId="formGroupFullName">
+                      <Form.Label>Nama Lengkap</Form.Label>
+                      <Form.Control
+                        type="text"
+                        placeholder="Masukkan Nama Lengkap"
+                        name="user_name"
+                        value={fullname}
+                        onChange={(e) => setFullname(e.target.value)}
+                        autoComplete="off"
+                        disabled={registerClose}
+                      />
+                    </Form.Group>
+                    <Form.Group className="mb-3" controlId="formGroupEmail">
+                      <Form.Label>Alamat Email</Form.Label>
+                      <Form.Control
+                        type="email"
+                        placeholder="Masukkan Alamat Email"
+                        name="user_email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        autoComplete="off"
+                        disabled={registerClose}
+                      />
+                    </Form.Group>
+                    <Form.Group className="mb-3" controlId="formGroupPhone">
+                      <Form.Label>Nomor Ponsel</Form.Label>
+                      <Form.Control
+                        type="number"
+                        placeholder="Masukkan Nomor Ponsel"
+                        name="phone"
+                        value={phone}
+                        onChange={(e) => setPhone(e.target.value)}
+                        autoComplete="off"
+                        disabled={registerClose}
+                      />
+                    </Form.Group>
+                    <Form.Group className="mb-3" controlId="formGroupAddress">
+                      <Form.Label>Alamat</Form.Label>
+                      <Form.Control
+                        as="textarea"
+                        placeholder="Masukkan Alamat"
+                        name="address"
+                        value={address}
+                        onChange={(e) => setAddress(e.target.value)}
+                        autoComplete="off"
+                        disabled={registerClose}
+                      />
+                    </Form.Group>
+
+                    <div className="d-grid">
+                      <Button
+                        className="btn btn-primary"
+                        type="button"
+                        onClick={handleDaftarEvent}
+                        autoComplete="off"
+                        disabled={registerClose}
+                      >
+                        {registerClose ? "Pendaftaran Ditutup" : "Pesan Sekarang"}
+                      </Button>
+                    </div>
+                  </Form>
+                </Card>
+              </Col>
+            </Row>
+          </main>
+        </div>
+      )}
+    </>
   );
 }

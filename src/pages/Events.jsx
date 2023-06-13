@@ -1,17 +1,18 @@
 import { Card, Form, Col, Row, InputGroup } from "react-bootstrap";
 import { FaCalendarAlt, FaMapMarker } from "react-icons/fa";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useLayoutEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Loading } from "../components/Loading";
 import notifyNoEvents from "../assets/notify no events.svg";
 import "../css/events.css";
 import { Navbar } from "../components/Navbar";
+import { LoginContext } from "../context/LoginProvider";
 
 export default function Events() {
   const [events, setEvents] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [search, setSearch] = useState("");
-
+  const {isLogin, setIsLogin} = useContext(LoginContext)
   // useEffect(() => {
   //   fetch("https://644dfece4e86e9a4d8ef004c.mockapi.io/events")
   //     .then((res) => res.json())
@@ -19,6 +20,12 @@ export default function Events() {
   //       setEvents(result);
   //     });
   // }, []);
+
+  if (isLogin) {
+    document.body.style.backgroundColor = "white";
+  } else {
+    document.body.style.backgroundColor = "white";
+  }
 
   useEffect(() => {
     document.title = "Loading.."
@@ -121,15 +128,15 @@ export default function Events() {
                           <p>{data.lokasi}</p>
                         </div>
                         <div className="d-grid btn__join">
+                          {isLogin ? (
                             <Link to={`/events/${data.id}`} className="btn btn-primary">
                               Join Now
                             </Link>
-                          {/* {isLogin ? (
                           ) : (
                             <Link to="/login" className="btn btn-primary">
                               Join Now
                             </Link>
-                          )} */}
+                          )}
                         </div>
                       </Card.Body>
                     </Card>

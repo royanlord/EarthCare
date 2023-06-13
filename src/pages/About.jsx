@@ -1,7 +1,17 @@
+import { useContext } from "react";
 import { Navbar } from "../components/Navbar";
 import "../css/about.css";
+import { LoginContext } from "../context/LoginProvider";
 
 function About() {
+  const {isLogin, setIsLogin} = useContext(LoginContext)
+
+  if (isLogin) {
+    document.body.style.backgroundColor = "white";
+  } else {
+    document.body.style.backgroundColor = "white";
+  }
+
   return (
     <>
       <Navbar />

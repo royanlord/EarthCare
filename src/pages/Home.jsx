@@ -5,8 +5,18 @@ import "../css/home.css";
 import { ContactForm } from "../components/ContactForm"
 import { Link } from "react-router-dom";
 import { Navbar } from "../components/Navbar";
+import { useContext } from "react";
+import { LoginContext } from "../context/LoginProvider";
 
 function Home() {
+  const {isLogin, setIsLogin} = useContext(LoginContext)
+
+  if (isLogin) {
+    document.body.style.backgroundColor = "white";
+  } else {
+    document.body.style.backgroundColor = "white";
+  }
+
   return (
     <>
       <Navbar />
