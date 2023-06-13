@@ -39,6 +39,13 @@
     letter-spacing: 1px;
     transition: 0.3s ease-out;
   }
+
+  .passwordToggle {
+    font-size: 1.2rem;
+    margin-top: -2.12rem;
+    margin-right: 1.2rem;
+    cursor: pointer;
+  }
   
   div > .btn-success:hover {
     background: #115810;
@@ -74,6 +81,13 @@
     }
     .auth img {
       margin-top: 3rem;
+    }
+
+    .passwordToggle {
+      font-size: 1.1rem;
+      margin-top: -1.9rem;
+      margin-right: 1.2rem;
+      cursor: pointer;
     }
   }
   
