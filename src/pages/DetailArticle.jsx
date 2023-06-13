@@ -84,6 +84,24 @@ export const DetailArticle = () => {
                                                 <p class="text-wrap">
                                                     {data.fourthDetail}
                                                 </p>
+                                                <p class="text-wrap">
+                                                    {data.fifthDetail}
+                                                </p>
+                                                <p class="text-wrap">
+                                                    {data.sixthDetail}
+                                                </p>
+                                                <p class="text-wrap">
+                                                    {data.seventhDetail}
+                                                </p>
+                                                <p class="text-wrap">
+                                                    {data.eighthDetail}
+                                                </p>
+                                                <p class="text-wrap">
+                                                    {data.ninthDetail}
+                                                </p>
+                                                <p class="text-wrap">
+                                                    {data.tenthDetail}
+                                                </p>
                                             </div>
                                         </div> 
                                         // data.id == id ? (
