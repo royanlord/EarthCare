@@ -5,17 +5,63 @@ import "../css/home.css";
 import { ContactForm } from "../components/ContactForm"
 import { Link } from "react-router-dom";
 import { Navbar } from "../components/Navbar";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { LoginContext } from "../context/LoginProvider";
+import { ArticlesContext } from "../context/ArticlesProvider";
 
 function Home() {
-  const {isLogin, setIsLogin} = useContext(LoginContext)
+  const { isLogin, setIsLogin } = useContext(LoginContext);
+  const [event, setEvent] = useState([]);
+  // const [article, setArticle] = useState([]);
+  const {articles, setArticles} = useContext(ArticlesContext)
 
   if (isLogin) {
     document.body.style.backgroundColor = "white";
   } else {
     document.body.style.backgroundColor = "white";
   }
+
+  const fetchEvent = () => {
+    fetch("https://644dfece4e86e9a4d8ef004c.mockapi.io/events")
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        setEvent(data.slice(0, 3));
+      });
+  };
+
+  const sortedEvents = event.sort((a, b) =>
+    b.tanggal
+      .split("/")
+      .reverse()
+      .join()
+      .localeCompare(a.tanggal.split("/").reverse().join())
+  );
+
+  useEffect(() => {
+    fetchEvent();
+  }, []);
+
+  let sortedArticles = articles.sort(
+    (a, b) =>
+      new Date(b.datePost.split("/").reverse()) -
+      new Date(a.datePost.split("/").reverse())
+  );
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const url = "https://644e5c2c4e86e9a4d8f6d279.mockapi.io/article";
+        const response = await fetch(url);
+        const data = await response.json();
+        setArticles(data.slice(0, 3));
+      } catch (error) {
+        console.log("error: " + error);
+      }
+    };
+    fetchData();
+  }, []);
+
 
   return (
     <>
@@ -222,9 +268,9 @@ function Home() {
         </Carousel>
 
         <section>
-          <div class="container mt-5">
-            <h2 class="text-center fw-bold">Event Terbaru, Yuk Ikutan!</h2>
-            <p class="text-center text-black-50">
+          <div className="container mt-5">
+            <h2 className="text-center fw-bold">Event Terbaru, Yuk Ikutan!</h2>
+            <p className="text-center text-black-50">
               Daftarkan diri anda untuk mendapatkan pengalaman baru
             </p>
           </div>
@@ -232,51 +278,64 @@ function Home() {
           <hr />
 
           <div className="d-flex justify-content-center gap-4 flex-wrap">
-            <Card style={{ width: "22rem" }} className="card-event">
-              <Card.Img variant="top" src="../src/assets/event-image1.svg" />
-              <Card.Body>
-                <Card.Title className="title-card">
-                  Strategi Pengelolaan Sungai
-                </Card.Title>
-                <Card.Text>
-                  <p className="text-black-50 card-text-event">ecoedu</p>
-                  <div class="date mb-2">
-                    <i class="mt-1 me-2">
-                      <FaCalendarAlt />
-                    </i>
-                    <p class="d-inline text-muted ms-1">14 Mei 2023</p>
-                  </div>
-                  <div class="location">
-                    <i class="mt-1 me-2">
-                      <FaMapMarker />
-                    </i>
-                    <p class="d-inline text-muted ms-1">Online, zoom</p>
-                  </div>
-                </Card.Text>
-                <Button variant="primary" className="btn-event w-100">
-                  Join Now
-                </Button>
-              </Card.Body>
-            </Card>
-            <Card style={{ width: "22rem" }} className="card-event">
+            {sortedEvents.map((data, index) => (
+              <Card
+                style={{ width: "22rem" }}
+                className="card-event"
+                key={index}
+              >
+                <Card.Img variant="top" src={data.gambar} />
+                <Card.Body>
+                  <Card.Title className="title-card">{data.judul}</Card.Title>
+                  <Card.Text>
+                    <p className="card-text-event">{data.pembuat}</p>
+                    <div className="date mb-2">
+                      <i className="mt-1 me-2">
+                        <FaCalendarAlt />
+                      </i>
+                      <p className="d-inline ms-1">{data.tanggal}</p>
+                    </div>
+                    <div className="location">
+                      <i className="mt-1 me-2">
+                        <FaMapMarker />
+                      </i>
+                      <p className="d-inline ms-1">{data.lokasi}</p>
+                    </div>
+                  </Card.Text>
+                  {isLogin ? (
+                    <Link to={`/events/${data.id}`} className="btn btn-primary btn-event">
+                      Join Now
+                    </Link>
+                  ) : (
+                    <Link to="/login" className="btn btn-primary btn-event">
+                      Join Now
+                    </Link>
+                  )}
+                  {/* <Button variant="primary" className="btn-event w-100">
+                    Join Now
+                  </Button> */}
+                </Card.Body>
+              </Card>
+            ))}
+            {/* <Card style={{ width: "22rem" }} className="card-event">
               <Card.Img variant="top" src="../src/assets/event-image2.svg" />
               <Card.Body>
                 <Card.Title className="title-card">
                   Gerakan Sedekah Sampah
                 </Card.Title>
                 <Card.Text>
-                  <p className="text-black-50 card-text-event">tkn_psl</p>
-                  <div class="date mb-2">
-                    <i class="mt-1 me-2">
+                  <p className="card-text-event">tkn_psl</p>
+                  <div className="date mb-2">
+                    <i className="mt-1 me-2">
                       <FaCalendarAlt />
                     </i>
-                    <p class="d-inline text-muted ms-1">8 April 2023</p>
+                    <p className="d-inline ms-1">8 April 2023</p>
                   </div>
-                  <div class="location">
-                    <i class="mt-1 me-2">
+                  <div className="location">
+                    <i className="mt-1 me-2">
                       <FaMapMarker />
                     </i>
-                    <p class="d-inline text-muted ms-1">
+                    <p className="d-inline ms-1">
                       Halaman Masjid Raya Bintaro Jaya
                     </p>
                   </div>
@@ -293,160 +352,88 @@ function Home() {
                   Perhitungan Gas Rumah Kaca
                 </Card.Title>
                 <Card.Text>
-                  <p className="text-black-50 card-text-event">ecoedu</p>
-                  <div class="date mb-2">
-                    <i class="mt-1 me-2">
+                  <p className="card-text-event">ecoedu</p>
+                  <div className="date mb-2">
+                    <i className="mt-1 me-2">
                       <FaCalendarAlt />
                     </i>
-                    <p class="d-inline text-muted ms-1">16 Maret 2023</p>
+                    <p className="d-inline ms-1">16 Maret 2023</p>
                   </div>
-                  <div class="location">
-                    <i class="mt-1 me-2">
+                  <div className="location">
+                    <i className="mt-1 me-2">
                       <FaMapMarker />
                     </i>
-                    <p class="d-inline text-muted ms-1">Online, zoom</p>
+                    <p className="d-inline ms-1">Online, zoom</p>
                   </div>
                 </Card.Text>
                 <Button variant="primary" className="btn-event w-100">
                   Join Now
                 </Button>
               </Card.Body>
-            </Card>
+            </Card> */}
           </div>
           <div className="wrapper-showall-event">
-            <Link
-              to="/event"
+            <button
               type="button"
-              class="btn my-5 btn-showall-event"
+              className="btn my-5 btn-showall-event"
               onclick="window.location.href='event.html'"
             >
-                Show All Events
-            </Link>
+              Show All Events
+            </button>
           </div>
         </section>
 
         <section>
-          <div class="fitur-article mt-3">
-            <div class="wrapper-article">
-              <div class="container">
-                <h2 class="text-center text-white fw-bold">
+          <div className="fitur-article mt-3">
+            <div className="wrapper-article">
+              <div className="container-fluid">
+                <h2 className="text-center text-white fw-bold">
                   Rekomendasi Artikel
                 </h2>
-                <p class="text-center text-white-50 mb-5">
+                <p className="text-center text-white-50 mb-5">
                   Beberapa rekomendasi artikel dari kami yang mungkin anda suka
                 </p>
-                <div class="row">
-                  <div class="col-lg-6">
-                    <div class="card mb-3 left-article border-0">
+
+                {sortedArticles.map((data, index) => (
+                  <div class="row mx-3 mb-4 card-article" key={index}>
+                    <div class="col-lg-6 d-flex align-items-center">
                       <img
-                        src="../src/assets/article-image1.svg"
-                        class="card-img-top"
-                        alt="kebakaran hutan"
+                        src={data.image}
+                        class="img-fluid me-4 rounded-3"
+                        alt={data.titleArticle}
                       />
-                      <div class="card-body">
-                        <h5 class="card-title">
-                          Penyebab Terjadinya Kebakaran Hutan dan Cara
-                          Mencegahnya
-                        </h5>
-                        <p class="card-text">
-                          Kebakaran hutan seringkali terjadi secara alami di
-                          daerah vegetasi kering. Kebakaran hutan disebut
-                          sebagai kebakaran semak atau kebakaran gurun
-                          tergantung pada area di mana hal ini terjadi.
-                          Kebakaran hutan ialah terbakarnya sesuatu yang
-                          menimbulkan bahaya atau mendatangkan bencana...
-                        </p>
-                        <div class="text-center btn-article">
-                          <a href="" class="btn w-50">
-                            Read
-                          </a>
+                    </div>
+                    <div class="col-lg-6 d-flex flex-column justify-content-center align-items-center">
+                      <div className="wrapper-text">
+                        <h2 class="fw-bold">{data.titleArticle}</h2>
+                        <p className="mt-2">{data.description}</p>
+                        <div class="date-article mb-4">
+                          <i class="fa-solid fa-calendar-days text-muted fa-lg"></i>
+                          <p class="d-inline text-black-50 ms-1">
+                            {data.datePost}
+                          </p>
+                        </div>
+                        <div className="btn-article">
+                          <Link 
+                              to={`/detailArticle/:${data.id}?id=${data.id}`} 
+                              class="btn btn-primary border-0 px-3 py-2" 
+                              id="btnSelengkapnya"
+                          >
+                                Selengkapnya
+                          </Link>
                         </div>
                       </div>
                     </div>
                   </div>
-                  <div class="col-lg">
-                    <div class="row">
-                      <div class="col mid-article">
-                        <div class="card mb-3 right-article border-0">
-                          <div class="row g-0">
-                            <div class="col-md-4">
-                              <img
-                                src="../src/assets/article-image2.svg"
-                                class="img-fluid rounded-start"
-                                alt="sampah menyebabkan banjir"
-                              />
-                            </div>
-                            <div class="col-md-8">
-                              <div class="card-body">
-                                <h5 class="card-title">
-                                  Menumpuknya Sampah di Sungai Menjadi Penyebab
-                                  Utama Banjir
-                                </h5>
-                                <p class="card-text">
-                                  Bencana banjir yang terjadi disebabkan oleh
-                                  curah hujan yang tinggi dan ulah warga
-                                  setempat yang membuang sampah ke sungai
-                                  sehingga menyebabkan airnya sungai meluap ke
-                                  pemukiman warga. Membuang sampah sembarangan
-                                  di sungai memberikan dampak...
-                                </p>
-                                <div class="text-center btn-article">
-                                  <a href="" class="btn w-50">
-                                    Read
-                                  </a>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-lg">
-                        <div class="card mb-3 right-article border-0">
-                          <div class="row g-0">
-                            <div class="col-md-4">
-                              <img
-                                src="../src/assets/article-image3.svg"
-                                class="img-fluid rounded-start"
-                                alt="polusi udara dari pabrik"
-                              />
-                            </div>
-                            <div class="col-md-8">
-                              <div class="card-body">
-                                <h5 class="card-title">
-                                  Polusi Udara Serta Dampaknya Bagi Manusia dan
-                                  Lingkungan
-                                </h5>
-                                <p class="card-text">
-                                  Polusi udara menjadi bahaya yang mengancam
-                                  kesehatan manusia. Kita bisa dengan mudah
-                                  mengetahui adanya polusi dengan udara yang
-                                  berwarna atau berbau. Polusi udara banyak
-                                  ditemukan di daerah perkotaan. Menurut data...
-                                </p>
-                                <div class="text-center btn-article">
-                                  <a href="" class="btn w-50">
-                                    Read
-                                  </a>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="text-center my-5">
-                  <Link
-                    to="/article"
+                ))}
+                <div className="text-center my-5">
+                  <Button
                     type="button"
                     className="btn btn-showall-article"
                     onclick="window.location.href='event.html'"
                   >
                     Show All Articles
-                  </Link>
+                  </Button>
                 </div>
               </div>
             </div>

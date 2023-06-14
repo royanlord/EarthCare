@@ -6,9 +6,11 @@ import { Loading } from "../components/Loading";
 import notifyNoEvents from "../assets/notify no events.svg";
 import { Navbar } from "../components/Navbar";
 import { LoginContext } from "../context/LoginProvider";
+import { ArticlesContext } from "../context/ArticlesProvider";
 
 export const Article = () => {
-    const [articles, setArticles] = useState([])
+    // const [articles, setArticles] = useState([])
+    const {articles, setArticles} = useContext(ArticlesContext)
     const [search, setSearch] = useState("");
     const [isLoading, setIsLoading] = useState(true);
     // const imgUrl = "../assets/"
