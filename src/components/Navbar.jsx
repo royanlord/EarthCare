@@ -71,7 +71,7 @@ export const Navbar = () => {
                                             <Link className="dropdown-item" to="/event">Event</Link>
                                         </li>
                                         <li>
-                                            <hr className="dropdown-divider" />
+                                            <hr className="dropdown-divider" style={{backgroundColor: "white"}} />
                                         </li>
                                         <li>
                                             <Link className="dropdown-item" to="/article">Article</Link>
@@ -102,10 +102,26 @@ export const Navbar = () => {
                                         </Link>
                                         <ul className="dropdown-menu animate slideIn dropdown-menu-dark ms-lg-5 mx-5">
                                             <li>
-                                                <button className="dropdown-item text-lg-start text-center" id="logout" href="index.html" onClick={() => userLogout()}
-                                            >
-                                                    Logout
+                                                <button 
+                                                    className="dropdown-item text-white text-lg-start text-center btn-showname"
+                                                    disabled
+                                                >
+                                                    Hai, <span className="text-wrap">{user.fullName}</span>
                                                 </button>
+                                            </li>
+                                            <li>
+                                                <hr className="dropdown-divider divider-profile" style={{backgroundColor: "white"}} />
+                                            </li>
+                                            <li>
+                                                <div className="container container-logout">
+                                                    <button 
+                                                        className="btn btn-danger btn-logout text-center" 
+                                                        id="logout"  
+                                                        onClick={() => userLogout()}
+                                                    >
+                                                        Logout
+                                                    </button>
+                                                </div>
                                             </li>
                                         </ul>
                                     </li>
