@@ -1,0 +1,21 @@
+/* user profile display after login */
+#user-pict {
+    background-color: #e54201;
+    padding: 0.8rem 0.8rem;
+  }
+  
+  #user-pict .fa-user {
+    font-size: 1.6rem !important;
+  }
+
+  #profile .btn-primary {
+    background-color: #e54201;
+  }
+
+  #profile .btn:hover {
+    background-color: #f36b35 !important;
+  }
+
+  #profile .btn:active {
+    background-color: #ce3b01 !important;
+  }
