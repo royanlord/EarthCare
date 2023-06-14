@@ -302,9 +302,18 @@ function Home() {
                       <p className="d-inline ms-1">{data.lokasi}</p>
                     </div>
                   </Card.Text>
-                  <Button variant="primary" className="btn-event w-100">
+                  {isLogin ? (
+                    <Link to={`/events/${data.id}`} className="btn btn-primary btn-event">
+                      Join Now
+                    </Link>
+                  ) : (
+                    <Link to="/login" className="btn btn-primary btn-event">
+                      Join Now
+                    </Link>
+                  )}
+                  {/* <Button variant="primary" className="btn-event w-100">
                     Join Now
-                  </Button>
+                  </Button> */}
                 </Card.Body>
               </Card>
             ))}
