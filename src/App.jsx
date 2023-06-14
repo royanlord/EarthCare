@@ -12,6 +12,7 @@ import {Contact} from "./pages/Contact"
 import {Login} from "./pages/Login"
 import {Register} from "./pages/Register"
 import NotifikasiEvents from "./pages/NotifikasiEvents";
+import { Profile } from "./pages/Profile";
 
 function App() {
 
@@ -34,6 +35,7 @@ function App() {
           <Route path="/detailArticle/:id" element={<DetailArticle />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/profile" element={<Profile />} />
         </Routes>
       </BrowserRouter>
       {/* <h1>Hello, React JS</h1> */}
