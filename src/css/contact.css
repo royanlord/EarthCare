@@ -1,0 +1,66 @@
+#jumbotron-contact {
+    margin-top: 4.4rem;
+  }
+  
+  #jumbotron-contact > div {
+    height: 75vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url("../assets/contact-jumbotron.svg") !important;
+    background-size: cover;
+  }
+
+  #content-form {
+    margin-bottom: 10vh;
+  }
+  
+  #content-form > div {
+    width: 85vw;
+    height: auto;
+    background-color: #115810 !important;
+  }
+  
+  #content-form #hear {
+    color: rgba(243, 107, 53, 1);
+  }
+  
+  #content-form .btn-primary {
+    background-color: #e54201;
+  }
+  
+  #content-form .btn:hover {
+    background-color: #f36b35 !important;
+  }
+  
+  #content-form .btn:active {
+    background-color: #ce3b01 !important;
+  }
+  
+  #invalid-email,
+  #invalid-fullname,
+  #invalid-message {
+    font-size: 0.8rem;
+  }
+
+  input#emailContact, input#fullnameContact, textarea#messageContact {
+    border: solid 1.6px transparent !important;
+  }
+
+  input#emailContact:focus, input#fullnameContact:focus, textarea#messageContact:focus {
+    border: solid 1.6px #e54201 !important;
+  }
+
+  @media screen and (max-width: 992px) {
+    #content-form > .rounded-5 {
+        border-radius: 20px !important;
+      }
+    
+      #content-form form {
+        margin: 0 15px;
+      }
+    
+      #content-form input,
+      textarea,
+      button {
+        font-size: 15px !important;
+      }
+  }
