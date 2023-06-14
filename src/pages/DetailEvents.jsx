@@ -6,7 +6,7 @@ import {
   FaMapMarker,
   FaClock,
   FaTicketAlt,
-  FaLink,
+  FaUserAlt,
   FaArrowLeft,
 } from "react-icons/fa";
 import "../css/detail-events.css";
@@ -19,7 +19,7 @@ export default function DetailEvents() {
   const [detailEvents, setDetailEvents] = useState("");
   const [isLoading, setIsLoading] = useState(true);
 
-  const {isLogin, setIsLogin} = useContext(LoginContext)
+  const { isLogin, setIsLogin } = useContext(LoginContext);
 
   if (isLogin) {
     document.body.style.backgroundColor = "white";
@@ -28,7 +28,7 @@ export default function DetailEvents() {
   }
 
   useEffect(() => {
-    document.title = "Loading.."
+    document.title = "Loading..";
     fetchDetailEvents();
   }, []);
 
@@ -42,10 +42,10 @@ export default function DetailEvents() {
       }
       const data = await res.json();
       setDetailEvents(data);
-      
+
       setTimeout(() => {
         setIsLoading(false);
-      }, 2000)
+      }, 2000);
     } catch (error) {
       console.log(error);
     }
@@ -67,7 +67,7 @@ export default function DetailEvents() {
 
   return (
     <>
-      {document.title = `${detailEvents.judul}`}
+      {(document.title = `${detailEvents.judul}`)}
       <Navbar />
       {isLoading ? (
         <Loading />
@@ -122,16 +122,19 @@ export default function DetailEvents() {
                       </p>
                     </div>
                     <div className="registration-detail mb-3">
-                      <FaLink />
+                      <FaUserAlt />
                       <p className="d-inline text-muted ms-3">
-                        {detailEvents.pendaftaran}
+                        {detailEvents.pembuat}
                       </p>
                     </div>
                     <div className="d-grid mt-4 btn-detail-event">
                       {/* <button className="btn btn-primary">
                         Daftar Event
                       </button> */}
-                      <Link className="btn btn-primary" to={`/daftarevents/${id}`}>
+                      <Link
+                        className="btn btn-primary"
+                        to={`/daftarevents/${id}`}
+                      >
                         Daftar Events
                       </Link>
                     </div>
