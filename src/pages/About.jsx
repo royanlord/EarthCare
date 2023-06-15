@@ -90,7 +90,7 @@ function About() {
                 alt="Nabil Anugerah P"
                 class="bg-primary rounded-circle"
               />
-              <p class="fs-4 fw-bold team">Nabil Anugerah P</p>
+              <p class="fs-4 fw-bold team text-wrap">Nabil Anugerah P</p>
               <small class="text-white-50">Front-End Developer</small>
             </div>
             <div>
@@ -99,7 +99,7 @@ function About() {
                 alt="Royan Farid F"
                 class="bg-primary rounded-circle"
               />
-              <p class="fs-4 fw-bold team">Royan Farid F</p>
+              <p class="fs-4 fw-bold team text-wrap">Royan Farid F</p>
               <small class="text-white-50">Front-End Developer</small>
             </div>
             <div>
@@ -108,7 +108,7 @@ function About() {
                 alt="Ghulsan Savana A"
                 class="bg-primary rounded-circle"
               />
-              <p class="fs-4 fw-bold team">Ghulsan Savana A</p>
+              <p class="fs-4 fw-bold team">Ghulsan Savana Ahasya</p>
               <small class="text-white-50">Front-End Developer</small>
             </div>
             <div>
@@ -117,8 +117,8 @@ function About() {
                 alt="Ghulsan Savana A"
                 class="bg-primary rounded-circle"
               />
-              <p class="fs-4 fw-bold team">Ghulsan Savana A</p>
-              <small class="text-white-50">Front-End Developer</small>
+              <p class="fs-4 fw-bold team">Rio Aziz Ginaldi</p>
+              <small class="text-white-50">Back-End Developer</small>
             </div>
             <div>
               <img
@@ -126,8 +126,8 @@ function About() {
                 alt="Ghulsan Savana A"
                 class="bg-primary rounded-circle"
               />
-              <p class="fs-4 fw-bold team">Ghulsan Savana A</p>
-              <small class="text-white-50">Front-End Developer</small>
+              <p class="fs-4 fw-bold team">Farhatin Nikmah</p>
+              <small class="text-white-50">Back-End Developer</small>
             </div>
           </div>
         </div>
