@@ -149,11 +149,11 @@ export default function Events() {
                               to={`/events/${event.id}`}
                               className="btn btn-primary"
                             >
-                              {event.registerClose ? "View Event" : "Join Event"}
+                              {event.registerClose ? "Lihat Event" : "Ikuti Event"}
                             </Link>
                         ) : (
                           <Link to="/login" className="btn btn-primary">
-                            Join Now
+                            Ikuti Event
                           </Link>
                         )}
                       </div>

@@ -171,7 +171,7 @@ export const ContactForm = () => {
                                     <div className="mt-1 text-warning d-flex align-items-center gap-1" id="invalid-email">{iconInvalidEmail} {invalidEmail}</div>
                                 </div>
                                 <div className="mb-2">
-                                    <label htmlFor="fullname" className="form-label">Full Name</label>
+                                    <label htmlFor="fullname" className="form-label">Nama Lengkap</label>
                                     {isLogin ? (
                                         <input 
                                             type="text" 
@@ -197,7 +197,7 @@ export const ContactForm = () => {
                                     <div className="mt-1 text-warning d-flex align-items-center gap-1" id="invalid-fullname">{iconInvalidFullname} {invalidFullname}</div>
                                 </div>
                                 <div className="mb-3">
-                                    <label htmlFor="message" className="form-label">Message</label>
+                                    <label htmlFor="message" className="form-label">Pesan</label>
                                     <textarea 
                                         className="form-control form-control-lg shadow-none" 
                                         id="messageContact"   
@@ -217,7 +217,7 @@ export const ContactForm = () => {
                                         id="btnSend" 
                                         className="btn btn-lg w-100 btn-primary border-0"
                                     >
-                                        Send Now
+                                        Kirim Pesan
                                     </button>
                                 </div>
                             </form>

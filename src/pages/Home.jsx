@@ -339,13 +339,13 @@ function Home() {
                       to={`/events/${data.id}`}
                       className="btn btn-primary btn-event"
                     >
-                      Join Now
+                      Ikuti Event
                     </Link>
                     </div>
                   ) : (
                     <div className="d-grid">
                     <Link to="/login" className="btn btn-primary btn-event">
-                      Join Now
+                      Ikuti Event
                     </Link>
                     </div>
                   )}
@@ -415,7 +415,7 @@ function Home() {
               to="/event"
               className="btn my-5 fw-bold btn-showall-event"
             >
-              Show All Events
+              Lihat Semua Event
             </Link>
           </div>
         </section>
@@ -468,7 +468,7 @@ function Home() {
                     to="/article"
                     className="fw-bold btn btn-showall-article"
                   >
-                    Show All Articles
+                    Lihat Semua Artikel
                   </Link>
                 </div>
               </div>

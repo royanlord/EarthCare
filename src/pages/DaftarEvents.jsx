@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState, useRef } from "react";
 import { Form, Col, Row, Button, Card } from "react-bootstrap";
 import { Link, useParams } from "react-router-dom";
-import { FaTicketAlt, FaInfoCircle, FaArrowLeft } from "react-icons/fa";
+import { FaTicketAlt, FaClock, FaArrowLeft } from "react-icons/fa";
 import withReactContent from "sweetalert2-react-content";
 import Swal from "sweetalert2";
 import axios from "axios";
@@ -278,7 +278,7 @@ export default function DaftarEvents() {
                   />
                   <h4 className="mt-4">{daftarEvents.judul}</h4>
                   <p className="text__date mt-2">
-                    <FaInfoCircle className="mb-1 me-2" /> Batas pendaftaran
+                    <FaClock className="mb-1 me-2" /> Batas pendaftaran
                     sampai tanggal {daftarEvents.tanggal}
                   </p>
                   <p className="mt-2">
@@ -353,7 +353,7 @@ export default function DaftarEvents() {
                         onClick={handleDaftarEvent}
                       >
                         {/* {registerClose ? "Pendaftaran Ditutup" : "Pesan Sekarang"} */}
-                        Pesan Sekarang
+                        Daftar Sekarang
                       </Button>
                     </div>
                   </Form>

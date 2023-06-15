@@ -162,7 +162,7 @@ export default function DetailEvents() {
                           className="btn btn-primary"
                           to={`/daftarevents/${id}`}
                         >
-                          Pesan Sekarang
+                            Ikuti Event
                         </Link>
                       )}
                     </div>
