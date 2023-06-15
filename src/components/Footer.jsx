@@ -7,11 +7,11 @@ export default function Footer() {
   return (
     <footer>
       <Container fluid className="component__footer">
-        <Row className="row d-flex justify-content-sm-start justify-content-lg-center flex-wrap mx-lg-5 mx-sm-0">
+        <Row className="row d-flex justify-content-sm-start justify-content-lg-center align-content-lg-center align-items-lg-stretch flex-wrap mx-lg-5 mx-auto">
           <Col
             lg={2}
             md={4}
-            sm={3}
+            // sm={3}
             className="d-flex align-items-lg-center align-items-sm-start flex-column text-start ms-lg-1 ms-sm-0 me-lg-1 me-sm-0"
           >
             <h1 className="d-flex justify-content-lg-center align-items-lg-center">
@@ -27,7 +27,7 @@ export default function Footer() {
           <Col
             lg={2}
             md={4}
-            sm={3}
+            // sm={3}
             className="d-flex align-items-lg-center align-items-sm-start flex-column text-start"
           >
             <div className="content__footer">
@@ -45,7 +45,7 @@ export default function Footer() {
           <Col
             lg={2}
             md={4}
-            sm={3}
+            // sm={3}
             className="d-flex align-items-lg-center align-items-sm-start flex-column text-start"
           >
             <div className="about__footer">
@@ -63,22 +63,22 @@ export default function Footer() {
           <Col
             lg={2}
             md={4}
-            sm={3}
-            className="d-flex align-items-lg-center align-items-sm-start flex-column text-start col"
+            // sm={3}
+            className="d-flex justify-content-sm-end align-items-lg-center align-items-sm-start flex-column text-start col"
           >
-            <div className="social__footer">
-              <h3 className="text-center text-lg-start">Connect With Us</h3>
-              <div className="icon__social d-flex justify-content-center justify-content-lg-start">
-                <span className="pe-3">
+            <div className="social__footer mb-lg-5">
+              <h3 className="text-center text-lg-start ">Connect With Us</h3>
+              <div className="icon__social d-flex justify-content-lg-center align-items-lg-center justify-content-lg-start">
+                <span className="icons pe-3">
                   <FaInstagram />
                 </span>
-                <span className="pe-3">
+                <span className="icons pe-3">
                   <FaTwitter />
                 </span>
-                <span className="pe-3">
+                <span className="icons pe-3">
                   <FaYoutube />
                 </span>
-                <span className="pe-3">
+                <span className="icons pe-3">
                   <FaFacebook />
                 </span>
               </div>
