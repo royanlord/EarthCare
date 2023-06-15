@@ -13,11 +13,13 @@ import "../css/detail-events.css";
 import { Loading } from "../components/Loading";
 import { Navbar } from "../components/Navbar";
 import { LoginContext } from "../context/LoginProvider";
+import Footer from "../components/Footer";
 
 export default function DetailEvents() {
   const { id } = useParams();
   const [detailEvents, setDetailEvents] = useState("");
   const [isLoading, setIsLoading] = useState(true);
+  const [registerClose, setRegisterClose] = useState(false);
 
   const { isLogin, setIsLogin } = useContext(LoginContext);
 
@@ -46,6 +48,13 @@ export default function DetailEvents() {
       setTimeout(() => {
         setIsLoading(false);
       }, 2000);
+
+      // Check register event end
+      const registerDate = new Date(data.tanggal);
+      const currentDate = new Date();
+      if (currentDate > registerDate) {
+        setRegisterClose(true);
+      }
     } catch (error) {
       console.log(error);
     }
@@ -72,6 +81,7 @@ export default function DetailEvents() {
       {isLoading ? (
         <Loading />
       ) : (
+        <div>
         <div className="detail__events d-flex justify-content-center align-items-center">
           <main className="d-flex container mx-5">
             <Row>
@@ -131,18 +141,38 @@ export default function DetailEvents() {
                       {/* <button className="btn btn-primary">
                         Daftar Event
                       </button> */}
-                      <Link
+                      {/* <Link
                         className="btn btn-primary"
                         to={`/daftarevents/${id}`}
+                        onClick={
+                          registerClose ? (e) => e.preventDefault() : null
+                        }
                       >
-                        Daftar Events
-                      </Link>
+                        {registerClose
+                          ? "Pendaftaran Ditutup"
+                          : "Pesan Sekarang"}
+                      </Link> */}
+
+                      {registerClose ? (
+                        <button className="btn btn-primary" disabled>
+                          Pendaftaran Ditutup
+                        </button>
+                      ) : (
+                        <Link
+                          className="btn btn-primary"
+                          to={`/daftarevents/${id}`}
+                        >
+                          Pesan Sekarang
+                        </Link>
+                      )}
                     </div>
                   </div>
                 </Card>
               </Col>
             </Row>
           </main>
+        </div>
+          <Footer/>
         </div>
       )}
     </>

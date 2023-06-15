@@ -10,6 +10,7 @@ import "../css/detail-events.css";
 import { Loading } from "../components/Loading";
 import { Navbar } from "../components/Navbar";
 import { LoginContext } from "../context/LoginProvider";
+import Footer from "../components/Footer";
 // import { env } from "process";
 
 export default function DaftarEvents() {
@@ -20,10 +21,11 @@ export default function DaftarEvents() {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [address, setAddress] = useState("");
-  const [registerClose, setRegisterClose] = useState(false);
+  // useState event end
+  // const [registerClose, setRegisterClose] = useState(false);
   const form = useRef();
 
-  const {isLogin, setIsLogin} = useContext(LoginContext)
+  const { isLogin, setIsLogin } = useContext(LoginContext);
 
   if (isLogin) {
     document.body.style.backgroundColor = "white";
@@ -32,7 +34,7 @@ export default function DaftarEvents() {
   }
 
   useEffect(() => {
-    document.title = "Loading.."
+    document.title = "Loading..";
     fetchDaftarEvents();
   }, []);
 
@@ -42,17 +44,17 @@ export default function DaftarEvents() {
         `https://644dfece4e86e9a4d8ef004c.mockapi.io/detail-events/${id}`
       );
       setDaftarEvents(res.data);
-      
+
       setTimeout(() => {
         setIsLoading(false);
-      }, 2000)
+      }, 2000);
 
       // Check register end
-      const registerDate = new Date(res.data.tanggal);
-      const currentDate = new Date();
-      if (currentDate > registerDate) {
-        setRegisterClose(true);
-      }
+      // const registerDate = new Date(res.data.tanggal);
+      // const currentDate = new Date();
+      // if (currentDate > registerDate) {
+      //   setRegisterClose(true);
+      // }
     } catch (error) {
       console.log(error);
     }
@@ -68,6 +70,14 @@ export default function DaftarEvents() {
       Swal.fire({
         icon: "error",
         title: "Nama lengkap harus diisi",
+      });
+      return false;
+    }
+
+    if (fullname.length < 5) {
+      Swal.fire({
+        icon: "error",
+        title: "Nama lengkap harus 5 karakter",
       });
       return false;
     }
@@ -92,7 +102,6 @@ export default function DaftarEvents() {
       });
       return false;
     }
-
     return true;
   };
 
@@ -102,6 +111,14 @@ export default function DaftarEvents() {
       Swal.fire({
         icon: "error",
         title: "Nomor ponsel harus diisi",
+      });
+      return false;
+    }
+
+    if (phone.length < 11) {
+      Swal.fire({
+        icon: "error",
+        title: "Nomor ponsel harus 11 angka",
       });
       return false;
     }
@@ -118,7 +135,7 @@ export default function DaftarEvents() {
       return false;
     }
 
-    if (address.length < 10) {
+    if (address.length < 6) {
       Swal.fire({
         icon: "error",
         title: "Alamat harus memiliki minimal 6 karakter",
@@ -146,39 +163,39 @@ export default function DaftarEvents() {
       };
 
       await emailjs
-      .send(
-        "service_a0ds3ae",
-        "template_u397uty",
-        {
-          from_name: "EarthCare",
-          user_name: fullname,
-          judul: daftarEvents.judul,
-          user_email: email,
-          reply_to: "-",
-        },
-        "XM4ogZzyYOFFnUQzU"
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-          console.log("emailjs", result)
-          // Success Validation Register Events
-          const MySwal = withReactContent(Swal);
-          MySwal.fire({
-            icon: "success",
-            title: "Anda Berhasil Terdaftar Ke Acara",
-          });
-          setFullname("");
-          setEmail("");
-          setPhone("");
-          setAddress("");
-        },
-        (error) => {
-          console.log(error.text);
-          console.log("emailjs", error)
-        }
-      );
-      
+        .send(
+          "service_a0ds3ae",
+          "template_u397uty",
+          {
+            from_name: "EarthCare",
+            user_name: fullname,
+            judul: daftarEvents.judul,
+            user_email: email,
+            reply_to: "-",
+          },
+          "XM4ogZzyYOFFnUQzU"
+        )
+        .then(
+          (result) => {
+            console.log(result.text);
+            console.log("emailjs", result);
+            // Success Validation Register Events
+            const MySwal = withReactContent(Swal);
+            MySwal.fire({
+              icon: "success",
+              title: "Anda Berhasil Terdaftar Ke Acara",
+            });
+            setFullname("");
+            setEmail("");
+            setPhone("");
+            setAddress("");
+          },
+          (error) => {
+            console.log(error.text);
+            console.log("emailjs", error);
+          }
+        );
+
       await axios
         .post("https://6486fcc9beba6297278f9d83.mockapi.io/form-events", data)
         .then((res) => {
@@ -204,7 +221,7 @@ export default function DaftarEvents() {
       judul: daftarEvents.judul,
       user_email: email,
       reply_to: "-",
-    }
+    };
 
     // emailjs.send("service_a0ds3ae","template_u397uty",{
     //   from_name: "EarthCare",
@@ -243,11 +260,12 @@ export default function DaftarEvents() {
 
   return (
     <>
-      {document.title = "Registrasi Event"}
+      {(document.title = "Registrasi Event")}
       <Navbar />
       {isLoading ? (
         <Loading />
       ) : (
+        <div>
         <div className="daftar__events d-flex justify-content-center align-items-center">
           <main className="d-flex container mx-5">
             <Row>
@@ -260,8 +278,8 @@ export default function DaftarEvents() {
                   />
                   <h4 className="mt-4">{daftarEvents.judul}</h4>
                   <p className="text__date mt-2">
-                    <FaInfoCircle className="mb-1 me-2" /> Batas pendaftaran sampai
-                    tanggal {daftarEvents.tanggal}
+                    <FaInfoCircle className="mb-1 me-2" /> Batas pendaftaran
+                    sampai tanggal {daftarEvents.tanggal}
                   </p>
                   <p className="mt-2">
                     <FaTicketAlt className="ticket__detail" />
@@ -292,7 +310,6 @@ export default function DaftarEvents() {
                         value={fullname}
                         onChange={(e) => setFullname(e.target.value)}
                         autoComplete="off"
-                        disabled={registerClose}
                       />
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formGroupEmail">
@@ -304,7 +321,6 @@ export default function DaftarEvents() {
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         autoComplete="off"
-                        disabled={registerClose}
                       />
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formGroupPhone">
@@ -316,7 +332,6 @@ export default function DaftarEvents() {
                         value={phone}
                         onChange={(e) => setPhone(e.target.value)}
                         autoComplete="off"
-                        disabled={registerClose}
                       />
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formGroupAddress">
@@ -328,7 +343,6 @@ export default function DaftarEvents() {
                         value={address}
                         onChange={(e) => setAddress(e.target.value)}
                         autoComplete="off"
-                        disabled={registerClose}
                       />
                     </Form.Group>
 
@@ -337,10 +351,9 @@ export default function DaftarEvents() {
                         className="btn btn-primary"
                         type="button"
                         onClick={handleDaftarEvent}
-                        autoComplete="off"
-                        disabled={registerClose}
                       >
-                        {registerClose ? "Pendaftaran Ditutup" : "Pesan Sekarang"}
+                        {/* {registerClose ? "Pendaftaran Ditutup" : "Pesan Sekarang"} */}
+                        Pesan Sekarang
                       </Button>
                     </div>
                   </Form>
@@ -349,6 +362,8 @@ export default function DaftarEvents() {
             </Row>
           </main>
         </div>
+        <Footer/>
+      </div>
       )}
     </>
   );
