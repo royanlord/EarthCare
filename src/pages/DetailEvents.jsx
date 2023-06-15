@@ -13,6 +13,7 @@ import "../css/detail-events.css";
 import { Loading } from "../components/Loading";
 import { Navbar } from "../components/Navbar";
 import { LoginContext } from "../context/LoginProvider";
+import Footer from "../components/Footer";
 
 export default function DetailEvents() {
   const { id } = useParams();
@@ -80,6 +81,7 @@ export default function DetailEvents() {
       {isLoading ? (
         <Loading />
       ) : (
+        <div>
         <div className="detail__events d-flex justify-content-center align-items-center">
           <main className="d-flex container mx-5">
             <Row>
@@ -169,6 +171,8 @@ export default function DetailEvents() {
               </Col>
             </Row>
           </main>
+        </div>
+          <Footer/>
         </div>
       )}
     </>
