@@ -81,53 +81,53 @@ function About() {
       </section>
 
       <section>
-        <div class="container py-5">
-          <p class="fs-2 fw-bold text-center">Our Team</p>
-          <div class="wrapper mx-auto p-5 d-flex justify-content-center gap-5 rounded-4 flex-wrap text-center text-white lh-1">
+        <div className="container py-5">
+          <p className="fs-2 fw-bold text-center">Our Team</p>
+          <div className="wrapper mx-auto p-5 d-flex justify-content-center gap-5 rounded-4 flex-wrap text-center text-white lh-1">
             <div>
               <img
                 src="../src/assets/nabil.svg"
                 alt="Nabil Anugerah P"
-                class="bg-primary rounded-circle"
+                className="bg-primary rounded-circle"
               />
-              <p class="fs-4 fw-bold team text-wrap">Nabil Anugerah P</p>
-              <small class="text-white-50">Front-End Developer</small>
+              <p className="fs-4 fw-bold team text-wrap">Nabil Anugerah P</p>
+              <small className="text-white-50">Front-End Developer</small>
             </div>
             <div>
               <img
                 src="../src/assets/royan.svg"
                 alt="Royan Farid F"
-                class="bg-primary rounded-circle"
+                className="bg-primary rounded-circle"
               />
-              <p class="fs-4 fw-bold team text-wrap">Royan Farid F</p>
-              <small class="text-white-50">Front-End Developer</small>
+              <p className="fs-4 fw-bold team text-wrap">Royan Farid F</p>
+              <small className="text-white-50">Front-End Developer</small>
             </div>
             <div>
               <img
                 src="../src/assets/ghulsan.svg"
                 alt="Ghulsan Savana A"
-                class="bg-primary rounded-circle"
+                className="bg-primary rounded-circle"
               />
-              <p class="fs-4 fw-bold team">Ghulsan Savana Ahasya</p>
-              <small class="text-white-50">Front-End Developer</small>
+              <p className="fs-4 fw-bold team">Ghulsan Savana Ahasya</p>
+              <small className="text-white-50">Front-End Developer</small>
             </div>
             <div>
               <img
                 src="../src/assets/ghulsan.svg"
                 alt="Ghulsan Savana A"
-                class="bg-primary rounded-circle"
+                className="bg-primary rounded-circle"
               />
-              <p class="fs-4 fw-bold team">Rio Aziz Ginaldi</p>
-              <small class="text-white-50">Back-End Developer</small>
+              <p className="fs-4 fw-bold team">Rio Aziz Ginaldi</p>
+              <small className="text-white-50">Back-End Developer</small>
             </div>
             <div>
               <img
                 src="../src/assets/ghulsan.svg"
                 alt="Ghulsan Savana A"
-                class="bg-primary rounded-circle"
+                className="bg-primary rounded-circle"
               />
-              <p class="fs-4 fw-bold team">Farhatin Nikmah</p>
-              <small class="text-white-50">Back-End Developer</small>
+              <p className="fs-4 fw-bold team">Farhatin Nikmah</p>
+              <small className="text-white-50">Back-End Developer</small>
             </div>
           </div>
         </div>
