@@ -318,7 +318,7 @@ function Home() {
                 <Card.Img variant="top" src={data.gambar} />
                 <Card.Body>
                   <Card.Title className="title-card">{data.judul}</Card.Title>
-                  <Card.Text>
+                  <Card.Text as="div">
                     <p className="card-text-event">{data.pembuat}</p>
                     <div className="date mb-2">
                       <i className="mt-1 me-2">
