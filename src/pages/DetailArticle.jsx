@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from "react"
 import { Loading } from "../components/Loading";
 import { Navbar } from "../components/Navbar";
 import { LoginContext } from "../context/LoginProvider";
-
+import Footer from "../components/Footer"
 export const DetailArticle = () => {
     const [article, setArticle] = useState([])
     const [isLoading, setIsLoading] = useState(true);
@@ -46,7 +46,7 @@ export const DetailArticle = () => {
             {isLoading ? (
                 <Loading />
             ) : (
-
+            <div>
                 <main id="detail-atc">
                     <section id="article-detail">
                         <div class="container-fluid" id="detail">
@@ -115,6 +115,8 @@ export const DetailArticle = () => {
                         </div>
                     </section>
                 </main>
+                    <Footer/>
+                </div>
             )}
         </>
     )
