@@ -2,18 +2,19 @@ import Carousel from "react-bootstrap/Carousel";
 import { Card, Button } from "react-bootstrap";
 import { FaCalendarAlt, FaMapMarker } from "react-icons/fa";
 import "../css/home.css";
-import { ContactForm } from "../components/ContactForm"
+import { ContactForm } from "../components/ContactForm";
 import { Link } from "react-router-dom";
 import { Navbar } from "../components/Navbar";
 import { useContext, useEffect, useState } from "react";
 import { LoginContext } from "../context/LoginProvider";
 import { ArticlesContext } from "../context/ArticlesProvider";
+import Footer  from "../components/Footer";
 
 function Home() {
   const { isLogin, setIsLogin } = useContext(LoginContext);
   const [event, setEvent] = useState([]);
   // const [article, setArticle] = useState([]);
-  const {articles, setArticles} = useContext(ArticlesContext)
+  const { articles, setArticles } = useContext(ArticlesContext);
 
   if (isLogin) {
     document.body.style.backgroundColor = "white";
@@ -61,7 +62,6 @@ function Home() {
     };
     fetchData();
   }, []);
-
 
   return (
     <>
@@ -303,7 +303,10 @@ function Home() {
                     </div>
                   </Card.Text>
                   {isLogin ? (
-                    <Link to={`/events/${data.id}`} className="btn btn-primary btn-event">
+                    <Link
+                      to={`/events/${data.id}`}
+                      className="btn btn-primary btn-event"
+                    >
                       Join Now
                     </Link>
                   ) : (
@@ -414,12 +417,12 @@ function Home() {
                           </p>
                         </div>
                         <div className="btn-article">
-                          <Link 
-                              to={`/detailArticle/:${data.id}?id=${data.id}`} 
-                              class="btn btn-primary border-0 px-3 py-2" 
-                              id="btnSelengkapnya"
+                          <Link
+                            to={`/detailArticle/:${data.id}?id=${data.id}`}
+                            class="btn btn-primary border-0 px-3 py-2"
+                            id="btnSelengkapnya"
                           >
-                                Selengkapnya
+                            Selengkapnya
                           </Link>
                         </div>
                       </div>
@@ -469,6 +472,7 @@ function Home() {
 
         <ContactForm />
       </main>
+      <Footer />
     </>
   );
 }

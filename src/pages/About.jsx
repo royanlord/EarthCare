@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { Navbar } from "../components/Navbar";
 import "../css/about.css";
 import { LoginContext } from "../context/LoginProvider";
+import Footer from "../components/Footer";
 
 function About() {
   const {isLogin, setIsLogin} = useContext(LoginContext)
@@ -130,6 +131,8 @@ function About() {
             </div>
           </div>
         </div>
+
+        <Footer/>
       </section>
     </>
   );

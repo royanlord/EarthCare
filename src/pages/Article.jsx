@@ -7,6 +7,7 @@ import notifyNoEvents from "../assets/notify no events.svg";
 import { Navbar } from "../components/Navbar";
 import { LoginContext } from "../context/LoginProvider";
 import { ArticlesContext } from "../context/ArticlesProvider";
+import Footer from "../components/Footer";
 
 export const Article = () => {
     // const [articles, setArticles] = useState([])
@@ -131,6 +132,7 @@ export const Article = () => {
                             ))
                         )}
                     </div>
+                    <Footer/>
                 </main>
             )}
         </>

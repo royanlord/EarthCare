@@ -3,6 +3,7 @@ import { ContactForm } from "../components/ContactForm"
 import { Navbar } from "../components/Navbar"
 import "../css/contact.css"
 import { LoginContext } from "../context/LoginProvider"
+import Footer from "../components/Footer"
 
 export const Contact = () => {
     const {isLogin, setIsLogin} = useContext(LoginContext)
@@ -27,6 +28,7 @@ export const Contact = () => {
                     </div>
                 </section>
                 <ContactForm />
+                <Footer/>
             </main>
         </>
     )
