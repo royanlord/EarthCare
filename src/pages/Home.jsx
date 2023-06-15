@@ -206,62 +206,60 @@ function Home() {
                   Gerakan menanam pohon sebagai upaya melakukan penghijauan dan
                   memperbaiki paru-paru kota
                 </p>
-                <button
+                <Link
+                  to={`/detailArticle/:${4}?id=${4}`}
                   class="btn-carousel"
-                  onclick="window.location.href='event.html'"
                 >
-                  Join Now
-                </button>
+                  Baca Sekarang
+                </Link>
               </div>
             </div>
           </Carousel.Item>
           <Carousel.Item>
             <img
               className="d-block w-100"
-              src="../src/assets/carousel-image2.png"
+              src="../src/assets/event-image2.svg"
               alt="Second slide"
             />
 
             <div class="overlay position-absolute top-0 bottom-0 start-0 end-0 w-100 h-100 text-white d-flex justify-content-center align-items-center">
               <div class="text-center wrapper-carousel">
                 <h1 class="fw-bold text-wrap">
-                  Menanam Pohon Selamatkan Kehidupan
+                  Daur Ulang Sampah Selamatkan Lingkungan
                 </h1>
                 <p class="text-wrap">
-                  Gerakan menanam pohon sebagai upaya melakukan penghijauan dan
-                  memperbaiki paru-paru kota
+                  Sedekahkan sampahmu baik berupa botol plastik, kardus bekas, gelas plastik, buku/kertas, sampah kaca ataupun sampah elektronik.
                 </p>
-                <button
+                <Link
+                  to={`/events/${2}`}
                   class="btn-carousel"
-                  onclick="window.location.href='event.html'"
                 >
-                  Join Now
-                </button>
+                  Ikuti Event
+                </Link>
               </div>
             </div>
           </Carousel.Item>
           <Carousel.Item>
             <img
               className="d-block w-100"
-              src="../src/assets/carousel-image3.png"
+              src="../src/assets/event-image1.svg"
               alt="Third slide"
             />
 
             <div class="overlay position-absolute top-0 bottom-0 start-0 end-0 w-100 h-100 text-white d-flex justify-content-center align-items-center">
               <div class="text-center wrapper-carousel">
                 <h1 class="fw-bold text-wrap">
-                  Menanam Pohon Selamatkan Kehidupan
+                  Pengelolaan Sungai Untuk Mencegah Kerusakan Sungai
                 </h1>
                 <p class="text-wrap">
-                  Gerakan menanam pohon sebagai upaya melakukan penghijauan dan
-                  memperbaiki paru-paru kota
+                  Upaya dalam pengelolaan sungai untuk meminimalisir terjadinya kerusakan lingkungan sungai yang ada di indonesia.
                 </p>
-                <button
+                <Link
+                  to={`/events/${1}`}
                   class="btn-carousel"
-                  onclick="window.location.href='event.html'"
                 >
-                  Join Now
-                </button>
+                  Ikuti Event
+                </Link>
               </div>
             </div>
           </Carousel.Item>
@@ -269,7 +267,7 @@ function Home() {
 
         <section>
           <div className="container mt-5">
-            <h2 className="text-center fw-bold">Event Terbaru, Yuk Ikutan!</h2>
+            <h2 className="text-center fw-bold">Beberapa Event Pilihan, Yuk Ikutan!</h2>
             <p className="text-center text-black-50">
               Daftarkan diri anda untuk mendapatkan pengalaman baru
             </p>
@@ -303,16 +301,20 @@ function Home() {
                     </div>
                   </Card.Text>
                   {isLogin ? (
+                    <div className="d-grid">
                     <Link
                       to={`/events/${data.id}`}
                       className="btn btn-primary btn-event"
                     >
                       Join Now
                     </Link>
+                    </div>
                   ) : (
+                    <div className="d-grid">
                     <Link to="/login" className="btn btn-primary btn-event">
                       Join Now
                     </Link>
+                    </div>
                   )}
                   {/* <Button variant="primary" className="btn-event w-100">
                     Join Now
@@ -376,13 +378,12 @@ function Home() {
             </Card> */}
           </div>
           <div className="wrapper-showall-event">
-            <button
-              type="button"
-              className="btn my-5 btn-showall-event"
-              onclick="window.location.href='event.html'"
+            <Link
+              to="/event"
+              className="btn my-5 fw-bold btn-showall-event"
             >
               Show All Events
-            </button>
+            </Link>
           </div>
         </section>
 
@@ -430,13 +431,12 @@ function Home() {
                   </div>
                 ))}
                 <div className="text-center my-5">
-                  <Button
-                    type="button"
-                    className="btn btn-showall-article"
-                    onclick="window.location.href='event.html'"
+                  <Link
+                    to="/article"
+                    className="fw-bold btn btn-showall-article"
                   >
                     Show All Articles
-                  </Button>
+                  </Link>
                 </div>
               </div>
             </div>
