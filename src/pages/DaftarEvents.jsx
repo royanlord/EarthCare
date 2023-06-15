@@ -10,6 +10,7 @@ import "../css/detail-events.css";
 import { Loading } from "../components/Loading";
 import { Navbar } from "../components/Navbar";
 import { LoginContext } from "../context/LoginProvider";
+import Footer from "../components/Footer";
 // import { env } from "process";
 
 export default function DaftarEvents() {
@@ -264,6 +265,7 @@ export default function DaftarEvents() {
       {isLoading ? (
         <Loading />
       ) : (
+        <div>
         <div className="daftar__events d-flex justify-content-center align-items-center">
           <main className="d-flex container mx-5">
             <Row>
@@ -360,6 +362,8 @@ export default function DaftarEvents() {
             </Row>
           </main>
         </div>
+        <Footer/>
+      </div>
       )}
     </>
   );
