@@ -9,12 +9,14 @@ import { useContext, useEffect, useState } from "react";
 import { LoginContext } from "../context/LoginProvider";
 import { ArticlesContext } from "../context/ArticlesProvider";
 import Footer  from "../components/Footer";
+import { EventsContext } from "../context/EventsProvider";
 
 function Home() {
   const { isLogin, setIsLogin } = useContext(LoginContext);
-  const [event, setEvent] = useState([]);
+  // const [event, setEvent] = useState([]);
   // const [article, setArticle] = useState([]);
   const { articles, setArticles } = useContext(ArticlesContext);
+  const { events, setEvents } = useContext(EventsContext);
 
   if (isLogin) {
     document.body.style.backgroundColor = "white";
@@ -28,11 +30,11 @@ function Home() {
         return response.json();
       })
       .then((data) => {
-        setEvent(data.slice(0, 3));
+        setEvents(data.slice(0, 3));
       });
   };
 
-  const sortedEvents = event.sort((a, b) =>
+  const sortedEvents = events.sort((a, b) =>
     b.tanggal
       .split("/")
       .reverse()
@@ -40,8 +42,20 @@ function Home() {
       .localeCompare(a.tanggal.split("/").reverse().join())
   );
 
+  const fetchArticle = async () => {
+    try {
+      const url = "https://644e5c2c4e86e9a4d8f6d279.mockapi.io/article";
+      const response = await fetch(url);
+      const data = await response.json();
+      setArticles(data.slice(0, 3));
+    } catch (error) {
+      console.log("error: " + error);
+    }
+  };
+
   useEffect(() => {
     fetchEvent();
+    fetchArticle();
   }, []);
 
   let sortedArticles = articles.sort(
@@ -49,19 +63,19 @@ function Home() {
       new Date(b.datePost.split("/").reverse()) -
       new Date(a.datePost.split("/").reverse())
   );
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const url = "https://644e5c2c4e86e9a4d8f6d279.mockapi.io/article";
-        const response = await fetch(url);
-        const data = await response.json();
-        setArticles(data.slice(0, 3));
-      } catch (error) {
-        console.log("error: " + error);
-      }
-    };
-    fetchData();
-  }, []);
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const url = "https://644e5c2c4e86e9a4d8f6d279.mockapi.io/article";
+  //       const response = await fetch(url);
+  //       const data = await response.json();
+  //       setArticles(data.slice(0, 3));
+  //     } catch (error) {
+  //       console.log("error: " + error);
+  //     }
+  //   };
+  //   fetchData();
+  // }, []);
 
   return (
     <>
