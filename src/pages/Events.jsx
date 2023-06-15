@@ -7,6 +7,7 @@ import notifyNoEvents from "../assets/notify no events.svg";
 import "../css/events.css";
 import { Navbar } from "../components/Navbar";
 import { LoginContext } from "../context/LoginProvider";
+import Footer from "../components/Footer";
 
 export default function Events() {
   const [events, setEvents] = useState([]);
@@ -34,7 +35,18 @@ export default function Events() {
         throw new Error("Failed to access data events");
       }
       const data = await res.json();
-      setEvents(data);
+
+      const eventRegisterClose = data.map((event) => {
+        const registerDate = new Date(event.tanggal);
+        const currentDate = new Date();
+        return {
+          ...event,
+          registerClose: registerDate < currentDate,
+        };
+      });
+
+      setEvents(eventRegisterClose);
+      // setEvents(data);
 
       setTimeout(() => {
         setIsLoading(false);
@@ -42,15 +54,15 @@ export default function Events() {
       }, 2000);
 
       // Check register event end
-      data.forEach((event) => {
-        const registerDate = new Date(event.tanggal);
-        const currentDate = new Date();
-        if (registerDate < currentDate) {
-          event.registerClose = true;
-        } else {
-          event.registerClose = false;
-        }
-      });
+      // data.forEach((event) => {
+      //   const registerDate = new Date(event.tanggal);
+      //   const currentDate = new Date();
+      //   if (registerDate < currentDate) {
+      //     event.registerClose = true;
+      //   } else {
+      //     event.registerClose = false;
+      //   }
+      // });
     } catch (error) {
       console.log(error);
     }
@@ -70,6 +82,7 @@ export default function Events() {
       {isLoading ? (
         <Loading />
       ) : (
+        <div>
         <main id="events" className="container">
           <div className="d-flex justify-content-lg-between mx-3 justify-content-center flex-wrap">
             <section className="title__events">
@@ -132,21 +145,12 @@ export default function Events() {
                       </div>
                       <div className="d-grid btn__join">
                         {isLogin ? (
-                          event.registerClose ? (
                             <Link
                               to={`/events/${event.id}`}
                               className="btn btn-primary"
                             >
-                              View Event
+                              {event.registerClose ? "View Event" : "Join Event"}
                             </Link>
-                          ) : (
-                            <Link
-                              to={`/events/${event.id}`}
-                              className="btn btn-primary"
-                            >
-                              Join Event
-                            </Link>
-                          )
                         ) : (
                           <Link to="/login" className="btn btn-primary">
                             Join Now
@@ -160,6 +164,8 @@ export default function Events() {
             )}
           </Row>
         </main>
+        <Footer/>
+        </div>
       )}
     </>
   );
