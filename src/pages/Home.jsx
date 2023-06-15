@@ -230,12 +230,21 @@ function Home() {
                 <p class="text-wrap">
                   Sedekahkan sampahmu baik berupa botol plastik, kardus bekas, gelas plastik, buku/kertas, sampah kaca ataupun sampah elektronik.
                 </p>
+                {isLogin ? (
                 <Link
                   to={`/events/${2}`}
                   class="btn-carousel"
                 >
                   Ikuti Event
                 </Link>
+                ) : (
+                <Link
+                  to={"/login"}
+                  class="btn-carousel"
+                >
+                  Ikuti Event
+                </Link>
+                )}
               </div>
             </div>
           </Carousel.Item>
@@ -254,12 +263,22 @@ function Home() {
                 <p class="text-wrap">
                   Upaya dalam pengelolaan sungai untuk meminimalisir terjadinya kerusakan lingkungan sungai yang ada di indonesia.
                 </p>
+                {isLogin ? (
+
                 <Link
                   to={`/events/${1}`}
                   class="btn-carousel"
                 >
                   Ikuti Event
                 </Link>
+                ) : (
+                <Link
+                  to={"/login"}
+                  class="btn-carousel"
+                >
+                  Ikuti Event
+                </Link>
+                )}
               </div>
             </div>
           </Carousel.Item>
