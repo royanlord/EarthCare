@@ -78,7 +78,7 @@ export const Article = () => {
             ) : (
                 
                 <main id="article">
-                    <div class="container-fluid mt-5" id="article-content">
+                    <div className="container-fluid mt-5" id="article-content">
                         <div className="row mx-3 mb-4 d-flex justify-content-center align-items-center">
                             <div className="col-lg-8 title-articles">
                                 <h2 className="fw-bold">Blog, Postingan, dan Artikel</h2>
@@ -109,20 +109,20 @@ export const Article = () => {
                             </div>
                         ) : (
                             filteredArticles.map((data,index) => (
-                                <div class="row mx-3 mb-4" key={index}>
-                                    <div class="col-lg-6">
-                                        <img src={data.image} class="img-fluid my-2 me-4 rounded-3" alt={data.titleArticle} />
+                                <div className="row mx-3 mb-4" key={index}>
+                                    <div className="col-lg-6">
+                                        <img src={data.image} className="img-fluid my-2 me-4 rounded-3" alt={data.titleArticle} />
                                     </div>
-                                    <div class="col-lg-6 ps-lg-5 d-flex flex-column justify-content-center">
-                                        <h2 class="fw-semibold">{data.titleArticle}</h2>
+                                    <div className="col-lg-6 ps-lg-5 d-flex flex-column justify-content-center">
+                                        <h2 className="fw-semibold">{data.titleArticle}</h2>
                                         <p>{data.description}</p>
-                                        <div class="date-article mb-4">
-                                            <i class="fa-solid fa-calendar-days text-muted fa-lg"></i>
-                                            <p class="d-inline text-muted ms-1">{data.datePost}</p>
+                                        <div className="date-article mb-4">
+                                            <i className="fa-solid fa-calendar-days text-muted fa-lg"></i>
+                                            <p className="d-inline text-muted ms-1">{data.datePost}</p>
                                         </div>
-                                        <div class="button-more">
+                                        <div className="button-more">
                                             <Link to={`/detailArticle/:${data.id}?id=${data.id}`} 
-                                                class="btn btn-primary border-0 px-3 py-2" 
+                                                className="btn btn-primary border-0 px-3 py-2" 
                                                 id="btnSelengkapnya">
                                                     Selengkapnya
                                             </Link>

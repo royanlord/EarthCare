@@ -453,7 +453,7 @@ function Home() {
                         <div className="btn-article">
                           <Link
                             to={`/detailArticle/:${data.id}?id=${data.id}`}
-                            class="btn btn-primary border-0 px-3 py-2"
+                            className="btn btn-primary border-0 px-3 py-2"
                             id="btnSelengkapnya"
                           >
                             Selengkapnya

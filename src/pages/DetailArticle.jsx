@@ -49,7 +49,7 @@ export const DetailArticle = () => {
             <div>
                 <main id="detail-atc">
                     <section id="article-detail">
-                        <div class="container-fluid" id="detail">
+                        <div className="container-fluid" id="detail">
                             {article.length === 0 ? (
                                     <span>Loading...</span>
                             ) : (
@@ -62,44 +62,44 @@ export const DetailArticle = () => {
                                 }).map((data,index) => {
                                     document.title = `${data.title}`
                                     return (
-                                        <div class="row mt-4 mx-4" key={index}>
-                                            <div class="col-12 rounded-3 mb-lg-4">
-                                                <img src={"/"+data.img} class="img-fluid rounded-3" alt={data.title} />                                    
+                                        <div className="row mt-4 mx-4" key={index}>
+                                            <div className="col-12 rounded-3 mb-lg-4">
+                                                <img src={"/"+data.img} className="img-fluid rounded-3" alt={data.title} />                                    
                                             </div>
-                                            <div class="col-12 mt-2 mt-lg-5 mx-lg-auto w-50" id="main-article">
-                                                <h2 class="fw-semibold">{data.title}</h2>
-                                                <div class="date-article mb-3 mb-lg-4">
-                                                    <i class="fa-solid fa-calendar-days text-muted fa-lg"></i>
-                                                    <p class="d-inline text-muted ms-1">{data.date}</p>
+                                            <div className="col-12 mt-2 mt-lg-5 mx-lg-auto w-50" id="main-article">
+                                                <h2 className="fw-semibold">{data.title}</h2>
+                                                <div className="date-article mb-3 mb-lg-4">
+                                                    <i className="fa-solid fa-calendar-days text-muted fa-lg"></i>
+                                                    <p className="d-inline text-muted ms-1">{data.date}</p>
                                                 </div>
-                                                <p class="text-wrap">
+                                                <p className="text-wrap">
                                                     {data.firstDetail}
                                                 </p>
-                                                <p class="text-wrap">
+                                                <p className="text-wrap">
                                                     {data.secondDetail}
                                                 </p>
-                                                <p class="text-wrap">
+                                                <p className="text-wrap">
                                                     {data.thirdDetail}
                                                 </p>
-                                                <p class="text-wrap">
+                                                <p className="text-wrap">
                                                     {data.fourthDetail}
                                                 </p>
-                                                <p class="text-wrap">
+                                                <p className="text-wrap">
                                                     {data.fifthDetail}
                                                 </p>
-                                                <p class="text-wrap">
+                                                <p className="text-wrap">
                                                     {data.sixthDetail}
                                                 </p>
-                                                <p class="text-wrap">
+                                                <p className="text-wrap">
                                                     {data.seventhDetail}
                                                 </p>
-                                                <p class="text-wrap">
+                                                <p className="text-wrap">
                                                     {data.eighthDetail}
                                                 </p>
-                                                <p class="text-wrap">
+                                                <p className="text-wrap">
                                                     {data.ninthDetail}
                                                 </p>
-                                                <p class="text-wrap">
+                                                <p className="text-wrap">
                                                     {data.tenthDetail}
                                                 </p>
                                             </div>
