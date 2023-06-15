@@ -197,18 +197,18 @@ function Home() {
               src="../src/assets/carousel-image1.png"
               alt="First slide"
             />
-            <div class="overlay position-absolute top-0 bottom-0 start-0 end-0 w-100 h-100 text-white d-flex justify-content-center align-items-center">
-              <div class="text-center wrapper-carousel">
-                <h1 class="fw-bold text-wrap">
+            <div className="overlay position-absolute top-0 bottom-0 start-0 end-0 w-100 h-100 text-white d-flex justify-content-center align-items-center">
+              <div className="text-center wrapper-carousel">
+                <h1 className="fw-bold text-wrap">
                   Menanam Pohon Selamatkan Kehidupan
                 </h1>
-                <p class="text-wrap">
+                <p className="text-wrap">
                   Gerakan menanam pohon sebagai upaya melakukan penghijauan dan
                   memperbaiki paru-paru kota
                 </p>
                 <Link
                   to={`/detailArticle/:${4}?id=${4}`}
-                  class="btn-carousel"
+                  className="btn-carousel"
                 >
                   Baca Sekarang
                 </Link>
@@ -222,25 +222,25 @@ function Home() {
               alt="Second slide"
             />
 
-            <div class="overlay position-absolute top-0 bottom-0 start-0 end-0 w-100 h-100 text-white d-flex justify-content-center align-items-center">
-              <div class="text-center wrapper-carousel">
-                <h1 class="fw-bold text-wrap">
+            <div className="overlay position-absolute top-0 bottom-0 start-0 end-0 w-100 h-100 text-white d-flex justify-content-center align-items-center">
+              <div className="text-center wrapper-carousel">
+                <h1 className="fw-bold text-wrap">
                   Daur Ulang Sampah Selamatkan Lingkungan
                 </h1>
-                <p class="text-wrap">
+                <p className="text-wrap">
                   Sedekahkan sampahmu baik berupa botol plastik, kardus bekas, gelas plastik, buku/kertas, sampah kaca ataupun sampah elektronik.
                 </p>
                 {isLogin ? (
                 <Link
                   to={`/events/${2}`}
-                  class="btn-carousel"
+                  className="btn-carousel"
                 >
                   Ikuti Event
                 </Link>
                 ) : (
                 <Link
                   to={"/login"}
-                  class="btn-carousel"
+                  className="btn-carousel"
                 >
                   Ikuti Event
                 </Link>
@@ -255,26 +255,26 @@ function Home() {
               alt="Third slide"
             />
 
-            <div class="overlay position-absolute top-0 bottom-0 start-0 end-0 w-100 h-100 text-white d-flex justify-content-center align-items-center">
-              <div class="text-center wrapper-carousel">
-                <h1 class="fw-bold text-wrap">
+            <div className="overlay position-absolute top-0 bottom-0 start-0 end-0 w-100 h-100 text-white d-flex justify-content-center align-items-center">
+              <div className="text-center wrapper-carousel">
+                <h1 className="fw-bold text-wrap">
                   Pengelolaan Sungai Untuk Mencegah Kerusakan Sungai
                 </h1>
-                <p class="text-wrap">
+                <p className="text-wrap">
                   Upaya dalam pengelolaan sungai untuk meminimalisir terjadinya kerusakan lingkungan sungai yang ada di indonesia.
                 </p>
                 {isLogin ? (
 
                 <Link
                   to={`/events/${1}`}
-                  class="btn-carousel"
+                  className="btn-carousel"
                 >
                   Ikuti Event
                 </Link>
                 ) : (
                 <Link
                   to={"/login"}
-                  class="btn-carousel"
+                  className="btn-carousel"
                 >
                   Ikuti Event
                 </Link>
@@ -418,21 +418,21 @@ function Home() {
                 </p>
 
                 {sortedArticles.map((data, index) => (
-                  <div class="row mx-3 mb-4 card-article" key={index}>
-                    <div class="col-lg-6 d-flex align-items-center">
+                  <div className="row mx-3 mb-4 card-article" key={index}>
+                    <div className="col-lg-6 d-flex align-items-center">
                       <img
                         src={data.image}
-                        class="img-fluid me-4 rounded-3"
+                        className="img-fluid me-4 rounded-3"
                         alt={data.titleArticle}
                       />
                     </div>
-                    <div class="col-lg-6 d-flex flex-column justify-content-center align-items-center">
+                    <div className="col-lg-6 d-flex flex-column justify-content-center align-items-center">
                       <div className="wrapper-text">
-                        <h2 class="fw-bold">{data.titleArticle}</h2>
+                        <h2 className="fw-bold">{data.titleArticle}</h2>
                         <p className="mt-2">{data.description}</p>
-                        <div class="date-article mb-4">
-                          <i class="fa-solid fa-calendar-days text-muted fa-lg"></i>
-                          <p class="d-inline text-black-50 ms-1">
+                        <div className="date-article mb-4">
+                          <i className="fa-solid fa-calendar-days text-muted fa-lg"></i>
+                          <p className="d-inline text-black-50 ms-1">
                             {data.datePost}
                           </p>
                         </div>
@@ -463,17 +463,17 @@ function Home() {
         </section>
 
         <section>
-          <div class="container mt-5">
-            <div class="row">
-              <div class="col-lg-6">
+          <div className="container mt-5">
+            <div className="row">
+              <div className="col-lg-6">
                 <img
                   src="../src/assets/about us.svg"
-                  class="img-fluid"
+                  className="img-fluid"
                   alt="ilustrasi peduli bumi"
                 />
               </div>
-              <div class="col-lg-6">
-                <p class="fs-3 fw-bold title">About Us</p>
+              <div className="col-lg-6">
+                <p className="fs-3 fw-bold title">About Us</p>
                 <p>
                   EarthCare adalah suatu platform aplikasi berbasis website yang
                   berfokus pada kepedulian dan kelestarian alam dimana pada
