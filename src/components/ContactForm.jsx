@@ -1,7 +1,10 @@
-import { useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import Swal from "sweetalert2"
 // import withReactContent from "sweetalert2-react-content"
 import {BsFillExclamationCircleFill} from "react-icons/bs"
+import axios from "axios"
+import { LoginContext } from "../context/LoginProvider"
+import { UserContext } from "../context/UserProvider"
 
 export const ContactForm = () => {
     // const MySwal = withReactContent(Swal)
@@ -16,48 +19,122 @@ export const ContactForm = () => {
     const [iconInvalidMessage, setIconInvalidMessage] = useState("")
     const icon = <BsFillExclamationCircleFill />
 
+    const {isLogin, setIsLogin} = useContext(LoginContext)
+    const {user, setUser} = useContext(UserContext)
+
+    useEffect(() => {
+        setIsLogin(sessionStorage.getItem("MyToken") !== null);
+        setUser(JSON.parse(sessionStorage.getItem("user") || '{"fullname":"","email":"","id":""}'));
+    },[])
+
     const handleSubmitContact = (e) => {
         e.preventDefault()
-        if (inputEmail !== "" && inputFullname !== "" && inputMessage !== "") {
-            Swal.fire({
-                position: 'top-center',
-                icon: 'success',
-                title: 'Message sent successfully',
-                showConfirmButton: false,
-                timer: 1500,
-            })
-            setInputEmail("")
-            setInputFullname("")
-            setInputMessage("")
-
-            setInvalidEmail("")
-            setInvalidFullname("")
-            setInvalidMessage("")
-
-            setIconInvalidEmail("")
-            setIconInvalidFullname("")
-            setIconInvalidMessage("")
+        if (isLogin) {
+            if (inputEmail !== "" && inputMessage !== "") {
+                Swal.fire({
+                    position: 'top-center',
+                    icon: 'success',
+                    title: 'Message sent successfully',
+                    showConfirmButton: false,
+                    timer: 1500,
+                })
+    
+                axios
+                .post("https://6461981c185dd9877e3f45ca.mockapi.io/contact", {
+                    fullName: user.fullName,
+                    email: inputEmail,
+                    message: inputMessage
+                })
+                .then((res) => {
+                    console.log(res.data);
+                    setInputEmail("")
+                    setInputFullname("")
+                    setInputMessage("")
+        
+                    setInvalidEmail("")
+                    setInvalidFullname("")
+                    setInvalidMessage("")
+        
+                    setIconInvalidEmail("")
+                    setIconInvalidFullname("")
+                    setIconInvalidMessage("")
+                })
+                .catch((error) => {
+                    console.log(error);
+                })
+    
+            } else {
+                if (inputEmail === "") {
+                    setIconInvalidEmail(icon)
+                    setInvalidEmail("Email can't be empty")
+                } else if (inputEmail !== "") {
+                    setIconInvalidEmail("")
+                    setInvalidEmail("")
+                }
+                if (inputMessage === "") {
+                    setIconInvalidMessage(icon)
+                    setInvalidMessage("Message can't be empty")
+                } else if (inputMessage !== "") {
+                    setIconInvalidMessage("")
+                    setInvalidMessage("")
+                }
+            }
         } else {
-            if (inputEmail === "") {
-                setIconInvalidEmail(icon)
-                setInvalidEmail("Email can't be empty")
-            } else if (inputEmail !== "") {
-                setIconInvalidEmail("")
-                setInvalidEmail("")
-            }
-            if (inputFullname === "") {
-                setIconInvalidFullname(icon)
-                setInvalidFullname("Fullname can't be empty")
-            } else if (inputFullname !== "") {
-                setIconInvalidFullname("")
-                setInvalidFullname("")
-            }
-            if (inputMessage === "") {
-                setIconInvalidMessage(icon)
-                setInvalidMessage("Message can't be empty")
-            } else if (inputMessage !== "") {
-                setIconInvalidMessage("")
-                setInvalidMessage("")
+            if (inputEmail !== "" && inputFullname !== "" && inputMessage !== "") {
+                Swal.fire({
+                    position: 'top-center',
+                    icon: 'success',
+                    title: 'Message sent successfully',
+                    showConfirmButton: false,
+                    timer: 1500,
+                })
+    
+                axios
+                .post("https://6461981c185dd9877e3f45ca.mockapi.io/contact", {
+                    fullName: inputFullname,
+                    email: inputEmail,
+                    message: inputMessage
+                })
+                .then((res) => {
+                    console.log(res.data);
+                    setInputEmail("")
+                    setInputFullname("")
+                    setInputMessage("")
+        
+                    setInvalidEmail("")
+                    setInvalidFullname("")
+                    setInvalidMessage("")
+        
+                    setIconInvalidEmail("")
+                    setIconInvalidFullname("")
+                    setIconInvalidMessage("")
+                })
+                .catch((error) => {
+                    console.log(error);
+                })
+    
+            } else {
+                if (inputEmail === "") {
+                    setIconInvalidEmail(icon)
+                    setInvalidEmail("Email can't be empty")
+                } else if (inputEmail !== "") {
+                    setIconInvalidEmail("")
+                    setInvalidEmail("")
+                }
+                if (inputFullname === "") {
+                    setIconInvalidFullname(icon)
+                    setInvalidFullname("Fullname can't be empty")
+                } else if (inputFullname !== "") {
+                    setIconInvalidFullname("")
+                    setInvalidFullname("")
+                }
+                if (inputMessage === "") {
+                    setIconInvalidMessage(icon)
+                    setInvalidMessage("Message can't be empty")
+                } else if (inputMessage !== "") {
+                    setIconInvalidMessage("")
+                    setInvalidMessage("")
+                }
             }
         }
     }
@@ -95,16 +172,28 @@ export const ContactForm = () => {
                                 </div>
                                 <div class="mb-2">
                                     <label htmlFor="fullname" class="form-label">Full Name</label>
-                                    <input 
-                                        type="text" 
-                                        class="form-control form-control-lg shadow-none" 
-                                        id="fullnameContact"
-                                        placeholder="Masukkan nama lengkap" 
-                                        value={inputFullname}
-                                        onChange={e => {
-                                            setInputFullname(e.target.value)
-                                        }}
-                                    />
+                                    {isLogin ? (
+                                        <input 
+                                            type="text" 
+                                            class="form-control text-muted form-control-lg shadow-none" 
+                                            id="fullnameContact"
+                                            placeholder="Masukkan nama lengkap" 
+                                            value={user.fullName}
+                                            disabled
+                                        />
+                                    ) : (
+                                        <input 
+                                            type="text" 
+                                            class="form-control form-control-lg shadow-none" 
+                                            id="fullnameContact"
+                                            placeholder="Masukkan nama lengkap" 
+                                            value={inputFullname}
+                                            onChange={e => {
+                                                setInputFullname(e.target.value)
+                                            }}
+                                        />
+
+                                    )}
                                     <div class="mt-1 text-warning d-flex align-items-center gap-1" id="invalid-fullname">{iconInvalidFullname} {invalidFullname}</div>
                                 </div>
                                 <div class="mb-3">
@@ -123,7 +212,13 @@ export const ContactForm = () => {
                                     <div class="mt-1 text-warning d-flex align-items-center gap-1" id="invalid-message">{iconInvalidMessage} {invalidMessage}</div>
                                 </div>
                                 <div class="mb-3">
-                                    <button type="submit" id="btnSend" class="btn btn-lg w-100 btn-primary border-0">Send Now</button>
+                                    <button 
+                                        type="submit" 
+                                        id="btnSend" 
+                                        class="btn btn-lg w-100 btn-primary border-0"
+                                    >
+                                        Send Now
+                                    </button>
                                 </div>
                             </form>
                         </div>

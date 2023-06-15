@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { FaEye } from "react-icons/fa"
 import { FaEyeSlash } from "react-icons/fa"
+import Swal from "sweetalert2";
 
 export const Register = () => {
   useLayoutEffect(() => {
@@ -17,28 +18,63 @@ export const Register = () => {
   const [passwordShown, setPasswordShown] = useState(false)
 
   const handleRegister = () => {
-    if (!fullName || !email || !password) {
-      alert("Maaf Fullname, email, dan password wajib diisi");
-      return;
+    // if (!fullName || !email || !password) {
+    //   alert("Maaf Fullname, email, dan password wajib diisi");
+    //   return;
+    // }
+
+    if (fullName === "" && email === "" && password === "") {
+      Swal.fire({
+        title: "Error",
+        text: "Semua input tidak boleh kosong!",
+        icon: "error",
+      });
+    } else if (fullName === "") {
+      Swal.fire({
+        title: "Error",
+        text: "Nama lengkap tidak boleh kosong!",
+        icon: "error",
+      });
+    } else if (email === "") {
+      Swal.fire({
+        title: "Error",
+        text: "Email tidak boleh kosong!",
+        icon: "error",
+      });
+    } else if (password === "") {
+      Swal.fire({
+        title: "Error",
+        text: "Password tidak boleh kosong!",
+        icon: "error",
+      });
+    } else {
+      axios
+      .post("https://6461981c185dd9877e3f45ca.mockapi.io/register", {
+          fullName, 
+          email, 
+          password
+      })
+        .then((res) => {
+          console.log(res.data);
+          Swal.fire({
+            title: "Success",
+            text: "Registrasi anda berhasil",
+            icon: "success",
+          })
+          setFullName("");
+          setEmail("");
+          setPassword("");
+        })
+        .catch((error) => {
+          console.error(error);
+          Swal.fire({
+            title: "Error",
+            text: "Registrasi gagal!",
+            icon: "error",
+          });
+        });
     }
 
-    axios
-    .post("https://6461981c185dd9877e3f45ca.mockapi.io/register", {
-        fullName, 
-        email, 
-        password
-    })
-      .then((res) => {
-        console.log(res.data);
-        alert("Registrasi Berhasil");
-        setFullName("");
-        setEmail("");
-        setPassword("");
-      })
-      .catch((error) => {
-        console.error(error);
-        alert("Registrasi gagal");
-      });
   };
 
   const passwordToggle = () => {

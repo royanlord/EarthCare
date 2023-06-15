@@ -5,6 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { FaEye } from "react-icons/fa"
 import { FaEyeSlash } from "react-icons/fa"
+import Swal from "sweetalert2";
 
 export const Login = () => {
   const [email, setEmail] = useState("")
@@ -23,34 +24,69 @@ export const Login = () => {
 
   const handleLogin = (e) => {
     e.preventDefault()
-    if (email === "" || password === "") {
-      alert("tidak boleh kosong")
+    // if (email === "" || password === "") {
+    //   alert("tidak boleh kosong")
+    // }
+
+    if (email === "" && password === "") {
+      Swal.fire({
+        title: "Error",
+        text: "Email dan password tidak boleh kosong",
+        icon: "error",
+      });
+    } else if (email === "") {
+      Swal.fire({
+        title: "Error",
+        text: "Email tidak boleh kosong",
+        icon: "error",
+      });
+    } else if (password === "") {
+      Swal.fire({
+        title: "Error",
+        text: "Password tidak boleh kosong",
+        icon: "error",
+      });
+    } else {
+      axios
+      .get("https://6461981c185dd9877e3f45ca.mockapi.io/register", payload)
+      .then((response) => {
+        const users = response.data;
+        const user = users.find(
+          (user) => user.email === email && user.password === password
+        );
+  
+        if (user) {
+          // localStorage.setItem("MyToken", user.token);
+          sessionStorage.setItem("MyToken", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c");
+          Swal.fire({
+            title: "Success",
+            text: "Login anda berhasil",
+            icon: "success",
+            confirmButtonText: "OKE"
+          }).then((result) => {
+            if (result.isConfirmed) {
+              sessionStorage.setItem("user", JSON.stringify(user))
+              navigation(`/`)
+            }
+          });
+          // console.log(user);
+        } else {
+          Swal.fire({
+            title: "Error",
+            text: "Invalid email atau password",
+            icon: "error",
+          });
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+        Swal.fire({
+          title: "Error",
+          text: "Login gagal",
+          icon: "error",
+        });
+      });
     }
-
-    axios
-    .get("https://6461981c185dd9877e3f45ca.mockapi.io/register", payload)
-    .then((response) => {
-      const users = response.data;
-      const user = users.find(
-        (user) => user.email === email && user.password === password
-      );
-
-      if (user) {
-        // localStorage.setItem("MyToken", user.token);
-        sessionStorage.setItem("MyToken", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c");
-        alert("Login successful");
-        sessionStorage.setItem("user", JSON.stringify(user))
-        navigation(`/`)
-        // console.log(user);
-      } else {
-        alert("Invalid email or password");
-      }
-    })
-    .catch((error) => {
-      console.log(error);
-      alert("Login failed");
-    });
-
   }
 
   const passwordToggle = () => {

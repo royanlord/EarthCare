@@ -110,8 +110,37 @@ header .bg-dark {
     margin-left: 5rem !important;
   }
 
+  .btn-danger.btn-logout {
+    width: 100%;
+    background-color: #FF0303 !important;
+    border: none !important;
+  }
+
+  .btn-danger.btn-logout:hover {
+    background-color: #fa4040 !important;
+  }
+
+  .btn-danger.btn-logout:active {
+    background-color: #bc0000 !important;
+  }
+
   @media screen and (max-width: 992px) {
     #profileUserNavbar {
       width: auto !important;
+    }
+
+    .btn-showname, .divider-profile {
+      display: none !important;
+    }
+
+    .container-logout {
+      display: flex;
+      justify-content: center ;
+    }
+
+    .btn-danger.btn-logout {
+      width: 50%;
+      background-color: #FF0303 !important;
+      border: none !important;
     }
   }
