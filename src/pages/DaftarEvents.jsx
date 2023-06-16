@@ -289,7 +289,7 @@ export default function DaftarEvents() {
                     className="btn btn-dark mb-4 mb-sm-4 fw-semibold"
                     to={"http://127.0.0.1:5173/events/2"}
                   >
-                    <FaArrowLeft /> Back to detail event
+                    <FaArrowLeft /> Kembali ke detail event
                   </Link>
                 </div>
               </Col>

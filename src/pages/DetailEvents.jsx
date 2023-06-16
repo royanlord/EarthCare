@@ -96,7 +96,7 @@ export default function DetailEvents() {
                   <hr color="black" />
                   <p>{detailEvents.detail}</p>
                   <Link className="btn btn-dark" to={"http://127.0.0.1:5173/"}>
-                    <FaArrowLeft /> Back to events
+                    <FaArrowLeft /> Kembali ke halaman event
                   </Link>
                 </div>
               </Col>
