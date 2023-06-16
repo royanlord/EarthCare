@@ -287,7 +287,7 @@ export default function DaftarEvents() {
                   </p>
                   <Link
                     className="btn btn-dark mb-4 mb-sm-4 fw-semibold"
-                    to={"http://127.0.0.1:5173/events/2"}
+                    to={`/events/${id}`}
                   >
                     <FaArrowLeft /> Kembali ke detail event
                   </Link>
