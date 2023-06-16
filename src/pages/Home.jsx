@@ -18,6 +18,8 @@ function Home() {
   const { articles, setArticles } = useContext(ArticlesContext);
   const { events, setEvents } = useContext(EventsContext);
 
+  document.title = "EarthCare | Home";
+
   if (isLogin) {
     document.body.style.backgroundColor = "white";
   } else {
