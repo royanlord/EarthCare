@@ -10,10 +10,10 @@ import { LoginContext } from "../context/LoginProvider";
 import { ArticlesContext } from "../context/ArticlesProvider";
 import Footer  from "../components/Footer";
 import { EventsContext } from "../context/EventsProvider";
-import {carouselImage1} from "../assets/carousel-image1.png";
-import {carouselImage2} from "../assets/event-image2.svg";
-import {carouselImage3} from "../assets/event-image1.svg";
-import {imageAbout} from "../assets/about us.svg";
+import carouselImage1 from "../assets/carousel-image1.png";
+import carouselImage2 from "../assets/event-image2.svg";
+import carouselImage3 from "../assets/event-image1.svg";
+import imageAbout from "../assets/about us.svg";
 
 function Home() {
   const { isLogin, setIsLogin } = useContext(LoginContext);

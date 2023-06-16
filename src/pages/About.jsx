@@ -3,8 +3,8 @@ import { Navbar } from "../components/Navbar";
 import "../css/about.css";
 import { LoginContext } from "../context/LoginProvider";
 import Footer from "../components/Footer";
-import {ImageAbout1} from "../assets/image1.svg";
-import {ImageAbout2} from "../assets/image2.svg";
+import ImageAbout1 from "../assets/image1.svg";
+import ImageAbout2 from "../assets/image2.svg";
 
 function About() {
   const {isLogin, setIsLogin} = useContext(LoginContext)
