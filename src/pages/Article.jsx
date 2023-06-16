@@ -40,7 +40,7 @@ export const Article = () => {
             
             setTimeout(() => {
                 setIsLoading(false)
-                document.title = "Articles"
+                document.title = "EarthCare | Articles"
             }, 2000)
         }
 
