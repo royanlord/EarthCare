@@ -1,0 +1,231 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;600;700&display=swap");
+
+* {
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.detail__events {
+  margin-top: 5rem;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #000;
+  font-weight: 400;
+  height: 100vh;
+}
+
+.detail__events main .card__image h3 {
+  margin-bottom: -1rem;
+  font-size: 22px;
+  font-weight: 600;
+  color: #000;
+}
+
+.detail__events main .card__image p {
+  margin-top: -0.5rem;
+  font-size: 16px;
+  color: #000;
+  font-weight: 400;
+}
+
+.detail__events main .card__detail h4 {
+  color: #000;
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.detail__events main .card__detail .date-detail,
+.detail__events main .card__detail .time-detail,
+.detail__events main .card__detail .ticket-detail,
+.detail__events main .card__detail .location-detail,
+.detail__events main .card__detail .registration-detail {
+  color: #ce3b01;
+  font-size: 16px;
+}
+
+.detail__events main .card__detail p,
+.detail__events main .card__detail p,
+.detail__events main .card__detail p,
+.detail__events main .card__detail p,
+.detail__events main .card__detail p {
+  color: #000 !important;
+  font-weight: 400;
+}
+
+.detail__events main .card__detail .btn-primary {
+  background: #ce3b01;
+  border: #ce3b01;
+  padding: 8px 12px;
+  font-weight: 600;
+  color: #fff;
+  transition: 0.2s ease-out;
+  cursor: pointer;
+}
+
+.detail__events main .card__detail .btn-primary:hover,
+.daftar__events main .card__detail .btn-primary:hover {
+  background: #e0612f;
+  border: #e0612f;
+}
+
+.detail__events main .card__image p {
+  text-align: justify;
+}
+
+.detail__events main .card__image .btn-dark {
+  padding: 8px 12px;
+  font-weight: 600;
+  margin-bottom: 1.8rem;
+  cursor: pointer;
+}
+
+/* Daftar Events */
+.daftar__events {
+  margin-top: 5rem;
+}
+
+.daftar__events main .card__detail {
+  background: #f0f0f0;
+}
+
+.card__detail > h3 {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.card__detail .border__bottom {
+  border: 1px solid rgba(164, 164, 164, 0.2);
+  margin-bottom: 1.5rem;
+}
+
+.daftar__events main h4 {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.daftar__events main .text__date {
+  color: #ce3b01;
+}
+
+.daftar__events main .ticket__detail {
+  color: #ce3b01;
+  margin-right: 10px;
+}
+
+.daftar__events main .card__detail input {
+  height: 45px;
+}
+
+.daftar__events main .card__detail textarea {
+  height: 90px;
+}
+
+.daftar__events main .card__detail h3 {
+  color: #000;
+  font-size: 22px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.daftar__events main .card__detail .btn-primary {
+  background: #e54201;
+  border: #e54201;
+  padding: 8px 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease-out;
+}
+
+/* Notifikasi Events */
+.notifikasi {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 8rem;
+}
+
+main .notifikasi__events h1 {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 600;
+  color: #000;
+  width: 80%;
+}
+
+main .notifikasi__events p {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 400;
+  color: #000;
+  width: 50%;
+}
+
+main .notifikasi__events img {
+  width: 350px;
+  height: 350px;
+  object-fit: cover;
+}
+
+main .notifikasi__events .btn-success {
+  background: #ce3b01;
+  border: #ce3b01;
+  padding: 8px 18px;
+  font-weight: 600;
+  color: #fff;
+  transition: 0.2s ease-out;
+  cursor: pointer;
+}
+
+main .notifikasi__events .btn-success:hover {
+  background: #e0612f;
+  border: #e0612f;
+}
+
+@media (max-width: 576px) {
+  main .notifikasi {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  main .notifikasi__events img {
+    width: 290px;
+    height: 290px;
+    object-fit: cover;
+  }
+
+  main .notifikasi__events h1 {
+    text-align: center;
+    font-size: 22px;
+    font-weight: 600;
+    color: #000;
+    width: 80%;
+    margin-top: 1rem;
+  }
+
+  main .notifikasi__events p {
+    text-align: center;
+    font-size: 12px;
+    font-weight: 400;
+    color: #000;
+    width: 80%;
+  }
+
+  main .notifikasi__events .btn-success {
+    background: #ce3b01;
+    border: #ce3b01;
+    padding: 8px 12px;
+    font-weight: 600;
+    color: #fff;
+    transition: 0.2s ease-out;
+    cursor: pointer;
+    margin-bottom: 0;
+  }
+}

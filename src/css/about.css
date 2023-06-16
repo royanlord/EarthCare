@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;600;700&display=swap");
+
+* {
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#about {
+  margin-top: 8.5rem;
+}
+
+.title {
+  color: #e54201;
+}
+
+.wrapper {
+  width: 90% !important;
+  background-color: #115810;
+}
+
+.wrapper img {
+  height: 200px;
+  width: 200px;
+  object-fit: cover;
+}
+
+.team {
+  margin: 1rem 0 0 0;
+  padding: 0 20px;
+}
+
+@media screen and (max-width: 992px) {
+  #goals {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .wrapper {
+    width: 95% !important;
+  }
+}
