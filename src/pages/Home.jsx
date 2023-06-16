@@ -337,14 +337,14 @@ function Home() {
                     <div className="d-grid">
                     <Link
                       to={`/events/${data.id}`}
-                      className="btn btn-primary btn-event"
+                      className="btn btn-primary btn-event mt-3"
                     >
                       Ikuti Event
                     </Link>
                     </div>
                   ) : (
                     <div className="d-grid">
-                    <Link to="/login" className="btn btn-primary btn-event">
+                    <Link to="/login" className="btn btn-primary btn-event mt-3">
                       Ikuti Event
                     </Link>
                     </div>
