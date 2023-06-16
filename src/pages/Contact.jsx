@@ -8,6 +8,8 @@ import Footer from "../components/Footer"
 export const Contact = () => {
     const {isLogin, setIsLogin} = useContext(LoginContext)
 
+    document.title = "EarthCare | Contact Us"
+
     if (isLogin) {
         document.body.style.backgroundColor = "white";
     } else {
