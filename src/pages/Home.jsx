@@ -10,6 +10,10 @@ import { LoginContext } from "../context/LoginProvider";
 import { ArticlesContext } from "../context/ArticlesProvider";
 import Footer  from "../components/Footer";
 import { EventsContext } from "../context/EventsProvider";
+import {carouselImage1} from "../assets/carousel-image1.png";
+import {carouselImage2} from "../assets/event-image2.svg";
+import {carouselImage3} from "../assets/event-image1.svg";
+import {imageAbout} from "../assets/about us.svg";
 
 function Home() {
   const { isLogin, setIsLogin } = useContext(LoginContext);
@@ -83,134 +87,11 @@ function Home() {
     <>
       <Navbar />
       <main>
-        {/* <div
-          id="carouselExampleAutoplaying"
-          class="carousel slide"
-          data-bs-ride="carousel"
-        >
-          <div class="carousel-inner position-relative">
-            <div class="carousel-indicators">
-              <button
-                type="button"
-                data-bs-target="#carouselExampleAutoplaying"
-                data-bs-slide-to="0"
-                class="active"
-                aria-current="true"
-                aria-label="Slide 1"
-              ></button>
-              <button
-                type="button"
-                data-bs-target="#carouselExampleAutoplaying"
-                data-bs-slide-to="1"
-                aria-label="Slide 2"
-              ></button>
-              <button
-                type="button"
-                data-bs-target="#carouselExampleAutoplaying"
-                data-bs-slide-to="2"
-                aria-label="Slide 3"
-              ></button>
-            </div>
-            <div class="carousel-item active" data-bs-interval="10000">
-              <img
-                src="assets/images/carousel-image1.png"
-                class="d-block w-100"
-                alt="menanam pohon"
-              />
-              <div class="overlay position-absolute top-0 bottom-0 start-0 end-0 w-100 h-100 text-white d-flex justify-content-center align-items-center">
-                <div class="text-center wrapper-carousel">
-                  <h1 class="fw-bold text-wrap">
-                    Menanam Pohon Selamatkan Kehidupan
-                  </h1>
-                  <p class="text-wrap">
-                    Gerakan menanam pohon sebagai upaya melakukan penghijauan
-                    dan memperbaiki paru-paru kota
-                  </p>
-                  <button
-                    class="btn btn-carousel"
-                    onclick="window.location.href='event.html'"
-                  >
-                    Join Now
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item" data-bs-interval="2000">
-              <img
-                src="assets/images/carousel-image2.png"
-                class="d-block w-100"
-                alt="menanam pohon"
-              />
-              <div class="overlay position-absolute top-0 bottom-0 start-0 end-0 w-100 h-100 text-white d-flex justify-content-center align-items-center">
-                <div class="text-center wrapper-carousel">
-                  <h1 class="fw-bold">
-                    Menanam Pohon <br />
-                    Selamatkan Kehidupan
-                  </h1>
-                  <p class="text-wrap">
-                    Gerakan menanam pohon sebagai upaya melakukan penghijauandan
-                    memperbaiki paru-paru kota
-                  </p>
-                  <button
-                    class="btn btn-carousel"
-                    onclick="window.location.href='event.html'"
-                  >
-                    Join Now
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <img
-                src="assets/images/carousel-image3.png"
-                class="d-block w-100"
-                alt="menanam pohon"
-              />
-              <div class="overlay position-absolute top-0 bottom-0 start-0 end-0 w-100 h-100 text-white d-flex justify-content-center align-items-center">
-                <div class="text-center wrapper-carousel">
-                  <h1 class="fw-bold">
-                    Menanam Pohon <br />
-                    Selamatkan Kehidupan
-                  </h1>
-                  <p class="text-wrap">
-                    Gerakan menanam pohon sebagai upaya melakukan penghijauan
-                    dan memperbaiki paru-paru kota
-                  </p>
-                  <button
-                    class="btn btn-carousel"
-                    onclick="window.location.href='event.html'"
-                  >
-                    Join Now
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <button
-            class="carousel-control-prev d-md-block"
-            type="button"
-            data-bs-target="#carouselExampleAutoplaying"
-            data-bs-slide="prev"
-          >
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button
-            class="carousel-control-next d-md-block"
-            type="button"
-            data-bs-target="#carouselExampleAutoplaying"
-            data-bs-slide="next"
-          >
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
-        </div> */}
-
         <Carousel>
           <Carousel.Item>
             <img
               className="d-block w-100"
-              src="../src/assets/carousel-image1.png"
+              src={carouselImage1}
               alt="First slide"
             />
             <div className="overlay position-absolute top-0 bottom-0 start-0 end-0 w-100 h-100 text-white d-flex justify-content-center align-items-center">
@@ -234,7 +115,7 @@ function Home() {
           <Carousel.Item>
             <img
               className="d-block w-100"
-              src="../src/assets/event-image2.svg"
+              src={carouselImage2}
               alt="Second slide"
             />
 
@@ -267,7 +148,7 @@ function Home() {
           <Carousel.Item>
             <img
               className="d-block w-100"
-              src="../src/assets/event-image1.svg"
+              src={carouselImage3}
               alt="Third slide"
             />
 
@@ -351,66 +232,9 @@ function Home() {
                     </Link>
                     </div>
                   )}
-                  {/* <Button variant="primary" className="btn-event w-100">
-                    Join Now
-                  </Button> */}
                 </Card.Body>
               </Card>
             ))}
-            {/* <Card style={{ width: "22rem" }} className="card-event">
-              <Card.Img variant="top" src="../src/assets/event-image2.svg" />
-              <Card.Body>
-                <Card.Title className="title-card">
-                  Gerakan Sedekah Sampah
-                </Card.Title>
-                <Card.Text>
-                  <p className="card-text-event">tkn_psl</p>
-                  <div className="date mb-2">
-                    <i className="mt-1 me-2">
-                      <FaCalendarAlt />
-                    </i>
-                    <p className="d-inline ms-1">8 April 2023</p>
-                  </div>
-                  <div className="location">
-                    <i className="mt-1 me-2">
-                      <FaMapMarker />
-                    </i>
-                    <p className="d-inline ms-1">
-                      Halaman Masjid Raya Bintaro Jaya
-                    </p>
-                  </div>
-                </Card.Text>
-                <Button variant="primary" className="btn-event w-100">
-                  Join Now
-                </Button>
-              </Card.Body>
-            </Card>
-            <Card style={{ width: "22rem" }} className="card-event">
-              <Card.Img variant="top" src="../src/assets/event-image3.svg" />
-              <Card.Body>
-                <Card.Title className="title-card">
-                  Perhitungan Gas Rumah Kaca
-                </Card.Title>
-                <Card.Text>
-                  <p className="card-text-event">ecoedu</p>
-                  <div className="date mb-2">
-                    <i className="mt-1 me-2">
-                      <FaCalendarAlt />
-                    </i>
-                    <p className="d-inline ms-1">16 Maret 2023</p>
-                  </div>
-                  <div className="location">
-                    <i className="mt-1 me-2">
-                      <FaMapMarker />
-                    </i>
-                    <p className="d-inline ms-1">Online, zoom</p>
-                  </div>
-                </Card.Text>
-                <Button variant="primary" className="btn-event w-100">
-                  Join Now
-                </Button>
-              </Card.Body>
-            </Card> */}
           </div>
           <div className="wrapper-showall-event">
             <Link
@@ -483,7 +307,7 @@ function Home() {
             <div className="row">
               <div className="col-lg-6">
                 <img
-                  src="../src/assets/about us.svg"
+                  src={imageAbout}
                   className="img-fluid"
                   alt="ilustrasi peduli bumi"
                 />
