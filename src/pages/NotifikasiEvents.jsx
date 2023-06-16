@@ -16,7 +16,7 @@ export default function NotifikasiEvents() {
           Silahkan tunggu konfirmasi email dari kami dan kami akan
           menginformasikan secepat mungkin!
         </p>
-        <Link to={"http://127.0.0.1:5173/"} className="btn btn-success mb-5">
+        <Link to={"/event"} className="btn btn-success mb-5">
           Back to Home
         </Link>
       </div>
