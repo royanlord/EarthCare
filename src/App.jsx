@@ -28,7 +28,7 @@ function App() {
           <Route path="/event" element={<Events />} />
           <Route path="/events/:id" element={<DetailEvents />} />
           <Route path="/daftarevents/:id" element={<DaftarEvents />} />
-          <Route path="/notifikasi/:id" element={<NotifikasiEvents />} />
+          <Route path="/notifikasi" element={<NotifikasiEvents />} />
           <Route path="/article" element={<Article />} />
           <Route path="/detailArticle/:id" element={<DetailArticle />} />
           <Route path="/about" element={<About />} />
