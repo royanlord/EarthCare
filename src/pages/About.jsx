@@ -3,6 +3,8 @@ import { Navbar } from "../components/Navbar";
 import "../css/about.css";
 import { LoginContext } from "../context/LoginProvider";
 import Footer from "../components/Footer";
+import {ImageAbout1} from "../assets/image1.svg";
+import {ImageAbout2} from "../assets/image2.svg";
 
 function About() {
   const {isLogin, setIsLogin} = useContext(LoginContext)
@@ -23,8 +25,8 @@ function About() {
           <div className="row">
             <div className="col-lg-6">
               <img
-                src="../src/assets/image1.svg"
-                alt=""
+                src={ImageAbout1}
+                alt="Menjaga Bumi"
                 className="img-fluid"
               />
             </div>
@@ -73,8 +75,8 @@ function About() {
             </div>
             <div className="col-lg-6">
               <img
-                src="../src/assets/image2.svg"
-                alt=""
+                src={ImageAbout2}
+                alt="Menyiram tanaman"
                 className="img-fluid rounded-3"
               />
             </div>
