@@ -7,6 +7,8 @@ import Footer from "../components/Footer";
 function About() {
   const {isLogin, setIsLogin} = useContext(LoginContext)
 
+  document.title = "EarthCare | About"
+
   if (isLogin) {
     document.body.style.backgroundColor = "white";
   } else {
@@ -86,7 +88,7 @@ function About() {
           <div className="wrapper mx-auto p-5 d-flex justify-content-center gap-5 rounded-4 flex-wrap text-center text-white lh-1">
             <div>
               <img
-                src="../src/assets/nabil.svg"
+                src="https://github.com/Anugerah20/assets/blob/main/Nabil%20Anugerah%20Pangestu.jpeg?raw=true"
                 alt="Nabil Anugerah P"
                 className="bg-primary rounded-circle"
               />
@@ -95,7 +97,7 @@ function About() {
             </div>
             <div>
               <img
-                src="../src/assets/royan.svg"
+                src="https://github.com/Anugerah20/assets/blob/main/Royan%20Farid%20Fathurrahman.jpg?raw=true"
                 alt="Royan Farid F"
                 className="bg-primary rounded-circle"
               />
@@ -104,7 +106,7 @@ function About() {
             </div>
             <div>
               <img
-                src="../src/assets/ghulsan.svg"
+                src="https://github.com/Anugerah20/assets/blob/main/Ghulsan%20Savana%20Ahasya.jpeg?raw=true"
                 alt="Ghulsan Savana A"
                 className="bg-primary rounded-circle"
               />
@@ -113,7 +115,7 @@ function About() {
             </div>
             <div>
               <img
-                src="../src/assets/ghulsan.svg"
+                src="https://github.com/Anugerah20/assets/blob/main/user.png?raw=true"
                 alt="Ghulsan Savana A"
                 className="bg-primary rounded-circle"
               />
@@ -122,7 +124,7 @@ function About() {
             </div>
             <div>
               <img
-                src="../src/assets/ghulsan.svg"
+                src="https://github.com/Anugerah20/assets/blob/main/user.png?raw=true"
                 alt="Ghulsan Savana A"
                 className="bg-primary rounded-circle"
               />
