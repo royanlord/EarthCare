@@ -211,3 +211,9 @@ section hr {
   font-size: 0.8rem;
 }
 }
+
+@media screen and (max-width: 576px) {
+  .card-event {
+    width: 20rem !important;
+  }
+} 
