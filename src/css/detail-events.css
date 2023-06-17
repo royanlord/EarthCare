@@ -86,14 +86,14 @@
 }
 
 /* Mobile Responsive card detail events */
-@media (max-width: 400px) {
+@media (max-width: 576px) {
 .detail__events {
   margin-top: 1.8rem;
   margin-bottom: -5.8rem;
 } 
 
 .detail__events main .card__detail {
-    width: 22rem;
+    width: 20rem;
   }
 }
 
@@ -169,9 +169,9 @@
 }
 
 /* Mobile Responsive register events */
-@media (max-width: 400px) {
+@media (max-width: 576px) {
   .daftar__events main .card__detail {
-    width: 22rem;
+    width: 20rem;
   }
 }
 
