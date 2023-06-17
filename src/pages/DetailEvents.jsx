@@ -85,7 +85,7 @@ export default function DetailEvents() {
         <div className="detail__events d-flex justify-content-center align-items-center">
           <main className="d-flex container mx-5">
             <Row>
-              <Col xs={12} lg={8}>
+              <Col md={6} lg={8}>
                 <div className="card__image">
                   <img
                     className="img-fluid mt-5"
@@ -101,8 +101,8 @@ export default function DetailEvents() {
                 </div>
               </Col>
 
-              <Col xs={12} lg={4}>
-                <Card className="bg-white shadow card card__detail p-2 mt-lg-5 mt-sm-2">
+              <Col md={6} lg={4}>
+                <Card className="bg-white shadow card card__detail p-2 mt-lg-5 mt-md-5">
                   <div className="card-body">
                     <h4 className="card-title mb-2">{detailEvents.judul}</h4>
                     <Badge bg="success me-2 mb-3">Lingkungan</Badge>
