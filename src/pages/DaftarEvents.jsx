@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState, useRef } from "react";
 import { Form, Col, Row, Button, Card } from "react-bootstrap";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { FaTicketAlt, FaClock, FaArrowLeft } from "react-icons/fa";
 import withReactContent from "sweetalert2-react-content";
 import Swal from "sweetalert2";
@@ -21,10 +21,10 @@ export default function DaftarEvents() {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [address, setAddress] = useState("");
-  // const navigate = useNavigation();
   // useState event end
   // const [registerClose, setRegisterClose] = useState(false);
   const form = useRef();
+  const navigation = useNavigate();
 
   const { isLogin, setIsLogin } = useContext(LoginContext);
 
@@ -201,7 +201,8 @@ export default function DaftarEvents() {
         .post("https://6486fcc9beba6297278f9d83.mockapi.io/form-events", data)
         .then((res) => {
           console.log("Pendaftaran event berhasil dikirim ke server", res.data);
-          window.location.href = "/notifikasi";
+          // window.location.href = "/notifikasi";
+          navigation(`/notifikasi`);
         })
         .catch((error) => {
           console.error(
@@ -353,7 +354,6 @@ export default function DaftarEvents() {
                         type="button"
                         onClick={handleDaftarEvent}
                       >
-                        {/* {registerClose ? "Pendaftaran Ditutup" : "Pesan Sekarang"} */}
                         Daftar Sekarang
                       </Button>
                     </div>
