@@ -271,7 +271,7 @@ export default function DaftarEvents() {
         <div className="daftar__events d-flex justify-content-center align-items-center">
           <main className="d-flex container mx-5">
             <Row>
-              <Col xs={12} lg={7}>
+              <Col md={6} lg={7}>
                 <div className="card__image">
                   <img
                     className="img-fluid mt-5"
@@ -296,7 +296,7 @@ export default function DaftarEvents() {
                 </div>
               </Col>
 
-              <Col xs={12} lg={5}>
+              <Col md={6} lg={5}>
                 <Card className="card__detail p-4 mt-lg-5 mt-sm-5 mb-sm-5 mb-5">
                   <h3 className="text-lg-center text-right mb-lg-2">
                     Lengkapi Data Anda
